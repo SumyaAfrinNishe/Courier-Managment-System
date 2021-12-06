@@ -7,7 +7,7 @@
          <div class="slider_container">
             <div class="slide"> 
                 <!-- Slide image -->
-               <img src="{{url('frontend/images/slider1.jpg')}}" class="img-responsive" alt=""/>
+               <img src="{{url('frontend/images/slider1.jpeg')}}" class="img-responsive" alt=""/>
                 <!-- /Slide image -->
                 <!-- Texts container -->
                 <div class="slide_content">
@@ -25,8 +25,8 @@
                <img src="{{url('frontend/images/slider2.jpg')}}" class="img-responsive" alt=""/>
                 <div class="slide_content">
                     <div class="slide_content_wrap">
-                        <h1 class="title">Run Over<br>Everything</h1>
-                       	<div class="button"><a href="#">See Details</a></div>
+                        <h1 class="title">Courier<br>Management<br>System</h1>
+                       	<!-- <div class="button"><a href="#">See Details</a></div> -->
                     </div>
                 </div>
             </div>
