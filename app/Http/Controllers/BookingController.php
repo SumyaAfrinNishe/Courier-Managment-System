@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 // use App\Models\Courier;
 use App\Models\CourierRecord;
-
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -55,6 +54,7 @@ class BookingController extends Controller
 
 
             ]);
+            // return redirect()->back()->with('success','Product created successfully.');
             return redirect('/admin/courierrecord');
     }
     public function dashboard()

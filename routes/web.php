@@ -24,13 +24,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('home',[HomeController::class,'home']);
 
 
-// Route::get('/admin', function ()
-// {
-//     return view ('frontend.master');
-// });
 Route::get('/admin', function ()
 {
     return view ('master');
+});
+Route::get('/', function ()
+{
+    return view ('frontend.pages.home');
 });
 
 

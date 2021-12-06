@@ -13,9 +13,9 @@
                 <div class="slide_content">
                     <div class="slide_content_wrap">
                         <!-- Text title -->
-                        <h1 class="title">Run Over<br>Everything</h1>
+                        <h1 class="title">Courier<br>Management<br>System</h1>
                         <!-- /Text title -->
-                        <div class="button"><a href="#">See Details</a></div>
+                        <!-- <div class="button"><a href="#">See Details</a></div> -->
                     </div>
                 </div>
                <!-- /Texts container -->
@@ -154,4 +154,4 @@
 		 </div>
 	    </div>
 
-        @endsection
+@endsection

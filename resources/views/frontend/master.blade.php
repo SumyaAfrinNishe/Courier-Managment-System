@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Snow Bootstrap Website Template | Home :: w3layouts</title>
+<title>Courier Management System</title>
 <link href="{{url('frontend/css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
 <!--<link href="css/style.css" rel='stylesheet' type='text/css' />-->
 <link href="{{url('frontend/css/style.css')}}" rel="stylesheet" />
