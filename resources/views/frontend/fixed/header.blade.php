@@ -9,12 +9,24 @@
 					 <div class="menu">
 						  <a class="toggleMenu" href="#"><img src="{{url('frontend/images/nav.png')}}" alt="" /></a>
 						    <ul class="nav" id="nav">
-						    	<li><a href="shop.html">Shop</a></li>
-						    	<li><a href="team.html">Team</a></li>
-						    	<li><a href="experiance.html">Events</a></li>
-						    	<li><a href="experiance.html">Experiance</a></li>
-						    	<li><a href="shop.html">Company</a></li>
-								<li><a href="contact.html">Contact</a></li>								
+						    	<li><a href="shop.html">Home</a></li>
+						    	<li><a href="team.html">About Us</a></li>
+						    	<li><a href="{{route('showbranch')}}">Branch</a></li>
+						    	<li><a href="experiance.html">Login</a></li>
+
+								<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+    Login
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><button class="dropdown-item" type="button">Admin</button></li>
+    <li><button class="dropdown-item" type="button">Customer</button></li>
+    <li><button class="dropdown-item" type="button">Shipper</button></li>
+  </ul>
+</div>
+<li><a href="experiance.html">Sign In</a></li>
+						    	<!-- <li><a href="shop.html">Company</a></li>
+								<li><a href="contact.html">Contact</a></li>								 -->
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="{{url('frontend/js/responsive-nav.js')}}"></script>

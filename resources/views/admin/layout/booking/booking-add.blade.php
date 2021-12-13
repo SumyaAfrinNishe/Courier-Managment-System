@@ -91,6 +91,21 @@
   <input type="number" name="price" class="form-control" id="price" placeholder="">
 </div>
 
+<div class="mb-3">
+  <label for="name" class="form-label">Branch Name</label>
+  <input type="text" name="name" class="form-control" id="name" placeholder="">
+</div>
+
+<div class="mb-3">
+  <label for="address" class="form-label">Branch Address</label>c
+  <input type="text" name="address" class="form-control" id="address" placeholder="">
+</div>
+
+<div class="mb-3">
+  <label for="status" class="form-label">Status</label>
+  <input type="text" name="status" class="form-control" id="status" placeholder="">
+</div>
+
 <div class="input-group">
   <div class="custom-file">
     <input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">

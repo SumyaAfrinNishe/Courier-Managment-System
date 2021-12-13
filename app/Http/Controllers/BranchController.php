@@ -34,7 +34,19 @@ class BranchController extends Controller
             'country'=>'required'
         ]);
         // dd($request->all());
-        //dd($request->all());
+        // dd($request->all());
+
+        $filename='';
+      if($request->hasfile('image'))
+      {
+          $file=$request->file('image');
+          $filename=date('Ymdhms').'.'.$file->getclientOriginalExtension();
+          $file->storeAs('/uploads',$filename);
+
+      }
+
+    //   dd("ok");
+
         BranchList::create([
             
             'name'=>$request->name,
@@ -43,10 +55,8 @@ class BranchController extends Controller
             'address'=>$request->address,
             'city'=>$request->city,
             'state'=>$request->state,
-            'country'=>$request->country
-            
-
-
+            'country'=>$request->country,
+            'image'=>$filename,
 
          ]);
          return redirect('/admin/branchlist');

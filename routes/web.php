@@ -1,13 +1,19 @@
 <?php
 
+//frontend
+use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\ShowBranchController;
+//backend
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CourierRecordController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TrackListController;
-use App\Http\Controllers\frontend\HomeController;
 use Illuminate\Support\Facades\Route;
+
+
+
 
 
 /*
@@ -32,13 +38,8 @@ Route::get('/', function ()
 {
     return view ('frontend.pages.home');
 });
-
-
-
-// Route::get('/', function () 
-// {
-//     return view('master');
-// });
+//frontend part
+Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name(name:'showbranch');
 
 //dashboard
 Route::get('/dashboard',[BookingController::class,'dashboard'])->name(name:'dashboard');

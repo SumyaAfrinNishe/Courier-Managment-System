@@ -22,6 +22,7 @@ class CreateBranchlistsTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('country');
+            $table->string('image');
             $table->timestamps();
         });
     }

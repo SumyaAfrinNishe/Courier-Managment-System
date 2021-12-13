@@ -12,7 +12,7 @@
 </div>
 @endif
 
-<form action="{{route('admin.branch.list.create')}}" method='POST'>
+<form action="{{route('admin.branch.list.create')}}" method='POST' enctype="multipart/form-data">
   
 @csrf
 <div class="mb-3">
@@ -24,7 +24,7 @@
   <input type="text" name="contact" class="form-control" id="contact" placeholder="">
 </div>
 <div class="mb-3">
-  <label for="email" class="form-label">Branch Email</label>
+  <label for="mail" class="form-label">Branch Email</label>
   <input type="text" name="email" class="form-control" id="email" placeholder="">
 </div>
 <div class="mb-3">
@@ -47,7 +47,11 @@
   <label for="country" class="form-label">Branch Country</label>
   <input type="text" name="country" class="form-control" id="country" placeholder="">
 </div>
-
+<div class="input-group">
+  <div class="custom-file">
+    <input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+  </div>
+</div>
 <button type="submit" class="btn btn-success">Submit</button>
 </form>
 

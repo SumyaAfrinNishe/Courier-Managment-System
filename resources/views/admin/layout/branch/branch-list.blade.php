@@ -15,6 +15,7 @@
         <th scope="col">City</th>
         <th scope="col">State</th>
         <th scope="col">Country</th>
+        <th scope="col">Image</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
@@ -30,6 +31,9 @@
         <td>{{$item->city}}</td>
         <td>{{$item->state}}</td>
         <td>{{$item->country}}</td>
+        <td> 
+            <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="product image">
+        </td>
 </tr>
 @endforeach
     </tbody>

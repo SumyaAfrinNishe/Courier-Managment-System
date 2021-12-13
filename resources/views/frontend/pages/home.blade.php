@@ -16,6 +16,13 @@
                         <h1 class="title">Courier<br>Management<br>System</h1>
                         <!-- /Text title -->
                         <!-- <div class="button"><a href="#">See Details</a></div> -->
+                        <div class="box">
+                          <h1>Search Your Courier</h1>
+                          <form>
+                            <input type="text" name="" placeholder="Enter Your Tracking Number">
+                            <input type="submit" name="" value="Search">
+                          </form>
+                       </div>
                     </div>
                 </div>
                <!-- /Texts container -->
@@ -27,6 +34,12 @@
                     <div class="slide_content_wrap">
                         <h1 class="title">Courier<br>Management<br>System</h1>
                        	<!-- <div class="button"><a href="#">See Details</a></div> -->
+                         <div class="box">
+                           <h1>Search Your Courier</h1>
+                         <form>
+                            <input type="text" name="search" placeholder="Enter Your Tracking Number">
+                            <input type="submit" name="search" value="Search">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -38,7 +51,7 @@
        </div>
        <!--/slider -->
       </div>
-	  <div class="main">
+	  <!-- <div class="main">
 		<div class="content-top">
 			<h2>snowboards</h2>
 			<p>hendrerit in vulputate velit esse molestie consequat, vel illum dolore</p>
@@ -78,7 +91,7 @@
 		    
 		});
 		</script>
-		<!-- <script type="text/javascript" src="{{url('frontend/js/jquery.flexisel.js')}}"></script> -->
+		<script type="text/javascript" src="{{url('frontend/js/jquery.flexisel.js')}}"></script>
 		</div>
 	</div>
 	<div class="content-bottom">
@@ -91,7 +104,7 @@
 			  </div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="features">
 		<div class="container">
 			<h3 class="m_3">Features</h3>
@@ -152,6 +165,6 @@
 				</div>
 			</div>
 		 </div>
-	    </div>
+	  </div>
 
 @endsection
