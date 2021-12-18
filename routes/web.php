@@ -62,20 +62,23 @@ Route::group(['prefix'=>'admin'],function (){
 
     Route::get('/logout',[AdminController::class,'logout'])->name('admin.logout');
 
-
 //dashboard
 Route::get('/dashboard',[BookingController::class,'dashboard'])->name(name:'dashboard');
+
 
 //Branch
 Route::get('/admin/addbranch',[BranchController::class,'addbranch'])->name(name:'admin.add.branch');
 Route::get('/admin/branchlist',[BranchController::class,'branchlist'])->name(name:'admin.branch.list');
-
 Route::post('/admin/branchlist/create',[BranchController::class,'branchlistCreate'])->name(name:'admin.branch.list.create');
+
+
 
 //Booking
 Route::get('/admin/booking',[BookingController::class,'bookingadd'])->name(name:'admin.booking.add');
 Route::get('/admin/courierrecord',[BookingController::class,'courierrecord'])->name(name:'admin.courier.record');
 Route::post('/admin/courierrecord/create',[BookingController::class,'courierrecordCreate'])->name(name:'admin.courier.record.create');
+
+
 
 
 //Status
@@ -88,7 +91,10 @@ Route::get('/admin/totalpickup',[StatusController::class,'totalpickup'])->name(n
 Route::get('/admin/totalshipped',[StatusController::class,'totalshipped'])->name(name:'admin.total.shipped');
 
 
+
+
 //Tracking
 Route::get('/admin/status',[StatusController::class,'status'])->name(name:'admin.status');
 Route::get('/admin/tracklist',[StatusController::class,'tracklist'])->name(name:'admin.track.list');
-
+    });
+});

@@ -15,7 +15,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{url('backend/login/vendor/animate/animate.css')}}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{url(backend/login/vendor/css-hamburgers/hamburgers.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url('backend/login/vendor/css-hamburgers/hamburgers.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{url('backend/login/vendor/animsition/css/animsition.min.css')}}">
 <!--===============================================================================================-->
@@ -32,7 +32,8 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-b-160 p-t-50">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="{{route('admin.doLogin')}}" method='POST'>
+					@csrf
 					<span class="login100-form-title p-b-43">
 						Admin Login
 					</span>
@@ -81,7 +82,7 @@
 	<script src="{{url('backend/login/vendor/daterangepicker/moment.min.js')}}"></script>
 	<script src="{{url('backend/login/vendor/daterangepicker/daterangepicker.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{url('backend/login/vendor/countdowntime/countdowntime.js')}]"></script>
+	<script src="{{url('backend/login/vendor/countdowntime/countdowntime.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{url('backend/login/js/main.js')}}"></script>
 
