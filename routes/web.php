@@ -2,8 +2,10 @@
 
 //frontend
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\LoginController;
 use App\Http\Controllers\ShowBranchController;
 //backend
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\BookingController;
@@ -39,7 +41,27 @@ Route::get('/', function ()
     return view ('frontend.pages.home');
 });
 //frontend part
+Route::get('/home',[HomeController::class, 'home'])->name(name:'home');
 Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name(name:'showbranch');
+Route::get('/registration',[LoginController::class,'registration'])->name(name:'registration');
+Route::post('/registration/store',[LoginController::class,'registrationstore'])->name(name:'registration.store');
+Route::get('/login',[LoginController::class,'login'])->name(name:'login');
+Route::post('/do/login',[LoginController::class,'dologin'])->name(name:'do.login');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
+
+Route::group(['prefix'=>'admin'],function (){
+
+    Route::get('/login',[AdminController::class,'login'])->name('admin.login');
+    Route::post('/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
+
+    Route::group(['middleware'=>'auth'],function (){
+    Route::get('/admin', function () {
+        return view('admin.partial.home');
+    })->name('home');
+
+    Route::get('/logout',[AdminController::class,'logout'])->name('admin.logout');
+
 
 //dashboard
 Route::get('/dashboard',[BookingController::class,'dashboard'])->name(name:'dashboard');
@@ -53,7 +75,6 @@ Route::post('/admin/branchlist/create',[BranchController::class,'branchlistCreat
 //Booking
 Route::get('/admin/booking',[BookingController::class,'bookingadd'])->name(name:'admin.booking.add');
 Route::get('/admin/courierrecord',[BookingController::class,'courierrecord'])->name(name:'admin.courier.record');
-
 Route::post('/admin/courierrecord/create',[BookingController::class,'courierrecordCreate'])->name(name:'admin.courier.record.create');
 
 

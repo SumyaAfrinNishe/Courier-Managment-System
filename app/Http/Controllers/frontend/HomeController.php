@@ -10,11 +10,8 @@ class HomeController extends Controller
 {
     public function home()
     {
-        // $courierrecordlist=CourierRecord::all();
-        // return view('frontend.pages.home',compact('courierrecordlist'));
-
         return view('frontend.pages.home');
     }
 
-    public function 
+
 }
