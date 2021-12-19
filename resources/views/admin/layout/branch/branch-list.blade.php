@@ -20,19 +20,22 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($branchlistlist as $key=>$item )
+    @foreach($branchlistlist as $key=>$branch )
     <tr>
        
         <td>{{$key+1}}</td> 
-        <td>{{$item->name}}</td>
-        <td>{{$item->contact}}</td>
-        <td>{{$item->email}}</td>
-        <td>{{$item->address}}</td>
-        <td>{{$item->city}}</td>
-        <td>{{$item->state}}</td>
-        <td>{{$item->country}}</td>
+        <td>{{$branch->name}} "---" {{$branch->id}}</td>
+        <td>{{$branch->contact}}</td>
+        <td>{{$branch->email}}</td>
+        <td>{{$branch->address}}</td>
+        <td>{{$branch->city}}</td>
+        <td>{{$branch->state}}</td>
+        <td>{{$branch->country}}</td>
         <td> 
-            <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="product image">
+            <img src="{{url('/uploads/'.$branch->image)}}" width="100px" alt="product image">
+        </td>
+        <td>
+            <a class="btn btn-primary" href="{{route('admin.branchdetails',$branch->id)}}">View</a>
         </td>
 </tr>
 @endforeach

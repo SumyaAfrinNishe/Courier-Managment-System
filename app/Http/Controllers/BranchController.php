@@ -61,6 +61,13 @@ class BranchController extends Controller
          ]);
          return redirect('/admin/branchlist');
  }
+
+ public function branchdetails($branch_id)
+ {
+     $branch=BranchList::find($branch_id);
+    // dd("$branch_id");
+    return view('admin.layout.branch-details',compact('branch'));
+ }
  public function dashboard()
  {
      return view('admin.partial.home');

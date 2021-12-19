@@ -18,18 +18,18 @@
     </tr>
     </thead>
     <tbody>
-        @foreach($courierrecordlist as $key=>$item )
+        @foreach($courierrecordlist as $key=>$book )
     <tr>
        
         
         <td>{{$key+1}}</td>
-        <td>{{$item->sender_name}}</td>
-        <td>{{$item->recepient_name}}</td>
-        <td>{{$item->consignment_no}}</td>
-        <td>{{$item->pickup_date}}</td>
-        <td>{{$item->pickup_time}}</td>
+        <td>{{$book->sender_name}}</td>
+        <td>{{$book->recepient_name}}</td>
+        <td>{{$book->consignment_no}}</td>
+        <td>{{$book->pickup_date}}</td>
+        <td>{{$book->pickup_time}}</td>
         <td> 
-            <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="product image">
+            <img src="{{url('/uploads/'.$book->image)}}" width="100px" alt="product image">
         </td>
         
        

@@ -70,6 +70,7 @@ Route::get('/dashboard',[BookingController::class,'dashboard'])->name(name:'dash
 Route::get('/admin/addbranch',[BranchController::class,'addbranch'])->name(name:'admin.add.branch');
 Route::get('/admin/branchlist',[BranchController::class,'branchlist'])->name(name:'admin.branch.list');
 Route::post('/admin/branchlist/create',[BranchController::class,'branchlistCreate'])->name(name:'admin.branch.list.create');
+Route::get('/admin/branchdetails/{branch_id}',[BranchController::class,'branchdetails'])->name(name:'admin.branchdetails');
 
 
 
