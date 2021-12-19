@@ -46,21 +46,21 @@ Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name(name
 Route::get('/registration',[LoginController::class,'registration'])->name(name:'registration');
 Route::post('/registration/store',[LoginController::class,'registrationstore'])->name(name:'registration.store');
 Route::get('/login',[LoginController::class,'login'])->name(name:'login');
-Route::post('/do/login',[LoginController::class,'dologin'])->name(name:'do.login');
+Route::post('/do/login',[LoginController::class,'doLogin'])->name(name:'doLogin');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
 Route::group(['prefix'=>'admin'],function (){
 
-    Route::get('/login',[AdminController::class,'login'])->name('admin.login');
-    Route::post('/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
+    Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
+    Route::post('/admin/do/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
 
     Route::group(['middleware'=>'auth'],function (){
     Route::get('/admin', function () {
         return view('admin.partial.home');
-    })->name('home');
+    })->name('admin.home');
 
-    Route::get('/logout',[AdminController::class,'logout'])->name('admin.logout');
+    Route::get('admin/logout',[AdminController::class,'logout'])->name('admin.logout');
 
 //dashboard
 Route::get('/dashboard',[BookingController::class,'dashboard'])->name(name:'dashboard');

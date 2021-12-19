@@ -16,13 +16,13 @@ class AdminController extends Controller
     public function doLogin(Request $request){
         // dd($request->all());
         $userpost=$request->except('_token');
-     
+    //  dd((Auth::attempt($userpost)));
         if(Auth::attempt($userpost))
         {
-            return redirect()->route('home')->with('message','Login Successful');
+            return redirect()->route('dashboard')->with('message','Login Successful');
         }
         else
-        return redirect()->route('login')->withErrors('Invalid user credentials');
+        return redirect()->route('admin.login')->withErrors('Invalid user credentials');
 
     }
 

@@ -10,16 +10,16 @@
 						  <a class="toggleMenu" href="#"><img src="{{url('frontend/images/nav.png')}}" alt="" /></a>
 						    <ul class="nav" id="nav">
 						    	<li><a href="{{route('home')}}">Home</a></li>
-						    	<li><a href="team.html">About Us</a></li>
+						    	<li><a href="#">About Us</a></li>
 						    	<li><a href="{{route('showbranch')}}">Branch</a></li>
 								@if(auth()->user())
-								<li><a href="#">Logout</a></li>
+								<li><a href="{{route('logout')}}">Logout</a></li>
 									@else
 									<li><a href="{{route('registration')}}">Login/Registration</a></li>
 								@endif
                                <!-- <li><a href="experiance.html">Sign In</a></li> -->
 						    	<!--<li><a href="shop.html">Company</a></li> -->
-								<li><a href="contact.html">Contact</a></li>								 -->
+								<li><a href="#">Contact</a></li>								 -->
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="{{url('frontend/js/responsive-nav.js')}}"></script>

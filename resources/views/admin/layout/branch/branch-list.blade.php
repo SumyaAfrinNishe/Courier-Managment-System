@@ -23,7 +23,7 @@
     @foreach($branchlistlist as $key=>$item )
     <tr>
        
-        <td>{{$key+1}}</td>
+        <td>{{$key+1}}</td> 
         <td>{{$item->name}}</td>
         <td>{{$item->contact}}</td>
         <td>{{$item->email}}</td>

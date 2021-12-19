@@ -1,4 +1,4 @@
-extends('frontend.master')
+@extends('frontend.master')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
