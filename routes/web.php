@@ -4,6 +4,7 @@
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\LoginController;
 use App\Http\Controllers\ShowBranchController;
+use App\Http\Controllers\frontend\InformationController;
 //backend
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BranchController;
@@ -40,9 +41,18 @@ Route::get('/', function ()
 {
     return view ('frontend.pages.home');
 });
+
 //frontend part
 Route::get('/home',[HomeController::class, 'home'])->name(name:'home');
 Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name(name:'showbranch');
+Route::post('/information',[InformationController::class, 'customerinfoCreate'])->name(name:'information');
+
+Route::get('/admin/customerinfo',[InformationController::class,'information'])->name(name:'admin.customer.info');
+Route::get('/admin/customerinfo/create',[InformationController::class,'customerinfo'])->name(name:'admin.customer.info.create');
+
+
+
+//login and registration
 Route::get('/registration',[LoginController::class,'registration'])->name(name:'registration');
 Route::post('/registration/store',[LoginController::class,'registrationstore'])->name(name:'registration.store');
 Route::get('/login',[LoginController::class,'login'])->name(name:'login');
@@ -70,15 +80,22 @@ Route::get('/dashboard',[BookingController::class,'dashboard'])->name(name:'dash
 Route::get('/admin/addbranch',[BranchController::class,'addbranch'])->name(name:'admin.add.branch');
 Route::get('/admin/branchlist',[BranchController::class,'branchlist'])->name(name:'admin.branch.list');
 Route::post('/admin/branchlist/create',[BranchController::class,'branchlistCreate'])->name(name:'admin.branch.list.create');
-Route::get('/admin/branchdetails/{branch_id}',[BranchController::class,'branchdetails'])->name(name:'admin.branchdetails');
+Route::get('/admin/branchdetails/view/{branch_id}',[BranchController::class,'branchdetails'])->name(name:'admin.branchdetails.view');
+Route::get('/admin/branchdetails/delete/{branch_id}',[BranchController::class,'branchdelete'])->name(name:'admin.branchdetails.delete');
 
+
+//Customer and Booking
+
+
+//CustomerInfo
+//Route::get('/admin/customerinfo',[BookingController::class,'customerinfo'])->name(name:'admin.customer.info');
+//Route::post('/admin/customerinfo/create',[BookingController::class,'customerinfoCreate'])->name(name:'admin.customer.info.create');
 
 
 //Booking
 Route::get('/admin/booking',[BookingController::class,'bookingadd'])->name(name:'admin.booking.add');
 Route::get('/admin/courierrecord',[BookingController::class,'courierrecord'])->name(name:'admin.courier.record');
 Route::post('/admin/courierrecord/create',[BookingController::class,'courierrecordCreate'])->name(name:'admin.courier.record.create');
-
 
 
 

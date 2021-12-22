@@ -68,6 +68,14 @@ class BranchController extends Controller
     // dd("$branch_id");
     return view('admin.layout.branch-details',compact('branch'));
  }
+
+ public function branchdelete($branch_id)
+ {
+    //  dd($branch_id);
+
+     $branch=BranchList::find($branch_id)->delete();
+     return redirect()->back()->with('Success','Product Deleted');
+ }
  public function dashboard()
  {
      return view('admin.partial.home');

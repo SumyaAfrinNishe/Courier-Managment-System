@@ -35,7 +35,10 @@
             <img src="{{url('/uploads/'.$branch->image)}}" width="100px" alt="product image">
         </td>
         <td>
-            <a class="btn btn-primary" href="{{route('admin.branchdetails',$branch->id)}}">View</a>
+            <a class="btn btn-primary" href="{{route('admin.branchdetails.view',$branch->id)}}">View</a>
+        </td>
+        <td>
+            <a class="btn btn-danger" href="{{route('admin.branchdetails.delete',$branch->id)}}">Delete</a>
         </td>
 </tr>
 @endforeach

@@ -1,12 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-// use App\Models\Courier;
-use App\Models\CourierRecord;
+use App\Models\Courier;
+use App\Models\CustomerInfo;
 use Illuminate\Http\Request;
+use App\Models\CourierRecord;
 
 class BookingController extends Controller
 {
+    public function customerinfo()
+    {
+        $customerinfolist=CustomerInfo::all();
+      //  dd($customerinfolist);
+        return view('admin.layout.booking.cusinfo',compact('customerinfolist'));
+    }
+
+    
     public function bookingadd()
     {
         return view('admin.layout.booking.booking-add');

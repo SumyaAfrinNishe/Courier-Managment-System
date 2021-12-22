@@ -16,6 +16,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{route('admin.customer.info')}}">Customer Information</a>
                                     <a class="nav-link" href="{{route('admin.booking.add')}}">Add Courier</a>
                                     <a class="nav-link" href="{{route('admin.courier.record')}}">Courier Record</a>
                                 </nav>
@@ -29,6 +30,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                   
                                     <a class="nav-link" href="{{route('admin.add.branch')}}">Add Branch</a>
                                     <a class="nav-link" href="{{route('admin.branch.list')}}">Branch List</a>
                                 </nav>

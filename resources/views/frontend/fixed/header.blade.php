@@ -1,33 +1,35 @@
 <div class="header">
 		<div class="container">
 			<div class="row">
-			  <div class="col-md-12">
-				 <div class="header-left">
-					 <div class="logo">
-						<a href="index.html"><img src="{{url('frontend/images/logo.png')}}" alt=""/></a>
+			  <div class="col-lg-12">
+				
+					 <div class="col-lg-3">
+						<img src="{{url('frontend/images/logof2.png')}}" alt="" style="width:100px;height:100px;"/>
 					 </div>
-					 <div class="menu">
+					 <div class="col-lg-9">
 						  <a class="toggleMenu" href="#"><img src="{{url('frontend/images/nav.png')}}" alt="" /></a>
-						    <ul class="nav" id="nav">
-						    	<li><a href="{{route('home')}}">Home</a></li>
-						    	<li><a href="#">About Us</a></li>
-						    	<li><a href="{{route('showbranch')}}">Branch</a></li>
+						    <ul class="" id="nav" style="display:flex; justify-content: space-between;">
+						    	<li style="list-style:none; "><a style="color: white;" href="{{route('home')}}">Home</a></li>
+						    	<li  style="list-style:none; "><a style="color: white;" href="#">About Us</a></li>
+						    	<li  style="list-style:none;" ><a style="color: white;" href="{{route('showbranch')}}">Branch</a></li>
+								<li  style="list-style:none; "><a style="color: white;" href="{{route('showbranch')}}">Status</a></li>
+								<li style="list-style:none; "><a style="color: white;" href="{{route('showbranch')}}">Payment</a></li>
+								<li style="list-style:none; "><a style="color: white;" href="{{route('information')}}">Information</a></li>
 								@if(auth()->user())
-								<li><a href="{{route('logout')}}">Logout</a></li>
+								<li style="list-style:none; "><a style="color: white;" href="{{route('logout')}}">Logout</a></li>
 									@else
-									<li><a href="{{route('registration')}}">Login/Registration</a></li>
+									<li style="list-style:none; "><a style="color: white;" href="{{route('registration')}}">Login/Registration</a></li>
 								@endif
-                               <!-- <li><a href="experiance.html">Sign In</a></li> -->
-						    	<!--<li><a href="shop.html">Company</a></li> -->
-								<li><a href="#">Contact</a></li>								 -->
+                               
+								<li style="list-style:none; "><a style="color: white;" href="#">Contact</a></li>
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="{{url('frontend/js/responsive-nav.js')}}"></script>
 				    </div>							
 	    		    <div class="clear"></div>
-	    	    </div>
-	            <div class="header_right">
-	    		  <!-- start search-->
+	    	   
+	        <!-- <div class="header_right">
+	    		 
 				      <div class="search-box">
 							<div id="sb-search" class="sb-search">
 								<form>
@@ -37,13 +39,13 @@
 								</form>
 							</div>
 						</div>
-						<!----search-scripts---->
+						
 						<script src="{{url('frontend/js/classie.js')}}"></script>
 						<script src="{{url('frontend/js/uisearch.js')}}"></script>
 						<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
 						</script>
-						<!----//search-scripts---->
+						
 				    <ul class="icon1 sub-icon1 profile_img">
 					 <li><a class="active-icon c1" href="#"> </a>
 						<ul class="sub-icon1 list">
@@ -65,7 +67,7 @@
 					 </li>
 				   </ul>
 		           <div class="clear"></div>
-	       </div>
+	       </div> -->
 	      </div>
 		 </div>
 	    </div>
