@@ -59,7 +59,7 @@ class BranchController extends Controller
             'image'=>$filename,
 
          ]);
-         return redirect('/admin/branchlist');
+         return redirect()->back();
  }
 
  public function branchdetails($branch_id)

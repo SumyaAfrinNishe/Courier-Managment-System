@@ -7,6 +7,7 @@ use App\Http\Controllers\ShowBranchController;
 use App\Http\Controllers\frontend\InformationController;
 //backend
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\BookingController;
@@ -92,7 +93,10 @@ Route::get('/admin/booking',[BookingController::class,'bookingadd'])->name(name:
 Route::get('/admin/courierrecord',[BookingController::class,'courierrecord'])->name(name:'admin.courier.record');
 Route::post('/admin/courierrecord/create',[BookingController::class,'courierrecordCreate'])->name(name:'admin.courier.record.create');
 
-
+//Staff
+Route::get('/admin/addstaff',[StaffController::class,'staffadd'])->name(name:'admin.staff.add');
+Route::get('/admin/stafflist',[StaffController::class,'stafflist'])->name(name:'admin.staff.list');
+Route::post('/admin/addstaff/create',[StaffController::class,'staffaddCreate'])->name(name:'admin.staff.create');
 
 //Status
 Route::get('/admin/arriveddestination',[StatusController::class,'arriveddestination'])->name(name:'admin.arrived.destination');

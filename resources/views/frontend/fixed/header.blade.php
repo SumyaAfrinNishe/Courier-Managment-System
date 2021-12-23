@@ -12,7 +12,6 @@
 						    	<li style="list-style:none; "><a style="color: white;" href="{{route('home')}}">Home</a></li>
 						    	<li  style="list-style:none; "><a style="color: white;" href="#">About Us</a></li>
 						    	<li  style="list-style:none;" ><a style="color: white;" href="{{route('showbranch')}}">Branch</a></li>
-								<li  style="list-style:none; "><a style="color: white;" href="{{route('showbranch')}}">Status</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('showbranch')}}">Payment</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('information')}}">Information</a></li>
 								@if(auth()->user())

@@ -36,9 +36,9 @@
                        	<!-- <div class="button"><a href="#">See Details</a></div> -->
                          <div class="box">
                            <h1>Search Your Courier</h1>
-                         <form>
+                         <form action="">
                             <input type="text" name="search" placeholder="Enter Your Tracking Number">
-                            <input type="submit" name="search" value="Search">
+                            <button id="submit" type="submit" class="btn btn-primary" name="search" placeholder="Search">Search</button>
                         </form>
                     </div>
                 </div>

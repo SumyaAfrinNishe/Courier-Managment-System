@@ -200,31 +200,31 @@ html, body {
                             <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="type">Type of: </label>
 
-                            <input type="radio" class="btn-check" name="type" id="electronics" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Electronics" name="type" id="electronics" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="electronics">Electronics</label>
 
-                            <input type="radio" class="btn-check" name="type" id="cloths" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Cloths" name="type" id="cloths" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="cloths">Cloths</label>
 
-                            <input type="radio" class="btn-check" name="type" id="shoes" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Shoes" name="type" id="shoes" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="shoes">Shoes</label>
 
-                            <input type="radio" class="btn-check" name="type" id="cosmetics" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Cosmetics" name="type" id="cosmetics" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="cosmetics">Cosmetics</label>
 
-                            <input type="radio" class="btn-check" name="type" id="jwellery" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Jwellery" name="type" id="jwellery" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="jwellery">Jwellery</label>
 
-                            <input type="radio" class="btn-check" name="type" id="crockeries" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Crockeries" name="type" id="crockeries" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="crockeries">Crockeries</label>
 
-                            <input type="radio" class="btn-check" name="type" id="food" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Food" name="type" id="food" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="food">Food</label>
 
-                            <input type="radio" class="btn-check" name="type" id="furniture" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Furniture" name="type" id="furniture" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="furniture">Furniture</label>
 
-                            <input type="radio" class="btn-check" name="type" id="construction" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Construction" name="type" id="construction" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="construction">Construction Material</label>
                               
                             </div>
