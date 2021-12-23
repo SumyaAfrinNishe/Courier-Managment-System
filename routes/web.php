@@ -45,10 +45,10 @@ Route::get('/', function ()
 //frontend part
 Route::get('/home',[HomeController::class, 'home'])->name(name:'home');
 Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name(name:'showbranch');
-Route::post('/information',[InformationController::class, 'customerinfoCreate'])->name(name:'information');
 
-Route::get('/admin/customerinfo',[InformationController::class,'information'])->name(name:'admin.customer.info');
-Route::get('/admin/customerinfo/create',[InformationController::class,'customerinfo'])->name(name:'admin.customer.info.create');
+Route::get('/information',[InformationController::class, 'information'])->name(name:'information');
+Route::get('/admin/customerinfo',[BookingController::class,'customerinfo'])->name(name:'admin.customer.info');
+Route::post('/admin/customerinfo/create',[InformationController::class,'customerinfoCreate'])->name(name:'admin.customer.create');
 
 
 
@@ -85,11 +85,6 @@ Route::get('/admin/branchdetails/delete/{branch_id}',[BranchController::class,'b
 
 
 //Customer and Booking
-
-
-//CustomerInfo
-//Route::get('/admin/customerinfo',[BookingController::class,'customerinfo'])->name(name:'admin.customer.info');
-//Route::post('/admin/customerinfo/create',[BookingController::class,'customerinfoCreate'])->name(name:'admin.customer.info.create');
 
 
 //Booking

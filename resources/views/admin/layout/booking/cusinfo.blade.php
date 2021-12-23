@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+<a href="">
 <h1>Customer Information</h1>
 <a href="">
 <table class="table">

@@ -11,12 +11,26 @@ class InformationController extends Controller
     public function information()
     {
         //dd("information");
-        $customerinfolist=CustomerInfo::all();
-        return view('frontend.pages.info2',compact('customerinfolist'));
+        return view('frontend.pages.info2');
     }
 
     public function customerinfoCreate(Request $request)
     {
+        //dd($request->all());
+        // $request->validate([
+
+        //     'yourname'=>'required',
+        //     'youremail'=>'required',
+        //     'yourcontact'=>'required|min:11|max:11',
+        //     'receivername'=>'required',
+        //     'receiveremail'=>'required',
+        //     'receivercontact'=>'required|min:11|max:11',
+        //     'type'=>'required',
+        //     'quantity'=>'required',
+        //     'branchname'=>'required'
+        // ]);
+
+        // dd($request->all());
         CustomerInfo::create([
             
             'yourname'=>$request->yourname,
@@ -31,5 +45,6 @@ class InformationController extends Controller
             
 
          ]);
+         return redirect()->back();
     }
 }

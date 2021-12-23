@@ -158,7 +158,7 @@ html, body {
     </style>
 
     <body>
-    <form class="login100-form validate-form p-b-33 p-t-5" action="{{route('information')}}" method='POST'>
+    <form action="{{route('admin.customer.create')}}" method="post">
         @csrf
     <div class="form-body">
         <div class="row">
@@ -170,31 +170,31 @@ html, body {
                         <form class="requires-validation" novalidate>
 
                             <div class="col-md-12">
-                               <input class="form-control" type="text" name="yourname" placeholder="Your Name" required>
+                               <input class="form-control" type="text" id="yourname" name="yourname" placeholder="Your Name" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="email" name="youremail" placeholder="Your E-mail Address" required>
+                                <input class="form-control" type="email" id="youremail" name="youremail" placeholder="Your E-mail Address" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" name="yourcontact" placeholder="Your Contact" required>
+                                <input class="form-control" type="number" id="yourcontact" name="yourcontact" placeholder="Your Contact" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="receivername" placeholder="Receiver Name" required>
+                                <input class="form-control" type="text" id="receivername" name="receivername" placeholder="Receiver Name" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="email" name="receiveremail" placeholder="Receiver E-mail Address" required>
+                                <input class="form-control" type="email" id="receiveremail" name="receiveremail" placeholder="Receiver E-mail Address" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" name="receivercontact" placeholder="Receiver Contact" required>
+                                <input class="form-control" type="number" id="receivercontact" name="receivercontact" placeholder="Receiver Contact" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="branchname" placeholder="Branch Name" required>
+                                <input class="form-control" type="text" id="branchname"name="branchname" placeholder="Branch Name" required>
                             </div>
 
                             <div class="col-md-12 mt-3">
@@ -230,7 +230,7 @@ html, body {
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" name="quantity" placeholder="Quantity" required>
+                                <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity" required>
                             </div>
 
                         <div class="form-button mt-3">

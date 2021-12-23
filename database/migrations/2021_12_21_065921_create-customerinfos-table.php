@@ -35,6 +35,6 @@ class CreateCustomerinfosTable extends Migration
      */
     public function down()
     {
-        //
+        // Schema::dropIfExists('customerinfos');
     }
 }
