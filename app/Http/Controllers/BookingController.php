@@ -24,7 +24,7 @@ class BookingController extends Controller
      public function courierrecord()
     {
         $courierrecordlist=CourierRecord::all();
-        return view('admin.layout.courier-record',compact('courierrecordlist'));
+        return view('admin.layout.booking.courier-record',compact('courierrecordlist'));
     }
 
     public function courierrecordCreate(Request $request)
@@ -66,9 +66,5 @@ class BookingController extends Controller
             // return redirect()->back()->with('success','Product created successfully.');
             return redirect('/admin/courierrecord');
     }
-    public function dashboard()
-    {
-        return view('admin.partial.home');
-    }
-
+   
 }

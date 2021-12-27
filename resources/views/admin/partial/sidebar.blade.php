@@ -45,7 +45,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                 
                                     <a class="nav-link" href="{{route('admin.staff.add')}}">Add Staff</a>
-                                    <a class="nav-link" href="">Staff List</a>
+                                    <a class="nav-link" href="{{route('admin.staff.list')}}">Staff List</a>
                                 </nav>
                             </div>
 

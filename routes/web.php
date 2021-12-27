@@ -6,6 +6,7 @@ use App\Http\Controllers\frontend\LoginController;
 use App\Http\Controllers\ShowBranchController;
 use App\Http\Controllers\frontend\InformationController;
 //backend
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\BranchController;
@@ -74,7 +75,7 @@ Route::group(['prefix'=>'admin'],function (){
     Route::get('admin/logout',[AdminController::class,'logout'])->name('admin.logout');
 
 //dashboard
-Route::get('/dashboard',[BookingController::class,'dashboard'])->name(name:'dashboard');
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->name(name:'dashboard');
 
 
 //Branch
@@ -96,7 +97,9 @@ Route::post('/admin/courierrecord/create',[BookingController::class,'courierreco
 //Staff
 Route::get('/admin/addstaff',[StaffController::class,'staffadd'])->name(name:'admin.staff.add');
 Route::get('/admin/stafflist',[StaffController::class,'stafflist'])->name(name:'admin.staff.list');
-Route::post('/admin/addstaff/create',[StaffController::class,'staffaddCreate'])->name(name:'admin.staff.create');
+Route::post('/admin/addstaff/create',[StaffController::class,'stafflistCreate'])->name(name:'admin.staff.create');
+Route::get('/admin/staffdetails/view/{staff_id}',[StaffController::class,'staffdetails'])->name(name:'admin.staffdetails.view');
+Route::get('/admin/stafffdetails/delete/{staff_id}',[StaffController::class,'staffdelete'])->name(name:'admin.staffdetails.delete');
 
 //Status
 Route::get('/admin/arriveddestination',[StatusController::class,'arriveddestination'])->name(name:'admin.arrived.destination');

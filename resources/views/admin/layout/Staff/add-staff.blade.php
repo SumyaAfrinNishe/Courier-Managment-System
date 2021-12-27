@@ -23,5 +23,8 @@
   <input type="text" name="staffbranch" class="form-control" id="staffbranch" placeholder="">
 </div>
 
+<div>
+<button type="submit" class="btn btn-success">Submit</button>
+</div>
 </form>
 @endsection

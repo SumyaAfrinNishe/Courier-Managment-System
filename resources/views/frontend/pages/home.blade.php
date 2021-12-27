@@ -34,12 +34,11 @@
                     <div class="slide_content_wrap">
                         <h1 class="title">Courier<br>Management<br>System</h1>
                        	<!-- <div class="button"><a href="#">See Details</a></div> -->
-                         <div class="box">
+                        <div class="box">
                            <h1>Search Your Courier</h1>
                          <form action="">
                             <input type="text" name="search" placeholder="Enter Your Tracking Number">
-                            <button id="submit" type="submit" class="btn btn-primary" name="search" placeholder="Search">Search</button>
-                        </form>
+                            <input type="submit" name="" value="Search">                        </form>
                     </div>
                 </div>
             </div>

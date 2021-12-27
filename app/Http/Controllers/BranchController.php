@@ -74,11 +74,7 @@ class BranchController extends Controller
     //  dd($branch_id);
 
      $branch=BranchList::find($branch_id)->delete();
-     return redirect()->back()->with('Success','Product Deleted');
- }
- public function dashboard()
- {
-     return view('admin.partial.home');
+     return redirect()->back()->with('Success','Branch Deleted');
  }
     }
 
