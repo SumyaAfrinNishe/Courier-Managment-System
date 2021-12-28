@@ -79,20 +79,26 @@ Route::get('/dashboard',[DashboardController::class,'dashboard'])->name(name:'da
 
 
 //Branch
-Route::get('/admin/addbranch',[BranchController::class,'addbranch'])->name(name:'admin.add.branch');
-Route::get('/admin/branchlist',[BranchController::class,'branchlist'])->name(name:'admin.branch.list');
-Route::post('/admin/branchlist/create',[BranchController::class,'branchlistCreate'])->name(name:'admin.branch.list.create');
-Route::get('/admin/branchdetails/view/{branch_id}',[BranchController::class,'branchdetails'])->name(name:'admin.branchdetails.view');
-Route::get('/admin/branchdetails/delete/{branch_id}',[BranchController::class,'branchdelete'])->name(name:'admin.branchdetails.delete');
+Route::get('/addbranch',[BranchController::class,'addbranch'])->name(name:'admin.add.branch');
+Route::get('/branchlist',[BranchController::class,'branchlist'])->name(name:'admin.branch.list');
+Route::post('/branchlist/create',[BranchController::class,'branchlistCreate'])->name(name:'admin.branch.list.create');
+Route::get('/branchdetails/view/{branch_id}',[BranchController::class,'branchdetails'])->name(name:'admin.branchdetails.view');
+Route::get('/branchdetails/delete/{branch_id}',[BranchController::class,'branchdelete'])->name(name:'admin.branchdetails.delete');
+Route::get('/branchedit/{branch_id}',[BranchController::class,'branchEdit'])->name('admin.branch.edit');
+Route::put('/branchupdate/{branch_id}',[BranchController::class,'branchUpdate'])->name('admin.branch.update');
 
 
 //Customer and Booking
 
 
 //Booking
-Route::get('/admin/booking',[BookingController::class,'bookingadd'])->name(name:'admin.booking.add');
-Route::get('/admin/courierrecord',[BookingController::class,'courierrecord'])->name(name:'admin.courier.record');
-Route::post('/admin/courierrecord/create',[BookingController::class,'courierrecordCreate'])->name(name:'admin.courier.record.create');
+Route::get('/booking',[BookingController::class,'bookingadd'])->name(name:'admin.booking.add');
+Route::get('/courierrecord',[BookingController::class,'courierrecord'])->name(name:'admin.courier.record');
+Route::post('/courierrecord/create',[BookingController::class,'courierrecordCreate'])->name(name:'admin.courier.record.create');
+Route::get('/bookingdetails/view/{book_id}',[BookingController::class,'bookingdetails'])->name(name:'admin.bookingdetails.view');
+Route::get('/bookingdetails/delete/{book_id}',[BookingController::class,'bookingdelete'])->name(name:'admin.bookingdetails.delete');
+Route::get('/bookingedit/{book_id}',[BookingController::class,'bookingEdit'])->name('admin.booking.edit');
+Route::put('/bookingupdate/{book_id}',[BookingController::class,'bookingUpdate'])->name('admin.booking.update');
 
 //Staff
 Route::get('/admin/addstaff',[StaffController::class,'staffadd'])->name(name:'admin.staff.add');

@@ -66,7 +66,7 @@ class BranchController extends Controller
  {
      $branch=BranchList::find($branch_id);
     // dd("$branch_id");
-    return view('admin.layout.branch-details',compact('branch'));
+    return view('admin.layout.branch.branch-details',compact('branch'));
  }
 
  public function branchdelete($branch_id)
@@ -75,6 +75,32 @@ class BranchController extends Controller
 
      $branch=BranchList::find($branch_id)->delete();
      return redirect()->back()->with('Success','Branch Deleted');
+ }
+
+ public function branchEdit($id)
+ {
+   $branch=BranchList::find($id);
+     return view('admin.layout.branch.branch-edit',compact('branch'));
+   
+ }
+
+ public function branchUpdate(Request $request,$id)
+ {
+     $branch=BranchList::find($id);
+     if($branch)
+     {
+         $branch->update([
+            'name'=>$request->name,
+            'contact'=>$request->contact,
+            'email'=>$request->email,
+            'address'=>$request->address,
+            'city'=>$request->city,
+            'state'=>$request->state,
+            'country'=>$request->country,
+            // 'image'=>$filename,
+         ]);
+         return redirect()->back()->with('msg', 'Branch Updated Successfully.');
+     }
  }
     }
 

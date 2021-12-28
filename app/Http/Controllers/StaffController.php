@@ -35,7 +35,7 @@ class StaffController extends Controller
  {
      $staff=StaffList::find($staff_id);
     // dd("$branch_id");
-    return view('admin.layout.staff-details',compact('staff'));
+    return view('admin.layout.staff.staff-details',compact('staff'));
  }
 
  public function staffdelete($staff_id)

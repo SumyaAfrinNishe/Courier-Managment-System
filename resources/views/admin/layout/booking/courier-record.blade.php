@@ -31,6 +31,11 @@
         <td> 
             <img src="{{url('/uploads/'.$book->image)}}" width="100px" alt="product image">
         </td>
+        <td>
+            <a class="btn btn-primary" href="{{route('admin.bookingdetails.view',$book->id)}}"><i class="fas fa-eye"></i></a>
+            <a class="btn btn-warning" href="{{route('admin.booking.edit',$book->id)}}"><i class="fas fa-edit"></i></a>
+            <a class="btn btn-danger" href="{{route('admin.bookingdetails.delete',$book->id)}}"><i class="fas fa-trash-alt"></i></a>
+        </td>
         
        
 </tr>

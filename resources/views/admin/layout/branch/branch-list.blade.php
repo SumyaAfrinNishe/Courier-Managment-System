@@ -12,9 +12,6 @@
         <th scope="col">Contact</th>
         <th scope="col">Email</th>
         <th scope="col">Address</th>
-        <th scope="col">City</th>
-        <th scope="col">State</th>
-        <th scope="col">Country</th>
         <th scope="col">Image</th>
         <th scope="col">Action</th>
     </tr>
@@ -28,16 +25,12 @@
         <td>{{$branch->contact}}</td>
         <td>{{$branch->email}}</td>
         <td>{{$branch->address}}</td>
-        <td>{{$branch->city}}</td>
-        <td>{{$branch->state}}</td>
-        <td>{{$branch->country}}</td>
         <td> 
             <img src="{{url('/uploads/'.$branch->image)}}" width="100px" alt="product image">
         </td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.branchdetails.view',$branch->id)}}"><i class="fas fa-eye"></i></a>
-        </td>
-        <td>
+            <a class="btn btn-warning" href="{{route('admin.branch.edit',$branch->id)}}"><i class="fas fa-edit"></i></a>
             <a class="btn btn-danger" href="{{route('admin.branchdetails.delete',$branch->id)}}"><i class="fas fa-trash-alt"></i></a>
         </td>
 </tr>

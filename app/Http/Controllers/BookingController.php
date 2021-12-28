@@ -59,12 +59,38 @@ class BookingController extends Controller
                'pickup_date'=>$request->pickup_date,
                'pickup_time'=>$request->pickup_time,
                'image'=>$filename,
-
-
-
             ]);
             // return redirect()->back()->with('success','Product created successfully.');
-            return redirect('/admin/courierrecord');
+            return redirect()->back()->with('Success','Booking Created');
     }
+
+    public function bookingdetails($book_id)
+ {
+     $book=CourierRecord::find($book_id);
+     return view('admin.layout.booking.booking-details',compact('book'));
+ }
    
+ public function bookingEdit($id)
+ {
+    $book=CourierRecord::find($id);
+     return view('admin.layout.booking.booking-edit',compact('book'));
+ }
+
+ public function bookingUpdate(Request $request,$id)
+ {
+     $book=CourierRecord::find($id);
+     if($book)
+     {
+         $book->update([
+            'sender_name'=>$request->sender_name,
+            'recepient_name'=>$request->recepient_name,
+            'consignment_no'=>$request->consignment_no,
+            'pickup_date'=>$request->pickup_date,
+            'pickup_time'=>$request->pickup_time,
+            // 'image'=>$filename,
+         ]);
+         return redirect()->back()->with('msg', 'Booking Updated Successfully.');
+     }
+ }
+
 }

@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<h1> Branch Details</h1>
+<h1> Add Branch</h1>
 @if ($errors->any())
 <div class="alert alert-warning" role="alert">
 
@@ -24,7 +24,7 @@
   <input type="text" name="contact" class="form-control" id="contact" placeholder="">
 </div>
 <div class="mb-3">
-  <label for="mail" class="form-label">Branch Email</label>
+  <label for="email" class="form-label">Branch Email</label>
   <input type="text" name="email" class="form-control" id="email" placeholder="">
 </div>
 <div class="mb-3">

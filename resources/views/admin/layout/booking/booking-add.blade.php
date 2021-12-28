@@ -16,13 +16,16 @@
 <form action="{{route('admin.courier.record.create')}}" method='POST' enctype="multipart/form-data">
   @csrf
 
+  
+  <h4 style="background-color:DodgerBlue;color:white;">Sender Information</h4>
+
 <div class="mb-3">
   <label for="sender_name" class="form-label">Sender Name</label>
   <input type="text" name="sender_name" class="form-control" id="sender_name" placeholder="">
 </div>
 
 <div class="mb-3">
-  <label for="sender_phone" class="form-label">Sender Phone</label>
+  <label for="sender_contact" class="form-label">Sender Phone</label>
   <input type="number" name="sender_contact" class="form-control" id="sender_contact" placeholder="">
 </div>
 
@@ -30,7 +33,7 @@
   <label for="sender_address" class="form-label">Sender Address</label>
   <input type="text" name="sender_address" class="form-control" id="sender_address" placeholder="">
 </div>
-
+<h4 style="background-color:DodgerBlue;color:white;">Receipient Information</h4>
 <div class="mb-3">
   <label for="recepient_name" class="form-label">Recepient Name</label>
   <input type="text" name="recepient_name" class="form-control" id="recepient_name" placeholder="">
@@ -45,6 +48,17 @@
   <label for="recepient_address" class="form-label">Recepient Address</label>
   <input type="text" name="recepient_address" class="form-control" id="recepient_address" placeholder="">
 </div>
+<h4 style="background-color:DodgerBlue;color:white;">Branch Information</h4>
+<div class="mb-3">
+  <label for="name" class="form-label">Branch Name</label>
+  <input type="text" name="name" class="form-control" id="name" placeholder="">
+</div>
+
+<div class="mb-3">
+  <label for="address" class="form-label">Branch Address</label>c
+  <input type="text" name="address" class="form-control" id="address" placeholder="">
+</div>
+<h4 style="background-color:DodgerBlue;color:white;">Courier Information</h4>
 
 <div class="mb-3">
   <label for="consignment_no" class="form-label">Consignment No.</label>
@@ -55,7 +69,10 @@
   <label for="type_of_shipment" class="form-label">Type of Shipment</label>
   <input type="text" name="type_of_shipment" class="form-control" id="type_of_shipment" placeholder="">
 </div>
-
+<div class="mb-3">
+  <label for="courier_description" class="form-label">Courier Description</label>
+  <input type="text" name="courier_description" class="form-control" id="courier_description" placeholder="">
+</div>
 <div class="mb-3">
   <label for="quantity" class="form-label">Quantity</label>
   <input type="number" name="quantity" class="form-control" id="quantity" placeholder="">
@@ -65,10 +82,9 @@
   <label for="weight" class="form-label">Weight</label>
   <input type="number" name="weight" class="form-control" id="weight" placeholder="">
 </div>
-
 <div class="mb-3">
-  <label for="branch_address" class="form-label">Branch Address</label>
-  <input type="text" name="branch_address" class="form-control" id="branch_address" placeholder="">
+  <label for="price" class="form-label">Price</label>
+  <input type="number" name="price" class="form-control" id="price" placeholder="">
 </div>
 
 <div class="mb-3">
@@ -82,33 +98,13 @@
 </div>
 
 <div class="mb-3">
-  <label for="courier_description" class="form-label">Courier Description</label>
-  <input type="text" name="courier_description" class="form-control" id="courier_description" placeholder="">
-</div>
-
-<div class="mb-3">
-  <label for="price" class="form-label">Price</label>
-  <input type="number" name="price" class="form-control" id="price" placeholder="">
-</div>
-
-<div class="mb-3">
-  <label for="name" class="form-label">Branch Name</label>
-  <input type="text" name="name" class="form-control" id="name" placeholder="">
-</div>
-
-<div class="mb-3">
-  <label for="address" class="form-label">Branch Address</label>c
-  <input type="text" name="address" class="form-control" id="address" placeholder="">
-</div>
-
-<div class="mb-3">
   <label for="status" class="form-label">Status</label>
   <input type="text" name="status" class="form-control" id="status" placeholder="">
 </div>
 
 <div class="input-group">
   <div class="custom-file">
-    <input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+    <input type="file" name="image" class="custom-file-input" id="image" aria-describedby="inputGroupFileAddon04">
   </div>
 </div>
 

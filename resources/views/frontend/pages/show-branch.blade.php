@@ -17,11 +17,11 @@
                         <h2>{{$item->name}}</h2>
                         <h2>{{$item->contact}}</h2>
                         <h2>{{$item->email}}</h2>
-                        <h2>{{$item->address}}</h2>
+                        <!-- <h2>{{$item->address}}</h2>
                         <h2>{{$item->city}}</h2>
                         <h2>{{$item->state}}</h2>
-                        <h2>{{$item->country}}</h2>
-                        <p> <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="product image">
+                        <h2>{{$item->country}}</h2> -->
+                        <p> <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="branch image">
                     </p>
 
                 </div>
