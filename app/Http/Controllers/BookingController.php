@@ -54,10 +54,22 @@ class BookingController extends Controller
             CourierRecord::create([
             
                'sender_name'=>$request->sender_name,
+               'sender_contact'=>$request->sender_contact,
+               'sender_address'=>$request->sender_address,
                'recepient_name'=>$request->recepient_name,
+               'recepient_phone'=>$request->recepient_phone,
+               'recepient_address'=>$request->recepient_address,
+               'name'=>$request->name,
+               'address'=>$request->address,
                'consignment_no'=>$request->consignment_no,
+               'type_of_shipment'=>$request->type_of_shipment,
+               'courier_description'=>$request->courier_description,
+               'quantity'=>$request->quantity,
+               'weight'=>$request->weight,
+               'price'=>$request->price,
                'pickup_date'=>$request->pickup_date,
                'pickup_time'=>$request->pickup_time,
+               'status'=>$request->status,
                'image'=>$filename,
             ]);
             // return redirect()->back()->with('success','Product created successfully.');
@@ -68,6 +80,14 @@ class BookingController extends Controller
  {
      $book=CourierRecord::find($book_id);
      return view('admin.layout.booking.booking-details',compact('book'));
+ }
+
+ public function bookingdelete($book_id)
+ {
+    //  dd($branch_id);
+
+     $book=CourierRecord::find($book_id)->delete();
+     return redirect()->back()->with('Success','Booking Deleted');
  }
    
  public function bookingEdit($id)
@@ -82,11 +102,23 @@ class BookingController extends Controller
      if($book)
      {
          $book->update([
-            'sender_name'=>$request->sender_name,
-            'recepient_name'=>$request->recepient_name,
-            'consignment_no'=>$request->consignment_no,
-            'pickup_date'=>$request->pickup_date,
-            'pickup_time'=>$request->pickup_time,
+               'sender_name'=>$request->sender_name,
+               'sender_contact'=>$request->sender_contact,
+               'sender_address'=>$request->sender_address,
+               'recepient_name'=>$request->recepient_name,
+               'recepient_phone'=>$request->recepient_phone,
+               'recepient_address'=>$request->recepient_address,
+               'name'=>$request->name,
+               'address'=>$request->address,
+               'consignment_no'=>$request->consignment_no,
+               'type_of_shipment'=>$request->type_of_shipment,
+               'courier_description'=>$request->courier_description,
+               'quantity'=>$request->quantity,
+               'weight'=>$request->weight,
+               'price'=>$request->price,
+               'pickup_date'=>$request->pickup_date,
+               'pickup_time'=>$request->pickup_time,
+               'status'=>$request->status,
             // 'image'=>$filename,
          ]);
          return redirect()->back()->with('msg', 'Booking Updated Successfully.');

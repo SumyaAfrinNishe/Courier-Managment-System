@@ -55,6 +55,7 @@ class BranchController extends Controller
             'address'=>$request->address,
             'city'=>$request->city,
             'state'=>$request->state,
+            'pincode'=>$request->pincode,
             'country'=>$request->country,
             'image'=>$filename,
 
@@ -96,6 +97,7 @@ class BranchController extends Controller
             'address'=>$request->address,
             'city'=>$request->city,
             'state'=>$request->state,
+            'pincode'=>$request->pincode,
             'country'=>$request->country,
             // 'image'=>$filename,
          ]);

@@ -21,6 +21,7 @@ class CreateBranchlistsTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('state');
+            $table->integer('pincode');
             $table->string('country');
             $table->string('image');
             $table->timestamps();
