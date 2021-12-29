@@ -30,7 +30,7 @@ class LoginController extends Controller
     }
 
     public function doLogin(Request $request){
-        // dd($request->all());
+        //  dd($request->all());
         $userpost=$request->except('_token');
      
         if(Auth::attempt($userpost))
