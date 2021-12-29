@@ -100,21 +100,25 @@ Route::get('/bookingdetails/delete/{book_id}',[BookingController::class,'booking
 Route::get('/bookingedit/{book_id}',[BookingController::class,'bookingEdit'])->name('admin.booking.edit');
 Route::put('/bookingupdate/{book_id}',[BookingController::class,'bookingUpdate'])->name('admin.booking.update');
 
+
 //Staff
-Route::get('/admin/addstaff',[StaffController::class,'staffadd'])->name(name:'admin.staff.add');
-Route::get('/admin/stafflist',[StaffController::class,'stafflist'])->name(name:'admin.staff.list');
-Route::post('/admin/addstaff/create',[StaffController::class,'stafflistCreate'])->name(name:'admin.staff.create');
-Route::get('/admin/staffdetails/view/{staff_id}',[StaffController::class,'staffdetails'])->name(name:'admin.staffdetails.view');
-Route::get('/admin/stafffdetails/delete/{staff_id}',[StaffController::class,'staffdelete'])->name(name:'admin.staffdetails.delete');
+Route::get('/addstaff',[StaffController::class,'staffadd'])->name(name:'admin.staff.add');
+Route::get('/stafflist',[StaffController::class,'stafflist'])->name(name:'admin.staff.list');
+Route::post('/addstaff/create',[StaffController::class,'stafflistCreate'])->name(name:'admin.staff.create');
+Route::get('/staffdetails/view/{staff_id}',[StaffController::class,'staffdetails'])->name(name:'admin.staffdetails.view');
+Route::get('/stafffdetails/delete/{staff_id}',[StaffController::class,'staffdelete'])->name(name:'admin.staffdetails.delete');
+Route::get('/staff/edit/{staff_id}',[StaffController::class,'staffEdit'])->name('admin.staff.edit');
+Route::put('/staff/update/{staff_id}',[StaffController::class,'staffUpdate'])->name('admin.staff.update');
+
 
 //Status
-Route::get('/admin/arriveddestination',[StatusController::class,'arriveddestination'])->name(name:'admin.arrived.destination');
-Route::get('/admin/intransit',[StatusController::class,'intransit'])->name(name:'admin.in.transit');
-Route::get('/admin/outdelievery',[StatusController::class,'outdelievery'])->name(name:'admin.out.delievery');
-Route::get('/admin/totalcourier',[StatusController::class,'totalcourier'])->name(name:'admin.total.courier');
-Route::get('/admin/totaldelieverd',[StatusController::class,'totaldelieverd'])->name(name:'admin.total.delieverd');
-Route::get('/admin/totalpickup',[StatusController::class,'totalpickup'])->name(name:'admin.total.pickup');
-Route::get('/admin/totalshipped',[StatusController::class,'totalshipped'])->name(name:'admin.total.shipped');
+Route::get('/arriveddestination',[StatusController::class,'arriveddestination'])->name(name:'admin.arrived.destination');
+Route::get('/intransit',[StatusController::class,'intransit'])->name(name:'admin.in.transit');
+Route::get('/outdelievery',[StatusController::class,'outdelievery'])->name(name:'admin.out.delievery');
+Route::get('/totalcourier',[StatusController::class,'totalcourier'])->name(name:'admin.total.courier');
+Route::get('/totaldelieverd',[StatusController::class,'totaldelieverd'])->name(name:'admin.total.delieverd');
+Route::get('/totalpickup',[StatusController::class,'totalpickup'])->name(name:'admin.total.pickup');
+Route::get('/totalshipped',[StatusController::class,'totalshipped'])->name(name:'admin.total.shipped');
 
 
 

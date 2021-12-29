@@ -1,7 +1,9 @@
 @extends('master')
 @section('content')
 <h1>Booking Details</h1>
-   
+<p>
+<img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$book->image)}}" alt="booking">
+</p>  
 <p>Sender Name: {{$book->sender_name}}</p>
 <p>Sender Contact: {{$book->sender_contact}}</p>
 <p>Sender Address: {{$book->sender_address}}</p>

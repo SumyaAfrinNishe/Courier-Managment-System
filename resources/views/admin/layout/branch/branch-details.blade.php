@@ -1,7 +1,9 @@
 @extends('master')
 @section('content')
 <h1>Branch Details</h1>
-   
+<p>
+<img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$branch->image)}}" alt="branch">
+</p>
 <p>Branch Name: {{$branch->name}}</p>
 <p>Branch Contact: {{$branch->contact}}</p>
 <p>Branch Email: {{$branch->email}}</p>

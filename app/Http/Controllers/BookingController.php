@@ -72,7 +72,7 @@ class BookingController extends Controller
                'status'=>$request->status,
                'image'=>$filename,
             ]);
-            // return redirect()->back()->with('success','Product created successfully.');
+    
             return redirect()->back()->with('Success','Booking Created');
     }
 

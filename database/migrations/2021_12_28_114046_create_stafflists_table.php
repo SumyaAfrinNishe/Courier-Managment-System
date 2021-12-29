@@ -19,6 +19,7 @@ class CreateStafflistsTable extends Migration
             $table->string('staffemail');
             $table->integer('staffcontact');
             $table->string('staffbranch');
+            $table->string('staffimage');
             $table->timestamps();
         });
     }

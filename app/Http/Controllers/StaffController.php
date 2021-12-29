@@ -20,12 +20,34 @@ class StaffController extends Controller
 
     public function stafflistCreate(Request $request)
     {
+
+        $request->validate([
+
+            'staffname'=>'required',
+            'staffemail'=>'required',
+            'staffcontact'=>'required|min:11|max:11',
+            'staffbranch'=>'required',
+            'staffimage'=>'required',
+
+        ]);
+
+        $filename='';
+      if($request->hasfile('staffimage'))
+      {
+          $file=$request->file('staffimage');
+          $filename=date('Ymdhms').'.'.$file->getclientOriginalExtension();
+          $file->storeAs('/uploads',$filename);
+
+      }
+//  dd("ok");
+
         StaffList::create([
             
             'staffname'=>$request->staffname,
             'staffemail'=>$request->staffemail,
             'staffcontact'=>$request->staffcontact,
             'staffbranch'=>$request->staffbranch,
+            'staffimage'=>$filename,
          ]);
          return redirect()->back();
 
@@ -44,5 +66,28 @@ class StaffController extends Controller
 
      $staff=StaffList::find($staff_id)->delete();
      return redirect()->back()->with('Success','Staff Deleted');
+ }
+
+ public function staffEdit($id)
+ {
+   $staff=StaffList::find($id);
+     return view('admin.layout.staff.staff-edit',compact('staff'));
+   
+ }
+
+ public function staffUpdate(Request $request,$id)
+ {
+     $staff=StaffList::find($id);
+     if($staff)
+     {
+         $staff->update([
+            'staffname'=>$request->staffname,
+            'staffemail'=>$request->staffemail,
+            'staffcontact'=>$request->staffcontact,
+            'staffbranch'=>$request->staffbranch,
+            // 'image'=>$filename,
+         ]);
+         return redirect()->back()->with('msg', 'Staff Updated Successfully.');
+     }
  }
 }
