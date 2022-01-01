@@ -86,7 +86,7 @@ Route::get('/branchdetails/view/{branch_id}',[BranchController::class,'branchdet
 Route::get('/branchdetails/delete/{branch_id}',[BranchController::class,'branchdelete'])->name(name:'admin.branchdetails.delete');
 Route::get('/branchedit/{branch_id}',[BranchController::class,'branchEdit'])->name('admin.branch.edit');
 Route::put('/branchupdate/{branch_id}',[BranchController::class,'branchUpdate'])->name('admin.branch.update');
-
+Route::get('/branch/search',[BranchController::class,'branchSearch'])->name('admin.branch.search');
 
 //Customer and Booking
 
@@ -99,7 +99,7 @@ Route::get('/bookingdetails/view/{book_id}',[BookingController::class,'bookingde
 Route::get('/bookingdetails/delete/{book_id}',[BookingController::class,'bookingdelete'])->name(name:'admin.bookingdetails.delete');
 Route::get('/bookingedit/{book_id}',[BookingController::class,'bookingEdit'])->name('admin.booking.edit');
 Route::put('/bookingupdate/{book_id}',[BookingController::class,'bookingUpdate'])->name('admin.booking.update');
-
+Route::get('/booking/search',[BookingController::class,'bookingSearch'])->name('admin.booking.search');
 
 //Staff
 Route::get('/addstaff',[StaffController::class,'staffadd'])->name(name:'admin.staff.add');
@@ -109,7 +109,7 @@ Route::get('/staffdetails/view/{staff_id}',[StaffController::class,'staffdetails
 Route::get('/stafffdetails/delete/{staff_id}',[StaffController::class,'staffdelete'])->name(name:'admin.staffdetails.delete');
 Route::get('/staff/edit/{staff_id}',[StaffController::class,'staffEdit'])->name('admin.staff.edit');
 Route::put('/staff/update/{staff_id}',[StaffController::class,'staffUpdate'])->name('admin.staff.update');
-
+Route::get('/staff/search',[StaffController::class,'staffSearch'])->name('admin.staff.search');
 
 //Status
 Route::get('/arriveddestination',[StatusController::class,'arriveddestination'])->name(name:'admin.arrived.destination');

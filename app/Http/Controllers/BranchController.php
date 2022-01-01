@@ -104,5 +104,12 @@ class BranchController extends Controller
          return redirect()->back()->with('msg', 'Branch Updated Successfully.');
      }
  }
+
+ public function branchSearch()
+ {
+     $key= request()->search;
+     $branchlistlist=BranchList::where('name','LIKE',"%{$key}%")->get();
+     return view('admin.layout.branch.search-branch',compact('branchlistlist'));
+ }
     }
 

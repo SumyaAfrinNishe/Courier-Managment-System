@@ -2,7 +2,7 @@
 @section('content')
 <h1>Staff List</h1>
 <form action="{{route('admin.staff.search')}}" method="GET">
-    <input name="search" class="search-input" type="text" placeholder="Search With Branch" aria-label="Search">
+    <input name="search" class="search-input" type="text" placeholder="Search" aria-label="Search">
     <button class="btn btn-success" type="submit">Search</button>
 </form>
 <table class="table">
@@ -23,8 +23,6 @@
     <tr>
         <td>{{$key+1}}</td>
         <td>{{$staff->staffname}}</td>
-        <!-- <td>{{$staff->staffemail}}</td> -->
-        <!-- <td>{{$staff->staffcontact}}</td> -->
         <td>{{$staff->staffbranch}}</td>
         <td> 
             <img src="{{url('/uploads/'.$staff->staffimage)}}" width="100px" alt="staff image">

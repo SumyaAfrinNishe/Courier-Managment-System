@@ -2,11 +2,6 @@
 @section('content')
 <h1>Courier Record</h1>
 
-<form action="{{route('admin.booking.search')}}" method="GET">
-    <input name="search" class="search-input" type="text" placeholder="Search with Consignment" aria-label="Search">
-    <button class="btn btn-success" type="submit">Search</button>
-</form>
-
 <table class="table">
      <thead>
     <tr>

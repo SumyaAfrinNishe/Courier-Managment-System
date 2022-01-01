@@ -2,12 +2,8 @@
 @section('content')
 
 <h1>Branch list</h1>
-
-<form action="{{route('admin.branch.search')}}" method="GET">
-    <input name="search" class="search-input" type="text" placeholder="Search with Branch" aria-label="Search">
-    <button class="btn btn-success" type="submit">Search</button>
-</form>
-    
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+<div id="PrintTableArea">
     <table class="table">
     <thead>
     <tr>
@@ -21,6 +17,7 @@
     </tr>
     </thead>
     <tbody>
+        
     @foreach($branchlistlist as $key=>$branch )
     <tr>
        
@@ -39,7 +36,18 @@
         </td>
 </tr>
 @endforeach
+
+
     </tbody>
 </table>
-
+</div>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection

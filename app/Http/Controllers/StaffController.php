@@ -90,4 +90,10 @@ class StaffController extends Controller
          return redirect()->back()->with('msg', 'Staff Updated Successfully.');
      }
  }
+ public function staffSearch()
+ {
+     $key= request()->search;
+     $stafflistinfo=StaffList::where('staffbranch','LIKE',"%{$key}%")->get();
+     return view('admin.layout.staff.search-staff',compact('stafflistinfo'));
+ }
 }

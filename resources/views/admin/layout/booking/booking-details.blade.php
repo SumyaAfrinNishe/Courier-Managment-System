@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
+
 <h1>Booking Details</h1>
+<div id="PrintTableArea">
 <p>
 <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$book->image)}}" alt="booking">
 </p>  
@@ -21,5 +23,16 @@
 <p>Pickup Date: {{$book->pickup_date}}</p>
 <p>Pickup Time: {{$book->pickup_time}}</p>
 <p>Status: {{$book->status}}</p>
+</div>
+<a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
 @endsection
