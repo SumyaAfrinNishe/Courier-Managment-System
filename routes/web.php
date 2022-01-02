@@ -62,17 +62,17 @@ Route::post('/do/login',[LoginController::class,'doLogin'])->name(name:'doLogin'
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
-Route::group(['prefix'=>'admin'],function (){
 
-    Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
-    Route::post('/admin/do/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
 
-    Route::group(['middleware'=>'auth'],function (){
+    Route::get('/login',[AdminController::class,'login'])->name('admin.login');
+    Route::post('/do/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
+
+    Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function () {
     Route::get('/admin', function () {
         return view('admin.partial.home');
     })->name('admin.home');
 
-    Route::get('admin/logout',[AdminController::class,'logout'])->name('admin.logout');
+    Route::get('/logout',[AdminController::class,'logout'])->name('admin.logout');
 
 //dashboard
 Route::get('/dashboard',[DashboardController::class,'dashboard'])->name(name:'dashboard');
@@ -124,7 +124,6 @@ Route::get('/totalshipped',[StatusController::class,'totalshipped'])->name(name:
 
 
 //Tracking
-Route::get('/admin/status',[StatusController::class,'status'])->name(name:'admin.status');
-Route::get('/admin/tracklist',[StatusController::class,'tracklist'])->name(name:'admin.track.list');
+Route::get('/status',[StatusController::class,'status'])->name(name:'admin.status');
+Route::get('/tracklist',[StatusController::class,'tracklist'])->name(name:'admin.track.list');
     });
-});
