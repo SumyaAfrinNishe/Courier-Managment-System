@@ -7,7 +7,7 @@
     <table class="table">
     <thead>
     <tr>
-        <th scope="col">ID</th>
+        
         <th scope="col">Consignment No.</th>
         <th scope="col">Sender</th>
         <th scope="col">Recepient</th>
@@ -16,5 +16,11 @@
     </tr>
     </thead>
     <tbody>
-
+    @foreach($delievers as $d)
+        <td>{{$d->consignment_no}}</td>
+        <td>{{$d->sender_name}}</td>
+        <td>{{$d->recepient_name}}</td>
+        <td>{{$d->status}}</td>
+        @endforeach
+   </tbody>
     @endsection

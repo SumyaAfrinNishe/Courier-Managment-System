@@ -12,19 +12,23 @@ class StatusController extends Controller
     }
      public function arriveddestination()
     {
-        return view('admin.layout.status.arrived-destination');
+        $arrives=CourierRecord::where('status','Arrived at Destination')->get();
+        return view('admin.layout.status.arrived-destination',compact('arrives'));
     } 
     public function totalpickup()
     {
-        return view('admin.layout.status.total-pickup');
+        $pickups=CourierRecord::where('status','Picked Up')->get();
+        return view('admin.layout.status.total-pickup',compact('pickups'));
     } 
     public function totalshipped()
     {
-        return view('admin.layout.status.total-shipped');
+        $ships=CourierRecord::where('status','Shipped')->get();
+        return view('admin.layout.status.total-shipped',compact('ships'));
     } 
     public function totaldelieverd()
     {
-        return view('admin.layout.status.total-delieverd');
+        $delievers=CourierRecord::where('status','Delievered')->get();
+        return view('admin.layout.status.total-delieverd',compact('delievers'));
     } 
     public function outdelievery()
     {
@@ -34,10 +38,8 @@ class StatusController extends Controller
     } 
     public function intransit()
     {
-        
         $intransits=CourierRecord::where('status','Intransit')->get();
         //dd($intransits);
             return view('admin.layout.status.in-transit',compact('intransits'));
-        
     } 
 }

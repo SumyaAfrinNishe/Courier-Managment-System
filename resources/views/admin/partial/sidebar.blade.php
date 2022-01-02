@@ -7,7 +7,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            @if(auth()->user()->role=='admin')
+                            
                             <!-- Booking -->
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -17,11 +17,10 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{route('admin.customer.info')}}">Customer Information</a>
-                                    @endif
-                                    @if(auth()->user()->role=='admin')
+                                    
+                                    
                                     <a class="nav-link" href="{{route('admin.booking.add')}}">Add Courier</a>
-                                    @endif
-                                    @if(auth()->user()->role=='admin')
+                                    
                                     <a class="nav-link" href="{{route('admin.courier.record')}}">Courier Record</a>
                                 </nav>
                             </div>
@@ -54,7 +53,7 @@
                                     <a class="nav-link" href="{{route('admin.staff.list')}}">Staff List</a>
                                 </nav>
                             </div>
-                            @endif
+                            
                             
 
                             <!-- Status -->
@@ -78,7 +77,7 @@
                             <div>
 
                             <!-- Tracking -->
-                            @if(auth()->user()->role=='admin')
+                            
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Tracking
@@ -102,7 +101,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Report
                             </a>
-                            @endif
+                            
                         </div>
                     </div>
                 </nav>
