@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\CourierRecord;
 class StatusController extends Controller
 {
     public function totalcourier()
@@ -28,10 +28,16 @@ class StatusController extends Controller
     } 
     public function outdelievery()
     {
-        return view('admin.layout.status.out-delievery');
+        $outdelievers=CourierRecord::where('status','Out for delievery')->get();
+        // dd($outdelievers);
+        return view('admin.layout.status.out-delievery',compact('outdelievers'));
     } 
     public function intransit()
     {
-        return view('admin.layout.status.in-transit');
+        
+        $intransits=CourierRecord::where('status','Intransit')->get();
+        //dd($intransits);
+            return view('admin.layout.status.in-transit',compact('intransits'));
+        
     } 
 }

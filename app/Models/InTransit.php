@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class InTransit extends Model
 {
     use HasFactory;
+
+
+public function courierrecord()
+{
+    return $this->belongsTo(CourierRecord::class);
+}
 }

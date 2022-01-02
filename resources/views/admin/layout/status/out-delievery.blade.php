@@ -15,6 +15,14 @@
         <th scope="col">Action</th>
     </tr>
     </thead>
+    @foreach($outdelievers as $outd)
+        
+        <td>{{$outd->consignment_no}}</td>
+        <td>{{$outd->sender_name}}</td>
+        <td>{{$outd->recepient_name}}</td>
+        <td>{{$outd->status}}</td>
+        @endforeach
     <tbody>
 
+</tbody>
     @endsection

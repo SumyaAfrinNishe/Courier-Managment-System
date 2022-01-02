@@ -27,7 +27,7 @@
     <tr>
        
         
-        <td>{{$key+1}}</td>
+        <td>{{$book+1}}</td>
         <td>{{$book->sender_name}}</td>
         <td>{{$book->recepient_name}}</td>
         <td>{{$book->consignment_no}}</td>

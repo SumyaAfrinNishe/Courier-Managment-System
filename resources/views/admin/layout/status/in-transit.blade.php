@@ -7,7 +7,7 @@
     <table class="table">
     <thead>
     <tr>
-        <th scope="col">ID</th>
+        <!-- <th scope="col">ID</th> -->
         <th scope="col">Consignment No.</th>
         <th scope="col">Sender</th>
         <th scope="col">Recepient</th>
@@ -15,6 +15,15 @@
         <th scope="col">Action</th>
     </tr>
     </thead>
+
     <tbody>
+        @foreach($intransits as $intra)
+        
+        <td>{{$intra->consignment_no}}</td>
+        <td>{{$intra->sender_name}}</td>
+        <td>{{$intra->recepient_name}}</td>
+        <td>{{$intra->status}}</td>
+        @endforeach
+    </tbody>
         
         @endsection
