@@ -3,7 +3,7 @@
 <a href="">
 <h1>Customer Information</h1>
 <a href="">
-<table class="table">
+<table class="table table-bordered">
      <thead>
     <tr>
         <!-- <th scope="col">SI No.</th>

@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 <h1>Courier Record</h1>
 
 <form action="{{route('admin.booking.search')}}" method="GET">
@@ -7,7 +8,7 @@
     <button class="btn btn-success" type="submit">Search</button>
 </form>
 
-<table class="table">
+<table class="table table-bordered">
      <thead>
     <tr>
         <!-- <th scope="col">SI No.</th>
@@ -27,7 +28,7 @@
     <tr>
        
         
-        <td>{{$book+1}}</td>
+        <td>{{$key+1}}</td>
         <td>{{$book->sender_name}}</td>
         <td>{{$book->recepient_name}}</td>
         <td>{{$book->consignment_no}}</td>

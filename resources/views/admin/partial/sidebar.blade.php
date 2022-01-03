@@ -64,14 +64,16 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{route('admin.total.courier')}}">Total Courier</a>
-                                    <a class="nav-link" href="{{route('admin.total.pickup')}}">Total Courier Pickup</a>
-                                    <a class="nav-link" href="{{route('admin.total.shipped')}}">Total Shipped</a>
+                                    <a class="nav-link" href="{{route('admin.accept.courier')}}">Accepted by Courier</a>
+                                    <a class="nav-link" href="{{route('admin.courier.collected')}}">Courier Collected</a>
+                                    <a class="nav-link" href="{{route('admin.ready.pickup')}}">Ready to Pickup</a>
+                                    <a class="nav-link" href="{{route('admin.picked.up')}}">Courier Picked up</a>
+                                    <a class="nav-link" href="{{route('admin.shipped')}}">Shipped</a>
                                     <a class="nav-link" href="{{route('admin.in.transit')}}">In-Transit</a>
-                                    <a class="nav-link" href="{{route('admin.arrived.destination')}}">Total Arrived at Destination</a>
+                                    <a class="nav-link" href="{{route('admin.arrived.destination')}}">Arrived at Destination</a>
                                     <a class="nav-link" href="{{route('admin.out.delievery')}}">Out for Delievery</a>
-                                    <a class="nav-link" href="{{route('admin.total.delieverd')}}">Total Delievered Courier</a>
-
+                                    <a class="nav-link" href="{{route('admin.total.delieverd')}}">Delievered Courier</a>
+                                    <a class="nav-link" href="{{route('admin.unsuccessful.delievery')}}">Unsuccessful Delievery Atempt</a>
                                 </nav>
                             </div>
                             <div>

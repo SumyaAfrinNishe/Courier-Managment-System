@@ -4,10 +4,10 @@
 <h1>Total Courier Arrived at Destination</h1>
 <a href="">
 
-    <table class="table">
+    <table class="table table-bordered">
     <thead>
     <tr>
-        
+        <th scope="col">ID</th>
         <th scope="col">Consignment No.</th>
         <th scope="col">Sender</th>
         <th scope="col">Recepient</th>
@@ -17,11 +17,16 @@
     </thead>
     <tbody>
     
-    @foreach($arrives as $arrd)
+    @foreach($arrives as $key=>$arrd)
+        <td>{{$key+1}}</td>
         <td>{{$arrd->consignment_no}}</td>
         <td>{{$arrd->sender_name}}</td>
         <td>{{$arrd->recepient_name}}</td>
         <td>{{$arrd->status}}</td>
+        <td>
+            <a class="btn btn-primary" href="{{route('admin.arrived.details.view',$arrd->id)}}"><i class="fas fa-eye"></i></a>
+            <a class="btn btn-warning" href="{{route('admin.arrived.edit',$arrd->id)}}"><i class="fas fa-edit"></i></a>
+        </td>
         @endforeach
    </tbody>
     @endsection

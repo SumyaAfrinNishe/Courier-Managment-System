@@ -4,10 +4,10 @@
 <h1>Total Courier Arrived Pickup</h1>
 <a href="">
 
-    <table class="table">
+    <table class="table table-bordered">
     <thead>
     <tr>
-        <!-- <th scope="col">ID</th> -->
+        <th scope="col">ID</th>
         <th scope="col">Consignment No.</th>
         <th scope="col">Sender</th>
         <th scope="col">Recepient</th>
@@ -16,11 +16,16 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($pickups as $p)
+    @foreach($pickups as $key=>$p)
+        <td>{{$key+1}}</td>
         <td>{{$p->consignment_no}}</td>
         <td>{{$p->sender_name}}</td>
         <td>{{$p->recepient_name}}</td>
         <td>{{$p->status}}</td>
+        <td>
+        <a class="btn btn-primary" href="{{route('admin.pickup.details.view',$p->id)}}"><i class="fas fa-eye"></i></a>
+            <a class="btn btn-warning" href="{{route('admin.pickup.edit',$p->id)}}"><i class="fas fa-edit"></i></a>
+            
         @endforeach
    </tbody>
     @endsection

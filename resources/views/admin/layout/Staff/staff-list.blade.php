@@ -5,7 +5,7 @@
     <input name="search" class="search-input" type="text" placeholder="Search With Branch" aria-label="Search">
     <button class="btn btn-success" type="submit">Search</button>
 </form>
-<table class="table">
+<table class="table table-bordered">
      <thead>
     <tr>
         <!-- <th scope="col">SI No.</th>
