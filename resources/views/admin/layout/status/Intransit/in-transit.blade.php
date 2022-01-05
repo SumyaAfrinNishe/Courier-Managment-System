@@ -25,7 +25,6 @@
         <td>{{$intra->status}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.intransit.details.view',$intra->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.intransit.edit',$intra->id)}}"><i class="fas fa-edit"></i></a>
         </td>
         @endforeach
     </tbody>

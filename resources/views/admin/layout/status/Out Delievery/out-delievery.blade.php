@@ -25,7 +25,7 @@
         <td>{{$outd->status}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.out.delievery.details.view',$outd->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.out.delievery.edit',$outd->id)}}"><i class="fas fa-edit"></i></a>
+            
             
         @endforeach
    </tbody>

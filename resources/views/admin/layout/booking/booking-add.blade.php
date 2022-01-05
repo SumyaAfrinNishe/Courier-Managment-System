@@ -97,10 +97,45 @@
   <input type="time" name="pickup_time" class="form-control" id="pickup_time" placeholder="">
 </div>
 
-<div class="mb-3">
-  <label for="status" class="form-label">Status</label>
-  <input type="text" name="status" class="form-control" id="status" placeholder="">
-</div>
+<div class="col-md-12 mt-3">
+                            <label class="mb-3 mr-1" for="status">Status: </label>
+
+                            <input type="radio" class="btn-check" value="Accepted by Courier" name="status" id="Accepted By Courier" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Accepted By Courier">Accepted By Courier</label>
+
+                            <input type="radio" class="btn-check" value="Collected" name="status" id="Collected" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Collected">Collected</label>
+
+                            <input type="radio" class="btn-check" value="Ready to Pickup" name="status" id="Ready to Pickup" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Ready to Pickup">Ready To Pickup</label>
+
+                            <input type="radio" class="btn-check" value="Picked Up" name="status" id="Picked Up" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Picked Up">Picked Up</label>
+
+                            <input type="radio" class="btn-check" value="Out for Delievery" name="status" id="Out for Delievery" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Out for Delievery">Out for Delievery</label>
+
+                            <input type="radio" class="btn-check" value="Shipped" name="status" id="Shipped" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Shipped">Shipped</label>
+
+                            <input type="radio" class="btn-check" value="Intransit" name="status" id="Intransit" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Intransit">Intransit</label>
+
+                            <input type="radio" class="btn-check" value="Arrived At Destination" name="status" id="Arrived At Destination" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Arrived At Destination">Arrived At Destination</label>
+
+                            <input type="radio" class="btn-check" value="Delievered" name="status" id="Delievered" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Delievered">Delieverd</label>
+                            
+                            <input type="radio" class="btn-check" value="Unsuccessful" name="status" id="Unsuccessful Delievery Attempt" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="Unsuccessful Delievery Attempt">Unsuccessful Delievery Attempt</label>
+
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity" required>
+                            </div>
+
 
 <div class="input-group">
   <div class="custom-file">

@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<h1>Total Courier Arrived Pickup</h1>
+<h1>Courier Picked Up</h1>
 <a href="">
 
     <table class="table table-bordered">
@@ -24,7 +24,6 @@
         <td>{{$p->status}}</td>
         <td>
         <a class="btn btn-primary" href="{{route('admin.pickup.details.view',$p->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.pickup.edit',$p->id)}}"><i class="fas fa-edit"></i></a>
             
         @endforeach
    </tbody>

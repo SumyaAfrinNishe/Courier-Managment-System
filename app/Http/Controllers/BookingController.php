@@ -128,8 +128,8 @@ class BookingController extends Controller
  public function bookingSearch()
  {
      $key= request()->search;
-     $customerinfolist=CourierRecord::where('consignment_no','LIKE',"%{$key}%")->get();
-     return view('admin.layout.booking.search-booking',compact('customerinfolist'));
+     $courierrecordlist=CourierRecord::where('consignment_no','LIKE',"%{$key}%")->get();
+     return view('admin.layout.booking.search-booking',compact('courierrecordlist'));
  }
 
 }

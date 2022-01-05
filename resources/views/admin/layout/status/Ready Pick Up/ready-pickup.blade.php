@@ -24,8 +24,8 @@
         <td>{{$rp->recepient_name}}</td>
         <td>{{$rp->status}}</td>
         <td>
-            <a class="btn btn-primary" href="#"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="#"><i class="fas fa-edit"></i></a>
+            <a class="btn btn-primary" href="{{route('admin.readypickup.details.view',$rp->id)}}"><i class="fas fa-eye"></i></a>
+
             
         </td>
         @endforeach

@@ -24,7 +24,7 @@
         <td>{{$collect->status}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.collect.details.view',$collect->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.collect.edit',$collect->id)}}"><i class="fas fa-edit"></i></a>
+            
             
         </td>
         @endforeach

@@ -25,7 +25,6 @@
         <td>{{$unsu->status}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.unsuccessful.details.view',$unsu->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.unsuccessful.edit',$unsu->id)}}"><i class="fas fa-edit"></i></a>
         </td>
         @endforeach
     </tbody>

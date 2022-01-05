@@ -21,7 +21,27 @@
         <p class="card-text" >Price: {{$unsu->price}}</p>
         <p class="card-text" >Pickup Date: {{$unsu->pickup_date}}</p>
         <p class="card-text" >Pickup Time: {{$unsu->pickup_time}}</p>
-        <p class="card-text" >Status: {{$unsu->status}}</p>
+        <form action="{{route('admin.unsuccessful.update.status',$unsu->id)}}" method='POST' enctype="multipart/form-data">
+         @method('PUT')
+         @csrf
+        <p class="card-text" >Status:</p>
+        <select class="form-select" aria-label="Default select example" name="status">
+        <option selected>{{$unsu->status}}</option>
+        <option value="Accepted By Courier">Accepted By Courier</option>
+        <option value="Collected">Collected</option>
+        <option value="Ready to Pickup">Ready to Pickup</option>
+        <option value="Picked Up">Picked Up</option>
+        <option value="Out for Delievery">Out for Delievery</option>
+        <option value="Shipped">Shipped</option>
+        <option value="Intransit">Intransit</option>
+        <option value="Arrived At Destination">Arrived At Destination</option>
+        <option value="Delieverd">Delieverd</option>
+</select>
+        <div>
+
+<button type="submit" class="btn btn-success">Submit</button>
+</div>
+</form>   
   </div>
 </div>
 

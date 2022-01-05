@@ -24,7 +24,6 @@
         <td>{{$ac->status}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.acceptdetails.view',$ac->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.accept.edit',$ac->id)}}"><i class="fas fa-edit"></i></a>
             
         </td>
         @endforeach

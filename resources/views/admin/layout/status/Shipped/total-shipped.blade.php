@@ -24,7 +24,6 @@
         <td>{{$s->status}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.shipped.details.view',$s->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.shipped.edit',$s->id)}}"><i class="fas fa-edit"></i></a>
             
         </td>
         @endforeach

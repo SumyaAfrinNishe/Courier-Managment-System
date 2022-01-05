@@ -48,6 +48,7 @@ Route::get('/', function ()
 Route::get('/home',[HomeController::class, 'home'])->name(name:'home');
 Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name(name:'showbranch');
 
+
 Route::get('/information',[InformationController::class, 'information'])->name(name:'information');
 Route::get('/admin/customerinfo',[BookingController::class,'customerinfo'])->name(name:'admin.customer.info');
 Route::post('/admin/customerinfo/create',[InformationController::class,'customerinfoCreate'])->name(name:'admin.customer.create');
@@ -138,7 +139,7 @@ Route::put('/outdelievery/update/{outd_id}',[StatusController::class,'outdelieve
 Route::get('/accepted/by/courier',[StatusController::class,'acceptCourier'])->name(name:'admin.accept.courier');
 Route::get('/accept/courier/details/view/{ac_id}',[StatusController::class,'acceptdetails'])->name(name:'admin.acceptdetails.view');
 Route::get('/accept/edit/{ac_id}',[StatusController::class,'acceptEdit'])->name('admin.accept.edit');
-Route::put('/update/{ac_id}',[StatusController::class,'acceptUpdate'])->name('admin.update.status');
+Route::put('/update/{ac_id}',[StatusController::class,'acceptUpdate'])->name('admin.accept.update.status');
 
 
 Route::get('/totaldelieverd',[StatusController::class,'totaldelieverd'])->name(name:'admin.total.delieverd');
