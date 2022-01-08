@@ -1,21 +1,22 @@
 <?php
 
 //frontend
-use App\Http\Controllers\frontend\HomeController;
-use App\Http\Controllers\frontend\LoginController;
-use App\Http\Controllers\ShowBranchController;
-use App\Http\Controllers\frontend\InformationController;
-//backend
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\BranchController;
-use App\Http\Controllers\AddBranchController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\CourierRecordController;
+use App\Http\Controllers\ShowTrackController;
+use App\Http\Controllers\ShowBranchController;
+//backend
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\AddBranchController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TrackListController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BranchController;
+use App\Http\Controllers\CourierRecordController;
+use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\LoginController;
+use App\Http\Controllers\frontend\InformationController;
 
 
 
@@ -47,6 +48,10 @@ Route::get('/', function ()
 //frontend part
 Route::get('/home',[HomeController::class, 'home'])->name(name:'home');
 Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name(name:'showbranch');
+Route::get('/show/tracking/details',[ShowTrackController::class, 'showTrack'])->name('showtrack');
+Route::get('/search/by/tracking',[ShowTrackController::class,'trackSearch'])->name('track.search');
+
+
 
 
 Route::get('/information',[InformationController::class, 'information'])->name(name:'information');

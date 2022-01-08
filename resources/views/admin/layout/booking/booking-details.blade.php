@@ -24,6 +24,7 @@
         <p class="card-text" >Pickup Time: {{$book->pickup_time}}</p>
         <p class="card-text" >Status: {{$book->status}}</p>
   </div>
+  
 </div>
 
 <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>

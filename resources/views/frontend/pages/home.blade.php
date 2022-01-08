@@ -18,9 +18,9 @@
                         <!-- <div class="button"><a href="#">See Details</a></div> -->
                         <div class="box">
                           <h1>Search Your Courier</h1>
-                          <form>
-                            <input type="text" name="" placeholder="Enter Your Tracking Number">
-                            <input type="submit" name="" value="Search">
+                          <form action="{{route('track.search')}}" method="GET">
+                            <input type="search" name="search" placeholder="Enter Your Tracking Number">
+                            <input type="submit" value="Search">
                           </form>
                        </div>
                     </div>
@@ -36,9 +36,10 @@
                        	<!-- <div class="button"><a href="#">See Details</a></div> -->
                         <div class="box">
                            <h1>Search Your Courier</h1>
-                         <form action="">
-                            <input type="text" name="search" placeholder="Enter Your Tracking Number">
-                            <input type="submit" name="" value="Search">                        </form>
+                           <form action="{{route('track.search')}}" method="GET">
+                            <input type="search" name="search" placeholder="Enter Your Tracking Number">
+                            <input type="submit" value="Search">
+                          </form>
                     </div>
                 </div>
             </div>
