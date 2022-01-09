@@ -47,4 +47,20 @@ class InformationController extends Controller
          ]);
          return redirect()->back();
     }
+
+    public function customerDetails($info_id)
+    {
+        $info=CustomerInfo::find($info_id);
+       // dd("$branch_id");
+       return view('admin.layout.customer.cusinfo-details',compact('info'));
+    }
+   
+    public function customerDelete($info_id)
+    {
+       //  dd($branch_id);
+   
+        $info=CustomerInfo::find($info_id)->delete();
+        return redirect()->back()->with('Success','Customer Deleted');
+    }
+   
 }

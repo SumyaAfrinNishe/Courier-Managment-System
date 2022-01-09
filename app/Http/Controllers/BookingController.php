@@ -12,7 +12,7 @@ class BookingController extends Controller
     {
         $customerinfolist=CustomerInfo::all();
       //  dd($customerinfolist);
-        return view('admin.layout.booking.cusinfo',compact('customerinfolist'));
+        return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
     }
 
     

@@ -14,12 +14,13 @@
 						    	<li  style="list-style:none;" ><a style="color: white;" href="{{route('showbranch')}}">Branch</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('showbranch')}}">Payment</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('information')}}">Information</a></li>
+								<li style="list-style:none; "><a style="color: white;" href="{{route('show.courier.info')}}">Courier Information</a></li>
 								@if(auth()->user())
 								<li style="list-style:none; "><a style="color: white;" href="{{route('logout')}}">Logout</a></li>
 									@else
 									<li style="list-style:none; "><a style="color: white;" href="{{route('registration')}}">Login/Registration</a></li>
 								@endif
-                               
+								<li style="list-style:none; "><a style="color: white;" href="{{route('profile')}}">Profile</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="#">Contact</a></li>
 								<div class="clear"></div>
 							</ul>

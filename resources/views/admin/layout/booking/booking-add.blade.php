@@ -132,9 +132,9 @@
 
                             </div>
 
-                            <div class="col-md-12">
+                            <!-- <div class="col-md-12">
                                 <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity" required>
-                            </div>
+                            </div> -->
 
 
 <div class="input-group">
