@@ -25,24 +25,24 @@ class LoginController extends Controller
         return redirect()->route('registration');
     }
 
-    public function login(){
+    public function userlogin(){
         return view('frontend.pages.login');
     }
 
-    public function doLogin(Request $request){
-        //  dd($request->all());
+    public function userdoLogin(Request $request){
+    //     //  dd($request->all());
         $userpost=$request->except('_token');
      
-        if(Auth::attempt($userpost))
-        {
-            return redirect()->route('home');
-        }
-        else
-        return redirect()->route('login');
+         if(Auth::attempt($userpost))
+         {
+             return redirect()->route('home');
+         }
+         else
+         return redirect()->route('login');
 
-    }
-    public function logout(){
-        Auth::logout();
-        return redirect()->route('home');
-    }
+     }
+     public function logout(){
+         Auth::logout();
+         return redirect()->route('home');
+     }
 }

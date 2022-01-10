@@ -69,8 +69,8 @@ Route::get('/customerinfo/delete/{info_id}',[InformationController::class,'custo
 //login and registration
 Route::get('/registration',[LoginController::class,'registration'])->name(name:'registration');
 Route::post('/registration/store',[LoginController::class,'registrationstore'])->name(name:'registration.store');
-Route::get('/login',[LoginController::class,'login'])->name(name:'login');
-Route::post('/do/login',[LoginController::class,'doLogin'])->name(name:'doLogin');
+Route::get('/user/login',[LoginController::class,'userlogin'])->name('user.login');
+Route::post('/user/do/login',[LoginController::class,'userdoLogin'])->name('doLogin');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 

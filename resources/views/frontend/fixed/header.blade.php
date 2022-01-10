@@ -18,7 +18,8 @@
 								@if(auth()->user())
 								<li style="list-style:none; "><a style="color: white;" href="{{route('logout')}}">Logout</a></li>
 									@else
-									<li style="list-style:none; "><a style="color: white;" href="{{route('registration')}}">Login/Registration</a></li>
+									<li style="list-style:none; "><a style="color: white;" href="{{route('user.login')}}">Login</a></li>
+									<li style="list-style:none; "><a style="color: white;" href="{{route('registration')}}">Registartion</a></li>
 								@endif
 								<li style="list-style:none; "><a style="color: white;" href="{{route('profile')}}">Profile</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="#">Contact</a></li>
