@@ -14,6 +14,7 @@
 @endif
 
 <form action="{{route('admin.courier.record.create')}}" method='POST' enctype="multipart/form-data">
+ 
   @csrf
 
   

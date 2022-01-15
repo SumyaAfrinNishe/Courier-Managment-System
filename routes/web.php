@@ -4,13 +4,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\Frontend\ShowTrackController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CustomerController;
 //backend
 use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ShowTrackController;
 use App\Http\Controllers\TrackListController;
 use App\Http\Controllers\ShowBranchController;
 use App\Http\Controllers\CourierRecordController;
@@ -37,14 +38,14 @@ use App\Http\Controllers\frontend\ShowCourierInfoController;
 // Route::get('home',[HomeController::class,'home']);
 
 
-Route::get('/admin', function ()
-{
-    return view ('master');
-});
-Route::get('/', function ()
-{
-    return view ('frontend.pages.home');
-});
+// Route::get('/admin', function ()
+// {
+//     return view ('master');
+// });
+// Route::get('/', function ()
+// {
+//     return view ('frontend.pages.home');
+// });
 
 //frontend part
 Route::get('/home',[HomeController::class, 'home'])->name(name:'home');
@@ -58,10 +59,13 @@ Route::get('/your/profile',[HomeController::class,'profile'])->name('profile');
 
 
 Route::get('/information',[InformationController::class, 'information'])->name(name:'information');
-Route::get('/admin/customerinfo',[BookingController::class,'customerinfo'])->name(name:'admin.customer.info');
+Route::get('/admin/customerinfo',[CustomerController::class,'customerinfo'])->name(name:'admin.customer.info');
 Route::post('/admin/customerinfo/create',[InformationController::class,'customerinfoCreate'])->name('admin.customer.create');
-Route::get('/customerinfo/view/{info_id}',[InformationController::class,'customerDetails'])->name('admin.customer.details.view');
-Route::get('/customerinfo/delete/{info_id}',[InformationController::class,'customerDelete'])->name('admin.customer.details.delete');
+Route::get('/customerinfo/view/{info_id}',[CustomerController::class,'customerDetails'])->name('admin.customer.details.view');
+Route::get('/customerinfo/edit/{info_id}',[CustomerController::class,'customerEdit'])->name('admin.customer.details.edit');
+Route::put('/customerinfo/update/{info_id}',[CustomerController::class,'customerUpdate'])->name('admin.customer.details.update');
+Route::get('/customerinfo/delete/{info_id}',[CustomerController::class,'customerDelete'])->name('admin.customer.details.delete');
+
 
 
 
@@ -71,7 +75,7 @@ Route::get('/registration',[LoginController::class,'registration'])->name(name:'
 Route::post('/registration/store',[LoginController::class,'registrationstore'])->name(name:'registration.store');
 Route::get('/user/login',[LoginController::class,'userlogin'])->name('user.login');
 Route::post('/user/do/login',[LoginController::class,'userdoLogin'])->name('doLogin');
-Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
 
 
 
@@ -79,7 +83,7 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
     Route::get('/login',[AdminController::class,'login'])->name('admin.login');
     Route::post('/do/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
 
-    Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function () {
+    Route::group(['prefix'=>'/','middleware'=>['auth','admin']],function () {
     Route::get('/admin', function () {
         return view('admin.partial.home');
     })->name('admin.home');

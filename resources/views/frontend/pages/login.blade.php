@@ -30,6 +30,34 @@
 <!--===============================================================================================-->
 </head>
 <body>
+<!-- 
+
+
+
+<div class="login-box">
+  <h2>Login</h2>
+  <form action="{{route('doLogin')}}" method='POST'>
+	  @csrf
+    <div class="user-box">
+      <input type="text" name="email" required>
+      <label>Email</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required>
+      <label>Password</label>
+    </div>
+    <a href="{{route('home')}}" type="submit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+	<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="{{route('registration')}}">Sign Up</a>
+				</div>
+  </form>
+</div> -->
 	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('frontend/images/loginimage.jpg');">

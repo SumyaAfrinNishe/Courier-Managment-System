@@ -31,6 +31,12 @@
     <p>
       <b>Contact:</b>{{auth()->user()->phone}}
     </p>
+    <p>
+      <b>Consignment Number:</b>
+    </p>
+    <p>
+      <b>Status:</b>
+    </p>
 
   </div>
 
