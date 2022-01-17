@@ -9,6 +9,7 @@ use App\Http\Controllers\BranchController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProfileController;
 //backend
 use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\DashboardController;
@@ -54,6 +55,7 @@ Route::get('/your/courier/information/',[ShowCourierInfoController::class,'showC
 Route::get('/show/tracking/details',[ShowTrackController::class, 'showTrack'])->name('showtrack');
 Route::get('/search/by/tracking',[ShowTrackController::class,'trackSearch'])->name('track.search');
 Route::get('/your/profile',[HomeController::class,'profile'])->name('profile');
+Route::get('/your/courier/status',[ProfileController::class,'statusView'])->name('profile.status.view');
 
 
 
@@ -65,6 +67,9 @@ Route::get('/customerinfo/view/{info_id}',[CustomerController::class,'customerDe
 Route::get('/customerinfo/edit/{info_id}',[CustomerController::class,'customerEdit'])->name('admin.customer.details.edit');
 Route::put('/customerinfo/update/{info_id}',[CustomerController::class,'customerUpdate'])->name('admin.customer.details.update');
 Route::get('/customerinfo/delete/{info_id}',[CustomerController::class,'customerDelete'])->name('admin.customer.details.delete');
+Route::get('/customerinfo/accept/{info_id}',[CustomerController::class,'customerAccept'])->name('admin.customer.accept');
+Route::get('/customerinfo/cancel/{info_id}',[CustomerController::class,'customerCancel'])->name('admin.customer.cancel');
+
 
 
 

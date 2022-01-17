@@ -16,13 +16,13 @@ class CustomerController extends Controller
         return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
     }
 
-//     public function customerEdit($id)
-//  {
-//     //  dd($id);
-//     $info=CourierRecord::find($id);
-//     // dd($info);
-//      return view('admin.layout.customer.cusinfo-edit',compact('info'));
-//  }
+    public function customerEdit($id)
+ {
+    //  dd($id);
+    $info=CustomerInfo::find($id);
+    // dd($info);
+     return view('admin.layout.customer.cusinfo-edit',compact('info'));
+ }
 
 //  public function customerUpdate(Request $request,$id)
 //  {
@@ -66,6 +66,38 @@ class CustomerController extends Controller
    
         $info=CustomerInfo::find($info_id)->delete();
         return redirect()->back()->with('Success','Customer Deleted');
+    }
+
+    public function customerAccept($info_id)
+    {
+        $info = CustomerInfo::find($info_id);
+        if($info->status)
+        {
+            $info->update([
+                'status' => 'approved'
+            ]);
+        }
+        else
+        {
+            $info->update([
+                'status' => 'cancelled'
+            ]);   
+        }
+           
+        return redirect()->back()->with('success','Request Approve.');
+    }
+
+    public function customerCancel($info_id)
+    {
+        $info= CustomerInfo::find($info_id);
+        if($info->status)
+        {
+            $info->update([
+                'status' => 'cancelled'
+            ]);
+        }
+    
+        return redirect()->back()->with('success','Request cancel.');
     }
 
 }

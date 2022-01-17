@@ -23,7 +23,7 @@ class CreateCourierrecordsTable extends Migration
             $table->string('recepient_address');
             $table->string('name');
             $table->string('address');
-            $table->integer('consignment_no');
+            $table->integer('consignment_no')->unique();
             $table->string('type_of_shipment');
             $table->string('courier_description');
             $table->integer('quantity');

@@ -17,31 +17,45 @@ class InformationController extends Controller
     public function customerinfoCreate(Request $request)
     {
         //dd($request->all());
-        // $request->validate([
+        $request->validate([
 
-        //     'yourname'=>'required',
-        //     'youremail'=>'required',
-        //     'yourcontact'=>'required|min:11|max:11',
-        //     'receivername'=>'required',
-        //     'receiveremail'=>'required',
-        //     'receivercontact'=>'required|min:11|max:11',
-        //     'type'=>'required',
-        //     'quantity'=>'required',
-        //     'branchname'=>'required'
-        // ]);
+            'sender_name'=>'required',
+            'sender_email'=>'required',
+            'sender_contact'=>'required|min:11|max:11',
+            'recepient_name'=>'required',
+            'recepient_email'=>'required',
+            'recepient_phone'=>'required|min:11|max:11',
+            'branch_name'=>'required',
+            'type_of_shipment'=>'required',
+            'courier_description'=>'required',
+            'quantity'=>'required',
+            'weight'=>'required'
+        ]);
+        
+        $filename='';
+        if($request->hasfile('image'))
+        {
+            $file=$request->file('image');
+            $filename=date('Ymdhms').'.'.$file->getclientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+  
+        }
 
         // dd($request->all());
         CustomerInfo::create([
             
-            'yourname'=>$request->yourname,
-            'youremail'=>$request->youremail,
-            'yourcontact'=>$request->yourcontact,
-            'receivername'=>$request->receivername,
-            'receiveremail'=>$request->receiveremail,
-            'receivercontact'=>$request->receivercontact,
-            'type'=>$request->type,
+            'sender_name'=>$request->sender_name,
+            'sender_email'=>$request->sender_email,
+            'sender_contact'=>$request->sender_contact,
+            'recepient_name'=>$request->recepient_name,
+            'recepient_email'=>$request->recepient_email,
+            'recepient_phone'=>$request->recepient_phone,
+            'branch_name'=>$request->branch_name,
+            'type_of_shipment'=>$request->type_of_shipment,
+            'courier_description'=>$request->courier_description,
             'quantity'=>$request->quantity,
-            'branchname'=>$request->branchname,
+            'weight'=>$request->weight,
+            'image'=>$filename,
             
 
          ]);

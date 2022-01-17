@@ -158,7 +158,7 @@ html, body {
     </style>
 
     <body>
-    <form action="{{route('admin.customer.create')}}" method="post">
+    <form action="{{route('admin.customer.create')}}" method="post" enctype="multipart/form-data">
         @csrf
     <div class="form-body">
         <div class="row">
@@ -170,73 +170,84 @@ html, body {
                         <form class="requires-validation" novalidate>
 
                             <div class="col-md-12">
-                               <input class="form-control" type="text" id="yourname" name="yourname" placeholder="Your Name" required>
+                               <input class="form-control" type="text" id="sender_name" name="sender_name" placeholder="Your Name" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="email" id="youremail" name="youremail" placeholder="Your E-mail Address" required>
+                                <input class="form-control" type="email" id="sender_email" name="sender_email" placeholder="Your E-mail Address" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" id="yourcontact" name="yourcontact" placeholder="Your Contact" required>
+                                <input class="form-control" type="number" id="sender_contact" name="sender_contact" placeholder="Your Contact" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" id="receivername" name="receivername" placeholder="Receiver Name" required>
+                                <input class="form-control" type="text" id="recepient_name" name="recepient_name" placeholder="Receiver Name" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="email" id="receiveremail" name="receiveremail" placeholder="Receiver E-mail Address" required>
+                                <input class="form-control" type="email" id="recepient_email" name="recepient_email" placeholder="Receiver E-mail Address" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" id="receivercontact" name="receivercontact" placeholder="Receiver Contact" required>
+                                <input class="form-control" type="number" id="recepient_phone" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" id="branchname"name="branchname" placeholder="Branch Name" required>
+                                <input class="form-control" type="text" id="branch_name"name="branch_name" placeholder="Branch Name" required>
                             </div>
-
+                        
                             <div class="col-md-12 mt-3">
-                            <label class="mb-3 mr-1" for="type">Type of: </label>
+                            <label class="mb-3 mr-1" for="type_of_shipment">Type of: </label>
 
-                            <input type="radio" class="btn-check" value="Electronics" name="type" id="electronics" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Electronics" name="type_of_shipment" id="electronics" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="electronics">Electronics</label>
 
-                            <input type="radio" class="btn-check" value="Cloths" name="type" id="cloths" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Cloths" name="type_of_shipment" id="cloths" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="cloths">Cloths</label>
 
-                            <input type="radio" class="btn-check" value="Shoes" name="type" id="shoes" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Shoes" name="type_of_shipment" id="shoes" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="shoes">Shoes</label>
 
-                            <input type="radio" class="btn-check" value="Cosmetics" name="type" id="cosmetics" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Cosmetics" name="type_of_shipment" id="cosmetics" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="cosmetics">Cosmetics</label>
 
-                            <input type="radio" class="btn-check" value="Jwellery" name="type" id="jwellery" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Jwellery" name="type_of_shipment" id="jwellery" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="jwellery">Jwellery</label>
 
-                            <input type="radio" class="btn-check" value="Crockeries" name="type" id="crockeries" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Crockeries" name="type_of_shipment" id="crockeries" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="crockeries">Crockeries</label>
 
-                            <input type="radio" class="btn-check" value="Food" name="type" id="food" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Food" name="type_of_shipment" id="food" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="food">Food</label>
 
-                            <input type="radio" class="btn-check" value="Furniture" name="type" id="furniture" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Furniture" name="type_of_shipment" id="furniture" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="furniture">Furniture</label>
 
-                            <input type="radio" class="btn-check" value="Construction" name="type" id="construction" autocomplete="off" required>
+                            <input type="radio" class="btn-check" value="Construction" name="type_of_shipment" id="construction" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="construction">Construction Material</label>
                               
+                            </div>
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" id="courier_description"name="courier_description" placeholder="Courier Description" required>
                             </div>
 
                             <div class="col-md-12">
                                 <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity" required>
                             </div>
+                            <div class="col-md-12">
+                                <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight" required>
+                            </div>
+                            <div class="input-group">
+                        <div class="custom-file">
+                        <input type="file" name="image" class="custom-file-input" id="image" aria-describedby="inputGroupFileAddon04">
+                          </div>
+                          </div>
 
                         <div class="form-button mt-3">
                            <button id="submit" type="submit" class="btn btn-primary">Confirm</button>
                         </div>
-                        
+                    
                     
                     </form>
                     </div>

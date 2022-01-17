@@ -14,7 +14,6 @@
 						    	<li  style="list-style:none;" ><a style="color: white;" href="{{route('showbranch')}}">Branch</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('showbranch')}}">Payment</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('information')}}">Information</a></li>
-								<li style="list-style:none; "><a style="color: white;" href="{{route('show.courier.info')}}">Courier Information</a></li>
 								@if(auth()->user())
 								<li style="list-style:none; "><a style="color: white;" href="{{route('user.logout')}}">Logout</a></li>
 									@else

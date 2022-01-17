@@ -15,15 +15,19 @@ class CreateCustomerinfosTable extends Migration
     {
         Schema::create('customerinfos', function (Blueprint $table) {
             $table->id();
-            $table->string('yourname');
-            $table->string('youremail');
-            $table->integer('yourcontact');
-            $table->string('receivername');
-            $table->string('receiveremail');
-            $table->integer('receivercontact');
-            $table->string('branchname');
-            $table->string('type');
+            $table->string('sender_name');
+            $table->string('sender_email');
+            $table->integer('sender_contact');
+            $table->string('recepient_name');
+            $table->string('recepient_email');
+            $table->integer('recepient_phone');
+            $table->string('branch_name');
+            $table->string('type_of_shipment');
+            $table->string('courier_description');
             $table->integer('quantity');
+            $table->integer('weight');
+            $table->string('image');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

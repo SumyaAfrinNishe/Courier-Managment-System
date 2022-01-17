@@ -15,7 +15,6 @@ class BookingController extends Controller
         return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
     }
 
-    
     public function bookingadd()
     {
         return view('admin.layout.booking.booking-add');
@@ -119,7 +118,7 @@ class BookingController extends Controller
                'pickup_date'=>$request->pickup_date,
                'pickup_time'=>$request->pickup_time,
                'status'=>$request->status,
-            // 'image'=>$filename,
+            'image'=>$filename,
          ]);
          return redirect()->back()->with('msg', 'Booking Updated Successfully.');
      }
