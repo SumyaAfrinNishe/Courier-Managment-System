@@ -20,6 +20,8 @@
       <th scope="col">Your Name</th>
       <th scope="col">Receipient Name</th>
       <th scope="col">Status</th>
+      <th scope="col">Price</th>
+      <th scope="col">Take Decision</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +30,12 @@
         <td>{{$info->sender_name}}</td>
         <td>{{$info->recepient_name}}</td>
         <td>{{$info->status}}</td>
+        <td>{{$info->price}}</td>
+        <td>{{$info->customer_decision}}</td>
+        <td>
+        <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a>
+        <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
+        </td>
     </tr>
   @endforeach 
 

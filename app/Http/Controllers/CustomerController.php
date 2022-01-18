@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CustomerInfo;
-use App\Models\CourierRecord;
 
 class CustomerController extends Controller
 {
@@ -16,47 +15,37 @@ class CustomerController extends Controller
         return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
     }
 
-    public function customerEdit($id)
- {
-    //  dd($id);
-    $info=CustomerInfo::find($id);
-    // dd($info);
-     return view('admin.layout.customer.cusinfo-edit',compact('info'));
- }
-
-//  public function customerUpdate(Request $request,$id)
+//     public function customerEdit($id)
 //  {
-//      $info=CourierRecord::find($id);
-//      if($info)
-//      {
-//          $info->update([
-//                'sender_name'=>$request->yourname,
-//                'sender_contact'=>$request->yourcontact,
-//                'sender_address'=>$request->youraddress,
-//                'recepient_name'=>$request->receivername,
-//                'recepient_phone'=>$request->receivercontact,
-//                'recepient_address'=>$request->receiveraddress,
-//                'name'=>$request->branchname,
-//                'address'=>$request->address,
-//                'consignment_no'=>$request->consignment_no,
-//                'type_of_shipment'=>$request->type,
-//                'courier_description'=>$request->courier_description,
-//                'quantity'=>$request->quantity,
-//                'weight'=>$request->weight,
-//                'price'=>$request->price,
-//                'pickup_date'=>$request->pickup_date,
-//                'pickup_time'=>$request->pickup_time,
-//                'status'=>$request->status,
-//             // 'image'=>$filename,
-//          ]);
-//          return redirect()->back()->with('msg', 'Booking Updated Successfully.');
-//      }
+//     //  dd($id);
+//     $info=CustomerInfo::find($id);
+//     // dd($info);
+//      return view('admin.layout.customer.cusinfo-details',compact('info'));
 //  }
+
+ public function customerUpdate(Request $request,$id)
+ {
+   
+     $info=CustomerInfo::find($id);
+     if($info)
+     {
+        
+        $a = $info->update([
+               'price'=>$request->price,
+               'pickup_date'=>$request->pickup_date,
+               'pickup_time'=>$request->pickup_time,
+         ]);
+
+
+         return redirect()->back()->with('msg', 'Customer Info Updated Successfully.');
+     }
+ }
  
  public function customerDetails($info_id)
     {
+        // dd($info_id);
         $info=CustomerInfo::find($info_id);
-       // dd("$branch_id");
+    
        return view('admin.layout.customer.cusinfo-details',compact('info'));
     }
    
@@ -87,17 +76,17 @@ class CustomerController extends Controller
         return redirect()->back()->with('success','Request Approve.');
     }
 
-    public function customerCancel($info_id)
-    {
-        $info= CustomerInfo::find($info_id);
-        if($info->status)
-        {
-            $info->update([
-                'status' => 'cancelled'
-            ]);
-        }
+    // public function customerCancel($info_id)
+    // {
+    //     $info= CustomerInfo::find($info_id);
+    //     if($info->status)
+    //     {
+    //         $info->update([
+    //             'status' => 'cancelled'
+    //         ]);
+    //     }
     
-        return redirect()->back()->with('success','Request cancel.');
-    }
+    //     return redirect()->back()->with('success','Request cancel.');
+    // }
 
 }

@@ -9,6 +9,39 @@ class ProfileController extends Controller
     public function statusView()
     {
         $customerinfolist=CustomerInfo::all();
-        return view('frontend.pages.profile-view',compact('customerinfolist'));
+        return view('frontend.pages.status-view',compact('customerinfolist'));
     }
+
+    public function customerConfirm($info_id)
+    {
+        $info = CustomerInfo::find($info_id);
+        if($info->customer_decision)
+        {
+            $info->update([
+                'customer_decision' => 'Confirmed'
+            ]);
+        }
+        else
+        {
+            $info->update([
+                'customer_decision' => 'Cancelled'
+            ]);   
+        }
+           
+        return redirect()->back()->with('success','Request Approve.');
+    }
+
+    public function confirmCancel($info_id)
+    {
+        $info= CustomerInfo::find($info_id);
+        if($info->customer_decision)
+        {
+            $info->update([
+                'customer_decision' => 'Cancelled'
+            ]);
+        }
+    
+        return redirect()->back()->with('success','Request cancel.');
+    }
+
 }

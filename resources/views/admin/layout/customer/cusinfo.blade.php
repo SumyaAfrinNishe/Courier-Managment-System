@@ -18,9 +18,10 @@
         <th scope="col">Branch Name</th>
         <th scope="col">Type</th>
         <!-- <th scope="col">Description</th> -->
-        <th scope="col">Quantity</th>
-        <th scope="col">Weight</th>
+        <!-- <th scope="col">Quantity</th>
+        <th scope="col">Weight</th> -->
         <th scope="col">Image</th>
+        <th scope="col">Customer Decision</th>
         <th scope="col">Status</th>
         <th scope="col">Action</th>
     </tr>
@@ -38,16 +39,17 @@
         <td>{{$info->branch_name}}</td>
         <td>{{$info->type_of_shipment}}</td>
         <!-- <td>{{$info->courier_description}}</td> -->
-        <td>{{$info->quantity}}</td>
-        <td>{{$info->weight}}</td>
+        <!-- <td>{{$info->quantity}}</td>
+        <td>{{$info->weight}}</td> -->
         <td>{{$info->image}}</td>
+        <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}"><i class="fas fa-eye"></i></a>
             <a class="btn btn-warning" href="{{route('admin.customer.details.edit',$info->id)}}"><i class="fas fa-edit"></i></a>
             <a class="btn btn-danger" href="{{route('admin.customer.details.delete',$info->id)}}"><i class="fas fa-trash-alt"></i></a>
             <a class="btn btn-success" href="{{route('admin.customer.accept',$info->id)}}"><i class="fas fa-check-circle"></i></a>
-            <a class="btn btn-danger" href="{{route('admin.customer.cancel',$info->id)}}"><i class="fas fa-times-circle"></i></a>
+            <!-- <a class="btn btn-danger" href="{{route('admin.customer.cancel',$info->id)}}"><i class="fas fa-times-circle"></i></a> -->
         </td>
         
 </tr>

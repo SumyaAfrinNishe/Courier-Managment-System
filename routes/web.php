@@ -69,6 +69,8 @@ Route::put('/customerinfo/update/{info_id}',[CustomerController::class,'customer
 Route::get('/customerinfo/delete/{info_id}',[CustomerController::class,'customerDelete'])->name('admin.customer.details.delete');
 Route::get('/customerinfo/accept/{info_id}',[CustomerController::class,'customerAccept'])->name('admin.customer.accept');
 Route::get('/customerinfo/cancel/{info_id}',[CustomerController::class,'customerCancel'])->name('admin.customer.cancel');
+Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customerConfirm'])->name('admin.customer.confirm');
+Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
 
 
 
