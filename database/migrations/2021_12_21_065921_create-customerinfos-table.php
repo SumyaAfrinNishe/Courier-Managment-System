@@ -27,11 +27,14 @@ class CreateCustomerinfosTable extends Migration
             $table->integer('quantity');
             $table->integer('weight');
             $table->string('image');
+            $table->bigInteger('track_number')->nullable();
             $table->string('customer_decision')->default('Pending');
             $table->string('status')->default('Pending');
             $table->integer('price')->nullable();
             $table->date('pickup_date')->nullable();
             $table->time('pickup_time')->nullable();
+            $table->string('payment')->default('Pending');
+            $table->string('delievery')->default('Pending');
             $table->timestamps();
         });
     }

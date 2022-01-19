@@ -18,7 +18,7 @@
     
     @foreach($collects as $key=>$collect)
         <td>{{$key+1}}</td>
-        <td>{{$collect->consignment_no}}</td>
+        <td>{{$collect->track_number}}</td>
         <td>{{$collect->sender_name}}</td>
         <td>{{$collect->recepient_name}}</td>
         <td>{{$collect->status}}</td>

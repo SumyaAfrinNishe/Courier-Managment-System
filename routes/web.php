@@ -73,6 +73,22 @@ Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customer
 Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
 
 
+//payment status
+Route::get('payment/status/paid/{info_id}',[CustomerController::class,'paymentPaid'])->name('admin.payment.paid');
+Route::get('payment/status/condition/{info_id}',[CustomerController::class,'paymentCondition'])->name('admin.payment.condition');
+
+//deliver status
+Route::get('courier/status/accepted/by/courier/{info_id}',[CustomerController::class,'statusAccepted'])->name('admin.courier.accepted');
+Route::get('courier/status/courier/collected/{info_id}',[CustomerController::class,'statusCollect'])->name('admin.status.collected');
+Route::get('courier/status/ready/to/pickup/{info_id}',[CustomerController::class,'statusReadyPickup'])->name('admin.courier.ready.pickup');
+Route::get('courier/status/shipped/{info_id}',[CustomerController::class,'statusShipped'])->name('admin.courier.shipped');
+Route::get('courier/status/intransit/{info_id}',[CustomerController::class,'statusIntransit'])->name('admin.courier.intransit');
+Route::get('courier/status/arrived/at/destination/{info_id}',[CustomerController::class,'statusArrived'])->name('admin.courier.arrived.destination');
+Route::get('courier/status/out/for/delivery/{info_id}',[CustomerController::class,'statusOutDelievery'])->name('admin.courier.out.for.delievery');
+Route::get('courier/status/picked/{info_id}',[CustomerController::class,'statusPicked'])->name('admin.courier.picked');
+Route::get('courier/status/delieverd/{info_id}',[CustomerController::class,'statusDeliverd'])->name('admin.courier.deliverd');
+Route::get('courier/status/unsuccesful/delievery/attempt/{info_id}',[CustomerController::class,'statusUnsuccessful'])->name('admin.courier.unsuccessful');
+
 
 
 
@@ -90,15 +106,15 @@ Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout'
     Route::get('/login',[AdminController::class,'login'])->name('admin.login');
     Route::post('/do/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
 
-    Route::group(['prefix'=>'/','middleware'=>['auth','admin']],function () {
-    Route::get('/admin', function () {
+    Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function () {
+    Route::get('/', function () {
         return view('admin.partial.home');
     })->name('admin.home');
 
     Route::get('/logout',[AdminController::class,'logout'])->name('admin.logout');
 
 //dashboard
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->name(name:'dashboard');
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 
 
 //Branch
@@ -204,4 +220,4 @@ Route::put('/unsuccessful/update/{unsu_id}',[StatusController::class,'unsuccessf
 //Tracking
 Route::get('/status',[StatusController::class,'status'])->name(name:'admin.status');
 Route::get('/tracklist',[StatusController::class,'tracklist'])->name(name:'admin.track.list');
-    });
+});

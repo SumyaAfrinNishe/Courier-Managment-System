@@ -56,6 +56,7 @@ class InformationController extends Controller
             'quantity'=>$request->quantity,
             'weight'=>$request->weight,
             'image'=>$filename,
+            'track_number'=>date('Ymdhmis'),
             'price'=>$request->price,
             'pickup_date'=>$request->pickup_date,
             'pickup_time'=>$request->pickup_time,

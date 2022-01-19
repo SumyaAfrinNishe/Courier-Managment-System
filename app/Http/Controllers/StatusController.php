@@ -3,33 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\CourierRecord;
+use App\Models\CustomerInfo;
 class StatusController extends Controller
 {
     public function acceptCourier()
     {
-        $acceptcouriers=CourierRecord::where('status','Accepted by Courier')->get();
+        $acceptcouriers=CustomerInfo::where('delievery','Accepted By Courier')->get();
         return view('admin.layout.status.Accepted By Courier.accept-courier',compact('acceptcouriers'));
     }
     public function acceptdetails($ac_id)
     {
-        $ac=CourierRecord::find($ac_id);
+        $ac=CustomerInfo::find($ac_id);
         return view('admin.layout.status.Accepted By Courier.accept-details',compact('ac'));
     }
     public function acceptEdit($id)
  {
-     $ac=CourierRecord::find($id);
+     $ac=CustomerInfo::find($id);
     //  dd($ac);
      return view('admin.layout.status.Accepted By Courier.accept-edit',compact('ac'));
  }
  public function acceptUpdate(Request $request,$id)
  {
-     $ac=CourierRecord::find($id);
+     $ac=CustomerInfo::find($id);
     //  dd($ac);
      if($ac)
      {
          $ac->update([
-            'status'=>$request->status,
+            'delievery'=>$request->delievery,
         ]);
         return redirect()->back()->with('msg', 'Status Updated Successfully.');
     }
@@ -43,12 +43,12 @@ class StatusController extends Controller
 
     public function collected()
     {
-        $collects=CourierRecord::where('status','Collected')->get();
+        $collects=CustomerInfo::where('delievery','Courier Collected')->get();
         return view('admin.layout.status.Collected.total-collected',compact('collects'));
     }
     public function collectDetails($ac_id)
     {
-        $collect=CourierRecord::find($ac_id);
+        $collect=CustomerInfo::find($ac_id);
         return view('admin.layout.status.Collected.collected-details',compact('collect'));
     }
     public function collectEdit($id)
@@ -78,31 +78,31 @@ class StatusController extends Controller
     
      public function arriveddestination()
     {
-        $arrives=CourierRecord::where('status','Arrived At Destination')->get();
+        $arrives=CustomerInfo::where('delievery','Arrived At Destination')->get();
         return view('admin.layout.status.Arrived.arrived-destination',compact('arrives'));
     } 
-    public function arriveDetails($arrd_id)
-    {
-        $arrd=CourierRecord::find($arrd_id);
-        return view('admin.layout.status.Arrived.arrived-details',compact('arrd'));
-    }
+    // public function arriveDetails($arrd_id)
+    // {
+    //     $arrd=CustomerInfo::find($arrd_id);
+    //     return view('admin.layout.status.Arrived.arrived-details',compact('arrd'));
+    // }
 
-    public function arriveEdit($id)
-    {
-        $arrd=CourierRecord::find($id);
-        return view('admin.layout.status.Arrived.arrived-edit',compact('arrd'));
-    } 
-    public function arriveUpdate(Request $request,$id)
-    {
-        $arrd=CourierRecord::find($id);
-        if($arrd)
-        {
-            $arrd->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
-    } 
+    // public function arriveEdit($id)
+    // {
+    //     $arrd=CustomerInfo::find($id);
+    //     return view('admin.layout.status.Arrived.arrived-edit',compact('arrd'));
+    // } 
+    // public function arriveUpdate(Request $request,$id)
+    // {
+    //     $arrd=CustomerInfo::find($id);
+    //     if($arrd)
+    //     {
+    //         $arrd->update([
+    //            'status'=>$request->status,
+    //        ]);
+    //        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+    //    }
+    // } 
 
 
 
@@ -113,31 +113,31 @@ class StatusController extends Controller
 
     public function readyPickup()
     {
-        $readypickups=CourierRecord::where('status','Ready to Pickup')->get();
+        $readypickups=CustomerInfo::where('delievery','Ready to Pickup')->get();
         return view('admin.layout.status.Ready Pick Up.ready-pickup',compact('readypickups'));
     }
-    public function readypickupDetails($rp_id)
-    {
-        $rp=CourierRecord::find($rp_id);
-        return view('admin.layout.status.Ready Pick Up.ready-pickup-details',compact('rp'));
-    }
+    // public function readypickupDetails($rp_id)
+    // {
+    //     $rp=CustomerInfo::find($rp_id);
+    //     return view('admin.layout.status.Ready Pick Up.ready-pickup-details',compact('rp'));
+    // }
 
-    public function readypickupEdit($id)
-    {
-        $rp=CourierRecord::find($id);
-        return view('admin.layout.status.Ready Pick Upready-pickup-edit',compact('rp'));
-    } 
-    public function readypickupUpdate(Request $request,$id)
-    {
-        $rp=CourierRecord::find($id);
-        if($rp)
-        {
-            $rp->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
-    } 
+    // public function readypickupEdit($id)
+    // {
+    //     $rp=CustomerInfo::find($id);
+    //     return view('admin.layout.status.Ready Pick Upready-pickup-edit',compact('rp'));
+    // } 
+    // public function readypickupUpdate(Request $request,$id)
+    // {
+    //     $rp=CustomerInfo::find($id);
+    //     if($rp)
+    //     {
+    //         $rp->update([
+    //            'status'=>$request->status,
+    //        ]);
+    //        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+    //    }
+    // } 
 
 
 
@@ -148,31 +148,31 @@ class StatusController extends Controller
 
     public function totalpickup()
     {
-        $pickups=CourierRecord::where('status','Picked Up')->get();
+        $pickups=CustomerInfo::where('delievery','Picked')->get();
         return view('admin.layout.status.Picked Up.total-pickup',compact('pickups'));
     } 
     
-    public function pickupDetails($p_id)
-    {
-        $p=CourierRecord::find($p_id);
-        return view('admin.layout.status.Picked Up.pickup-details',compact('p'));
-    } 
-    public function pickupEdit($id)
-    {
-        $p=CourierRecord::find($id);
-        return view('admin.layout.status.Picked Up.pickup-edit',compact('p'));
-    } 
-    public function pickupUpdate(Request $request,$id)
-    {
-        $p=CourierRecord::find($id);
-        if($p)
-        {
-            $p->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
-    } 
+    // public function pickupDetails($p_id)
+    // {
+    //     $p=CustomerInfo::find($p_id);
+    //     return view('admin.layout.status.Picked Up.pickup-details',compact('p'));
+    // } 
+    // public function pickupEdit($id)
+    // {
+    //     $p=CustomerInfo::find($id);
+    //     return view('admin.layout.status.Picked Up.pickup-edit',compact('p'));
+    // } 
+    // public function pickupUpdate(Request $request,$id)
+    // {
+    //     $p=CustomerInfo::find($id);
+    //     if($p)
+    //     {
+    //         $p->update([
+    //            'status'=>$request->status,
+    //        ]);
+    //        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+    //    }
+    // } 
 
 
 
@@ -183,30 +183,30 @@ class StatusController extends Controller
 
     public function totalshipped()
     {
-        $ships=CourierRecord::where('status','Shipped')->get();
+        $ships=CustomerInfo::where('delievery','Shipped')->get();
         return view('admin.layout.status.Shipped.total-shipped',compact('ships'));
     }
-    public function shippedDetails($s_id)
-    {
-        $s=CourierRecord::find($s_id);
-        return view('admin.layout.status.Shipped.shipped-details',compact('s'));
-    }
-    public function shippedEdit($id)
-    {
-        $s=CourierRecord::find($id);
-        return view('admin.layout.status.Shipped.shipped-edit',compact('s'));
-    }
-    public function shippedUpdate(Request $request,$id)
-    {
-        $s=CourierRecord::find($id);
-        if($s)
-        {
-            $s->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
-    }
+    // public function shippedDetails($s_id)
+    // {
+    //     $s=CustomerInfo::find($s_id);
+    //     return view('admin.layout.status.Shipped.shipped-details',compact('s'));
+    // }
+    // public function shippedEdit($id)
+    // {
+    //     $s=CustomerInfo::find($id);
+    //     return view('admin.layout.status.Shipped.shipped-edit',compact('s'));
+    // }
+    // public function shippedUpdate(Request $request,$id)
+    // {
+    //     $s=CustomerInfo::find($id);
+    //     if($s)
+    //     {
+    //         $s->update([
+    //            'status'=>$request->status,
+    //        ]);
+    //        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+    //    }
+    // }
     
     
 
@@ -217,30 +217,30 @@ class StatusController extends Controller
 
     public function totaldelieverd()
     {
-        $delievers=CourierRecord::where('status','Delievered')->get();
+        $delievers=CustomerInfo::where('delievery','Deliverd')->get();
         return view('admin.layout.status.Delieverd.total-delieverd',compact('delievers'));
     } 
-    public function delieverDetails($d_id)
-    {
-        $d=CourierRecord::find($d_id);
-        return view('admin.layout.status.Delieverd.delieverd-details',compact('d'));
-    } 
-    public function delieverEdit($id)
-    {
-        $d=CourierRecord::find($id);
-        return view('admin.layout.status.Delieverd.delieverd-edit',compact('d'));
-    } 
-    public function delieverUpdate(Request $request,$id)
-    {
-        $d=CourierRecord::find($id);
-        if($d)
-        {
-            $d->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
-    } 
+    // public function delieverDetails($d_id)
+    // {
+    //     $d=CustomerInfo::find($d_id);
+    //     return view('admin.layout.status.Delieverd.delieverd-details',compact('d'));
+    // } 
+    // public function delieverEdit($id)
+    // {
+    //     $d=CustomerInfo::find($id);
+    //     return view('admin.layout.status.Delieverd.delieverd-edit',compact('d'));
+    // } 
+    // public function delieverUpdate(Request $request,$id)
+    // {
+    //     $d=CustomerInfo::find($id);
+    //     if($d)
+    //     {
+    //         $d->update([
+    //            'status'=>$request->status,
+    //        ]);
+    //        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+    //    }
+    // } 
 
    
 
@@ -250,33 +250,33 @@ class StatusController extends Controller
 
     public function outdelievery()
     {
-        $outdelievers=CourierRecord::where('status','Out for Delievery')->get();
+        $outdelievers=CustomerInfo::where('delievery','Out For Delivery')->get();
         // dd($outdelievers);
         return view('admin.layout.status.Out Delievery.out-delievery',compact('outdelievers'));
     } 
-    public function outdelieveryDetails($outd_id)
-    {
-        $outd=CourierRecord::find($outd_id);
-        // dd($outdelievers);
-        return view('admin.layout.status.Out Delievery.out-delievery-details',compact('outd'));
-    } 
-    public function outdelieveryEdit($id)
-    {
-        $outd=CourierRecord::find($id);
-        // dd($outdelievers);
-        return view('admin.layout.status.Out Delievery.out-delievery-edit',compact('outd'));
-    } 
-    public function outdelieveryUpdate(Request $request,$id)
-    {
-        $outd=CourierRecord::find($id);
-        if($outd)
-        {
-            $outd->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
-    } 
+    // public function outdelieveryDetails($outd_id)
+    // {
+    //     $outd=CustomerInfo::find($outd_id);
+    //     // dd($outdelievers);
+    //     return view('admin.layout.status.Out Delievery.out-delievery-details',compact('outd'));
+    // } 
+    // public function outdelieveryEdit($id)
+    // {
+    //     $outd=CustomerInfo::find($id);
+    //     // dd($outdelievers);
+    //     return view('admin.layout.status.Out Delievery.out-delievery-edit',compact('outd'));
+    // } 
+    // public function outdelieveryUpdate(Request $request,$id)
+    // {
+    //     $outd=CustomerInfo::find($id);
+    //     if($outd)
+    //     {
+    //         $outd->update([
+    //            'status'=>$request->status,
+    //        ]);
+    //        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+    //    }
+    // } 
 
 
 
@@ -286,34 +286,34 @@ class StatusController extends Controller
 
     public function intransit()
     {
-        $intransits=CourierRecord::where('status','Intransit')->get();
+        $intransits=CustomerInfo::where('delievery','Intransit')->get();
         //dd($intransits);
             return view('admin.layout.status.Intransit.in-transit',compact('intransits'));
     }
-    public function intransitDetails($intra_id)
-    {
-        $intra=CourierRecord::find($intra_id);
-        //dd($intransits);
-            return view('admin.layout.status.Intransit.intransit-details',compact('intra'));
-    } 
-    public function intransitEdit($id)
-    {
-        $intra=CourierRecord::find($id);
-        //dd($intransits);
-            return view('admin.layout.status.Intransit.intransit-edit',compact('intra'));
-    } 
-    public function intransitUpdate(Request $request,$id)
-    {
-        $intra=CourierRecord::find($id);
-        if($intra)
-        {
-            $intra->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
+    // public function intransitDetails($intra_id)
+    // {
+    //     $intra=CustomerInfo::find($intra_id);
+    //     //dd($intransits);
+    //         return view('admin.layout.status.Intransit.intransit-details',compact('intra'));
+    // } 
+    // public function intransitEdit($id)
+    // {
+    //     $intra=CustomerInfo::find($id);
+    //     //dd($intransits);
+    //         return view('admin.layout.status.Intransit.intransit-edit',compact('intra'));
+    // } 
+    // public function intransitUpdate(Request $request,$id)
+    // {
+    //     $intra=CustomerInfo::find($id);
+    //     if($intra)
+    //     {
+    //         $intra->update([
+    //            'status'=>$request->status,
+    //        ]);
+    //        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+    //    }
 
-    } 
+    // } 
 
 
 
@@ -323,31 +323,31 @@ class StatusController extends Controller
 
     public function unsuccessful()
     {
-        $unsuccesfuls=CourierRecord::where('status','Unsuccessful')->get();
+        $unsuccesfuls=CustomerInfo::where('delievery','Unsuccessful Delivery Attempt')->get();
         //dd($intransits);
             return view('admin.layout.status.Unsuccessful.unsuccessful',compact('unsuccesfuls'));
     }
-    public function unsuccessfulDetails($unsu_id)
-    {
-        $unsu=CourierRecord::find($unsu_id);
-        //dd($intransits);
-            return view('admin.layout.status.Unsuccessful.unsuccessful-details',compact('unsu'));
-    } 
-    public function unsuccessfulEdit($id)
-    {
-        $unsu=CourierRecord::find($id);
-        //dd($intransits);
-            return view('admin.layout.status.Unsuccessful.unsuccessful-edit',compact('unsu'));
-    } 
-    public function unsuccessfulUpdate(Request $request,$id)
-    {
-        $unsu=CourierRecord::find($id);
-        if($unsu)
-        {
-            $unsu->update([
-               'status'=>$request->status,
-           ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
-       }
-}
+//     public function unsuccessfulDetails($unsu_id)
+//     {
+//         $unsu=CustomerInfo::find($unsu_id);
+//         //dd($intransits);
+//             return view('admin.layout.status.Unsuccessful.unsuccessful-details',compact('unsu'));
+//     } 
+//     public function unsuccessfulEdit($id)
+//     {
+//         $unsu=CustomerInfo::find($id);
+//         //dd($intransits);
+//             return view('admin.layout.status.Unsuccessful.unsuccessful-edit',compact('unsu'));
+//     } 
+//     public function unsuccessfulUpdate(Request $request,$id)
+//     {
+//         $unsu=CustomerInfo::find($id);
+//         if($unsu)
+//         {
+//             $unsu->update([
+//                'status'=>$request->status,
+//            ]);
+//            return redirect()->back()->with('msg', 'Status Updated Successfully.');
+//        }
+// }
 }

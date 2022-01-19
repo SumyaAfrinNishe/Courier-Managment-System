@@ -18,7 +18,7 @@
     <tbody>
     @foreach($delievers as $key=>$d)
         <td>{{$key+1}}</td>
-        <td>{{$d->consignment_no}}</td>
+        <td>{{$d->track_number}}</td>
         <td>{{$d->sender_name}}</td>
         <td>{{$d->recepient_name}}</td>
         <td>{{$d->status}}</td>

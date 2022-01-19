@@ -19,7 +19,7 @@
     
     @foreach($readypickups as $key=>$rp)
         <td>{{$key+1}}</td>
-        <td>{{$rp->consignment_no}}</td>
+        <td>{{$rp->track_number}}</td>
         <td>{{$rp->sender_name}}</td>
         <td>{{$rp->recepient_name}}</td>
         <td>{{$rp->status}}</td>

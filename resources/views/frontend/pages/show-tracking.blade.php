@@ -20,13 +20,12 @@
   <img src="{{url('/uploads/'.$track->image)}}" alt="Your Product">
         <p class="card-text" ><b style="color:DodgerBlue;">Your Name:</b> {{$track->sender_name}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Your Contact:</b>{{$track->sender_contact}}</p>
-        <p class="card-text" ><b style="color:DodgerBlue;">Your Address:</b>{{$track->sender_address}}</p>
+        <p class="card-text" ><b style="color:DodgerBlue;">Your Address:</b>{{$track->sender_email}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Receipient Name:</b>{{$track->recepient_name}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Recepient Phone:</b>{{$track->recepient_phone}}</p>
-        <p class="card-text" ><b style="color:DodgerBlue;">Recepient Address:</b>{{$track->recepient_address}}</p>
-        <p class="card-text" ><b style="color:DodgerBlue;">Branch Name:</b>{{$track->name}}</p>
-        <p class="card-text" ><b style="color:DodgerBlue;">Branch Address:</b>{{$track->address}}</p>
-        <p class="card-text" ><b style="color:DodgerBlue;">Consignment Number:</b>{{$track->consignment_no}}</p>
+        <p class="card-text" ><b style="color:DodgerBlue;">Recepient Address:</b>{{$track->recepient_email}}</p>
+        <p class="card-text" ><b style="color:DodgerBlue;">Branch Name:</b>{{$track->branch_name}}</p>
+        <p class="card-text" ><b style="color:DodgerBlue;">Consignment Number:</b>{{$track->track_number}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Type of Shipment:</b>{{$track->type_of_shipment}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Description:</b>{{$track->courier_description}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Quantity:</b>{{$track->quantity}}</p>
@@ -34,7 +33,7 @@
         <p class="card-text" ><b style="color:DodgerBlue;">Price:</b>{{$track->price}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Pickup Date:</b>{{$track->pickup_date}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Pickup Time:</b>{{$track->pickup_time}}</p>
-        <h3><b style="color:red;">Status:</b><span class="label label-info">{{$track->status}}</span></h3>
+        <h3><b style="color:red;">Status:</b><span class="label label-info">{{$track->delievery}}</span></h3>
         @endforeach
 </section>
 <!-- partial -->

@@ -1,4 +1,6 @@
 <!-- //table header start -->
+@extends('frontend.master')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +21,14 @@
     <tr>
       <th scope="col">Your Name</th>
       <th scope="col">Receipient Name</th>
+      <th scope="col">Tracking Number</th>
       <th scope="col">Status</th>
       <th scope="col">Price</th>
+      <th scope="col">Payment Status</th>
+      <th scope="col">Delivery Status</th>
       <th scope="col">Take Decision</th>
+
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -29,13 +36,29 @@
     <tr>
         <td>{{$info->sender_name}}</td>
         <td>{{$info->recepient_name}}</td>
+        @if($info->customer_decision == 'Confirmed')
+
+           <td>{{$info->track_number}}</td>
+         @else
+           <td> </td>  
+         @endif  
         <td>{{$info->status}}</td>
         <td>{{$info->price}}</td>
+        <td>{{$info->payment}}</td>
+        <td>{{$info->delievery}}</td>
+
         <td>{{$info->customer_decision}}</td>
-        <td>
+        @if($info->customer_decision == 'Cancelled')
+          <td></td>
+         @else
+         <td>
+
+        
         <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a>
         <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
-        </td>
+        </td> 
+
+        @endif
     </tr>
   @endforeach 
 
@@ -51,4 +74,5 @@
 
 </body>
 </html>
+@endsection
 <!-- //table footer end -->

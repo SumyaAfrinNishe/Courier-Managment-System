@@ -19,7 +19,7 @@
     <tbody>
     @foreach($outdelievers as $key=>$outd)
         <td>{{$key+1}}</td>
-        <td>{{$outd->consignment_no}}</td>
+        <td>{{$outd->track_number}}</td>
         <td>{{$outd->sender_name}}</td>
         <td>{{$outd->recepient_name}}</td>
         <td>{{$outd->status}}</td>

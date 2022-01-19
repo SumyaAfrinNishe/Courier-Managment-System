@@ -27,11 +27,11 @@
          @csrf
         <p class="card-text" >Status:</p>
         <select class="form-select" aria-label="Default select example" name="status">
-        <option selected>{{$ac->status}}</option>
-        <option value="Collected">Collected</option>
+        <option selected>{{$ac->delievery}}</option>
+        <option value="Collected">Courier Collected</option>
         <option value="Ready to Pickup">Ready to Pickup</option>
-        <option value="Picked Up">Picked Up</option>
-        <option value="Out for Delievery">Out for Delievery</option>
+        <option value="Picked">Picked</option>
+        <option value="Out For Delievery">Out For Delievery</option>
         <option value="Shipped">Shipped</option>
         <option value="Intransit">Intransit</option>
         <option value="Arrived At Destination">Arrived At Destination</option>
