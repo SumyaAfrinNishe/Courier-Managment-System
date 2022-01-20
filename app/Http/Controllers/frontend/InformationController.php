@@ -16,12 +16,8 @@ class InformationController extends Controller
 
     public function customerinfoCreate(Request $request)
     {
-        //dd($request->all());
+        
         $request->validate([
-
-            'sender_name'=>'required',
-            'sender_email'=>'required',
-            'sender_contact'=>'required|min:11|max:11',
             'recepient_name'=>'required',
             'recepient_email'=>'required',
             'recepient_phone'=>'required|min:11|max:11',
@@ -43,10 +39,7 @@ class InformationController extends Controller
 
         // dd($request->all());
         CustomerInfo::create([
-            
-            'sender_name'=>$request->sender_name,
-            'sender_email'=>$request->sender_email,
-            'sender_contact'=>$request->sender_contact,
+            'user_id'=>auth()->user()->id,
             'recepient_name'=>$request->recepient_name,
             'recepient_email'=>$request->recepient_email,
             'recepient_phone'=>$request->recepient_phone,
@@ -55,7 +48,7 @@ class InformationController extends Controller
             'courier_description'=>$request->courier_description,
             'quantity'=>$request->quantity,
             'weight'=>$request->weight,
-            'image'=>$filename,
+            'cus_image'=>$filename,
             'track_number'=>date('Ymdhmis'),
             'price'=>$request->price,
             'pickup_date'=>$request->pickup_date,

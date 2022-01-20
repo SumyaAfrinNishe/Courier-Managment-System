@@ -22,7 +22,7 @@
         <td>{{$arrd->track_number}}</td>
         <td>{{$arrd->sender_name}}</td>
         <td>{{$arrd->recepient_name}}</td>
-        <td>{{$arrd->status}}</td>
+        <td>{{$arrd->delievery}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.arrived.details.view',$arrd->id)}}"><i class="fas fa-eye"></i></a>
             

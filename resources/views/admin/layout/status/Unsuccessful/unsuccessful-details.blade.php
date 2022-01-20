@@ -7,13 +7,13 @@
     <img style="border-radius: 4px;" width="500px;" src=" {{url('/uploads/'.$unsu->image)}}" alt="booking">
         <p class="card-text" >Sender Name: {{$unsu->sender_name}}</p>
         <p class="card-text" >Sender Contact: {{$unsu->sender_contact}}</p>
-        <p class="card-text" >Sender Address: {{$unsu->sender_address}}</p>
+        <p class="card-text" >Sender Address: {{$unsu->sender_email}}</p>
         <p class="card-text" >Receipient Name: {{$unsu->recepient_name}}</p>
         <p class="card-text" >Recepient Phone: {{$unsu->recepient_phone}}</p>
-        <p class="card-text" >Recepient Address: {{$unsu->recepient_address}}</p>
-        <p class="card-text" >Branch Name: {{$unsu->name}}</p>
+        <p class="card-text" >Recepient Address: {{$unsu->recepient_email}}</p>
+        <p class="card-text" >Branch Name: {{$unsu->branch_name}}</p>
         <p class="card-text" >Branch Address: {{$unsu->address}}</p>
-        <p class="card-text" >Consignment Number: {{$unsu->consignment_no}}</p>
+        <p class="card-text" >Consignment Number: {{$unsu->track_number}}</p>
         <p class="card-text" >Type of Shipment: {{$unsu->type_of_shipment}}</p>
         <p class="card-text" >Description: {{$unsu->courier_description}}</p>
         <p class="card-text" >Quantity: {{$unsu->quantity}}</p>
@@ -25,8 +25,8 @@
          @method('PUT')
          @csrf
         <p class="card-text" >Status:</p>
-        <select class="form-select" aria-label="Default select example" name="status">
-        <option selected>{{$unsu->status}}</option>
+        <select class="form-select" aria-label="Default select example" name="delievery">
+        <option selected>{{$unsu->delievery}}</option>
         <option value="Accepted By Courier">Accepted By Courier</option>
         <option value="Collected">Collected</option>
         <option value="Ready to Pickup">Ready to Pickup</option>

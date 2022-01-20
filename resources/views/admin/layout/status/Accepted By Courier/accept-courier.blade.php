@@ -21,7 +21,7 @@
         <td>{{$ac->track_number}}</td>
         <td>{{$ac->sender_name}}</td>
         <td>{{$ac->recepient_name}}</td>
-        <td>{{$ac->status}}</td>
+        <td>{{$ac->delievery}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.acceptdetails.view',$ac->id)}}"><i class="fas fa-eye"></i></a>
             

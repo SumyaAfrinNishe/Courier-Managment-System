@@ -21,7 +21,7 @@
         <td>{{$collect->track_number}}</td>
         <td>{{$collect->sender_name}}</td>
         <td>{{$collect->recepient_name}}</td>
-        <td>{{$collect->status}}</td>
+        <td>{{$collect->delievery}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.collect.details.view',$collect->id)}}"><i class="fas fa-eye"></i></a>
             

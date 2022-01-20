@@ -170,18 +170,6 @@ html, body {
                         <form class="requires-validation" novalidate>
 
                             <div class="col-md-12">
-                               <input class="form-control" type="text" id="sender_name" name="sender_name" placeholder="Your Name" required>
-                            </div>
-
-                            <div class="col-md-12">
-                                <input class="form-control" type="email" id="sender_email" name="sender_email" placeholder="Your E-mail Address" required>
-                            </div>
-
-                            <div class="col-md-12">
-                                <input class="form-control" type="number" id="sender_contact" name="sender_contact" placeholder="Your Contact" required>
-                            </div>
-
-                            <div class="col-md-12">
                                 <input class="form-control" type="text" id="recepient_name" name="recepient_name" placeholder="Receiver Name" required>
                             </div>
 
@@ -240,7 +228,7 @@ html, body {
                             </div>
                             <div class="input-group">
                         <div class="custom-file">
-                        <input type="file" name="image" class="custom-file-input" id="image" aria-describedby="inputGroupFileAddon04">
+                        <input type="file" name="cus_image" class="custom-file-input" id="cus_image" aria-describedby="inputGroupFileAddon04">
                           </div>
                           </div>
 

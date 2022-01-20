@@ -21,10 +21,10 @@
         @foreach($customerinfolist as $key=>$info )
     <tr>
         <td>{{$key+1}}</td>
-        <td>{{$info->sender_name}}</td>
+        <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
         <td>{{$info->track_number}}</td>
-        <td>{{$info->image}}</td>
+        <td>{{$info->cus_image}}</td>
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
         <td>

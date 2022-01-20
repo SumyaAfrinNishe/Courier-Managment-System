@@ -22,7 +22,7 @@
         <td>{{$unsu->track_number}}</td>
         <td>{{$unsu->sender_name}}</td>
         <td>{{$unsu->recepient_name}}</td>
-        <td>{{$unsu->status}}</td>
+        <td>{{$unsu->delievery}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.unsuccessful.details.view',$unsu->id)}}"><i class="fas fa-eye"></i></a>
         </td>

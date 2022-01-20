@@ -22,7 +22,7 @@
         <td>{{$outd->track_number}}</td>
         <td>{{$outd->sender_name}}</td>
         <td>{{$outd->recepient_name}}</td>
-        <td>{{$outd->status}}</td>
+        <td>{{$outd->delievery}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.out.delievery.details.view',$outd->id)}}"><i class="fas fa-eye"></i></a>
             

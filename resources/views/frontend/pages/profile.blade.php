@@ -79,9 +79,7 @@
     <p>
       <b>Contact:</b>{{auth()->user()->phone}}
     </p>
-    <p>
-      <b>Consignment Number:</b>
-    </p>
+    
     <div class="dropdown">
   <button class="dropbtn">My Courier Status</button>
   <div class="dropdown-content">

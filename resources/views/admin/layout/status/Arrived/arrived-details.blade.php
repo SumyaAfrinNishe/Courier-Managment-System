@@ -5,28 +5,29 @@
   <div class="card-body">
     <h5 class="card-title">Details</h5>
     <img style="border-radius: 4px;" width="500px;" src=" {{url('/uploads/'.$arrd->image)}}" alt="booking">
-        <p class="card-text" >Sender Name: {{$arrd->sender_name}}</p>
-        <p class="card-text" >Sender Contact: {{$arrd->sender_contact}}</p>
-        <p class="card-text" >Sender Address: {{$arrd->sender_address}}</p>
-        <p class="card-text" >Receipient Name: {{$arrd->recepient_name}}</p>
-        <p class="card-text" >Recepient Phone: {{$arrd->recepient_phone}}</p>
-        <p class="card-text" >Recepient Address: {{$arrd->recepient_address}}</p>
-        <p class="card-text" >Branch Name: {{$arrd->name}}</p>
-        <p class="card-text" >Branch Address: {{$arrd->address}}</p>
-        <p class="card-text" >Consignment Number: {{$arrd->consignment_no}}</p>
-        <p class="card-text" >Type of Shipment: {{$arrd->type_of_shipment}}</p>
-        <p class="card-text" >Description: {{$arrd->courier_description}}</p>
-        <p class="card-text" >Quantity: {{$arrd->quantity}}</p>
-        <p class="card-text" >Weight: {{$arrd->weight}}</p>
-        <p class="card-text" >Price: {{$arrd->price}}</p>
-        <p class="card-text" >Pickup Date: {{$arrd->pickup_date}}</p>
-        <p class="card-text" >Pickup Time: {{$arrd->pickup_time}}</p>
+        <p class="card-text" ><b style="color:blue">Sender Name:</b> {{$arrd->sender_name}}</p>
+        <p class="card-text" ><b style="color:blue">Sender Contact:</b> {{$arrd->sender_contact}}</p>
+        <p class="card-text" ><b style="color:blue">Sender Address:</b> {{$arrd->sender_email}}</p>
+        <p class="card-text" ><b style="color:blue">Receipient Name:</b> {{$arrd->recepient_name}}</p>
+        <p class="card-text" ><b style="color:blue">Recepient Phone:</b> {{$arrd->recepient_phone}}</p>
+        <p class="card-text" ><b style="color:blue">Recepient Address:</b> {{$arrd->recepient_email}}</p>
+        <p class="card-text" ><b style="color:blue">Branch Name:</b> {{$arrd->branch_name}}</p>
+        <p class="card-text" ><b style="color:blue">Branch Address:</b> {{$arrd->address}}</p>
+        <p class="card-text" ><b style="color:blue">Consignment Number:</b> {{$arrd->track_number}}</p>
+        <p class="card-text" ><b style="color:blue">Type of Shipment:</b> {{$arrd->type_of_shipment}}</p>
+        <p class="card-text" ><b style="color:blue">Description:</b> {{$arrd->courier_description}}</p>
+        <p class="card-text" ><b style="color:blue">Quantity:</b> {{$arrd->quantity}}</p>
+        <p class="card-text" ><b style="color:blue">Weight:</b> {{$arrd->weight}}</p>
+        <p class="card-text" ><b style="color:blue">Price:</b> {{$arrd->price}}</p>
+        <p class="card-text" ><b style="color:blue">Pickup Date:</b> {{$arrd->pickup_date}}</p>
+        <p class="card-text" ><b style="color:blue">Pickup Time:</b> {{$arrd->pickup_time}}</p>
         <form action="{{route('admin.arrived.update.status',$arrd->id)}}" method='POST' enctype="multipart/form-data">
          @method('PUT')
          @csrf
+
         <p class="card-text" >Status:</p>
-        <select class="form-select" aria-label="Default select example" name="status">
-        <option selected>{{$arrd->status}}</option>
+        <select class="form-select" aria-label="Default select example" name="delievery">
+        <option selected>{{$arrd->delievery}}</option>
         <option value="Accepted By Courier">Accepted By Courier</option>
         <option value="Collected">Collected</option>
         <option value="Ready to Pickup">Ready to Pickup</option>

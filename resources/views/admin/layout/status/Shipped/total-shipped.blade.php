@@ -21,7 +21,7 @@
         <td>{{$s->track_number}}</td>
         <td>{{$s->sender_name}}</td>
         <td>{{$s->recepient_name}}</td>
-        <td>{{$s->status}}</td>
+        <td>{{$s->delievery}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.shipped.details.view',$s->id)}}"><i class="fas fa-eye"></i></a>
             

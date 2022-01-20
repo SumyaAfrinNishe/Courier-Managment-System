@@ -21,7 +21,7 @@
         <td>{{$p->track_number}}</td>
         <td>{{$p->sender_name}}</td>
         <td>{{$p->recepient_name}}</td>
-        <td>{{$p->status}}</td>
+        <td>{{$p->delievery}}</td>
         <td>
         <a class="btn btn-primary" href="{{route('admin.pickup.details.view',$p->id)}}"><i class="fas fa-eye"></i></a>
             

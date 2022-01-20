@@ -15,9 +15,7 @@ class CreateCustomerinfosTable extends Migration
     {
         Schema::create('customerinfos', function (Blueprint $table) {
             $table->id();
-            $table->string('sender_name');
-            $table->string('sender_email');
-            $table->integer('sender_contact');
+            $table->integer('user_id');
             $table->string('recepient_name');
             $table->string('recepient_email');
             $table->integer('recepient_phone');
@@ -26,7 +24,7 @@ class CreateCustomerinfosTable extends Migration
             $table->string('courier_description');
             $table->integer('quantity');
             $table->integer('weight');
-            $table->string('image');
+            $table->string('cus_image');
             $table->bigInteger('track_number')->nullable();
             $table->string('customer_decision')->default('Pending');
             $table->string('status')->default('Pending');

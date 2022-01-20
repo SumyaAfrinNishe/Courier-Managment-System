@@ -22,7 +22,7 @@
         <td>{{$intra->track_number}}</td>
         <td>{{$intra->sender_name}}</td>
         <td>{{$intra->recepient_name}}</td>
-        <td>{{$intra->status}}</td>
+        <td>{{$intra->delievery}}</td>
         <td>
             <a class="btn btn-primary" href="{{route('admin.intransit.details.view',$intra->id)}}"><i class="fas fa-eye"></i></a>
         </td>
