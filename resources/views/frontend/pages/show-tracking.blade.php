@@ -18,9 +18,9 @@
     @foreach($trackings as $track)
         <h3>Your Product Details</span></h3>
   <img src="{{url('/uploads/'.$track->image)}}" alt="Your Product">
-        <p class="card-text" ><b style="color:DodgerBlue;">Your Name:</b> {{$track->sender_name}}</p>
-        <p class="card-text" ><b style="color:DodgerBlue;">Your Contact:</b>{{$track->sender_contact}}</p>
-        <p class="card-text" ><b style="color:DodgerBlue;">Your Address:</b>{{$track->sender_email}}</p>
+        <p class="card-text" ><b style="color:DodgerBlue;">Your Name:</b> {{$track->user->name}}</p>
+        <p class="card-text" ><b style="color:DodgerBlue;">Your Contact:</b>{{$track->user->phone}}</p>
+        <p class="card-text" ><b style="color:DodgerBlue;">Your Address:</b>{{$track->user->email}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Receipient Name:</b>{{$track->recepient_name}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Recepient Phone:</b>{{$track->recepient_phone}}</p>
         <p class="card-text" ><b style="color:DodgerBlue;">Recepient Address:</b>{{$track->recepient_email}}</p>

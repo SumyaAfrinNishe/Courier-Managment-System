@@ -8,7 +8,7 @@ class ProfileController extends Controller
 {
     public function statusView()
     {
-        $customerinfolist=CustomerInfo::all();
+        $customerinfolist=CustomerInfo::where('user_id',auth()->user()->id)->get();
         return view('frontend.pages.status-view',compact('customerinfolist'));
     }
 

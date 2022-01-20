@@ -34,7 +34,7 @@
   <tbody>
   @foreach($customerinfolist as $key=>$info )
     <tr>
-        <td>{{$info->sender_name}}</td>
+        <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
         @if($info->customer_decision == 'Confirmed')
 

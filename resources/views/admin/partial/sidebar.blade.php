@@ -18,10 +18,10 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{route('admin.customer.info')}}">Customer Information</a>
                                     
-                                    
+<!--                                     
                                     <a class="nav-link" href="{{route('admin.booking.add')}}">Add Courier</a>
                                     
-                                    <a class="nav-link" href="{{route('admin.courier.record')}}">Courier Record</a>
+                                    <a class="nav-link" href="{{route('admin.courier.record')}}">Courier Record</a> -->
                                 </nav>
                             </div>
                         
