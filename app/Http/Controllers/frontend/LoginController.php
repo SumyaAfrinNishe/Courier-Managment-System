@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function registration()
     {
-        return view('frontend.pages.registration');
+        return view('frontend.pages.new-registration');
     }
 
     public function registrationstore(Request $request){
@@ -26,7 +26,7 @@ class LoginController extends Controller
     }
 
     public function userlogin(){
-        return view('frontend.pages.login');
+        return view('frontend.pages.fron-login');
     }
 
     public function userdoLogin(Request $request){

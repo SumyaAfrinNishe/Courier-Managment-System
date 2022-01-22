@@ -1,25 +1,46 @@
 @extends('master')
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<center>
+<h1>Customer Request Details</h1>
+<center>  <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
 
 
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Customer Infromation Details</h5>
-    <img style="border-radius: 4px;" width="500px;" src=" {{url('/uploads/'.$info->image)}}" alt="booking">
-        <p class="card-text" ><b style="color:blue">Customer Name: </b> {{$info->user->name}}</p>
-        <p class="card-text" ><b style="color:blue">Customer Contact:</b> {{$info->user->phone}}</p>
-        <p class="card-text" ><b style="color:blue">Customer Address:</b> {{$info->user->email}}</p>
-        <p class="card-text" ><b style="color:blue">Receipient Name: </b>{{$info->recepient_name}}</p>
-        <p class="card-text" ><b style="color:blue">Recepient Phone:</b> {{$info->recepient_email}}</p>
-        <p class="card-text" ><b style="color:blue">Recepient Address: </b>{{$info->recepient_phone}}</p>
-        <p class="card-text" ><b style="color:blue">Branch Name:</b> {{$info->branch_name}}</p>
-        <p class="card-text" ><b style="color:blue">Type of Shipment:</b> {{$info->type_of_shipment}}</p>
-        <p class="card-text" ><b style="color:blue">Courier Description:</b> {{$info->courier_description}}</p>
-        <p class="card-text" ><b style="color:blue">Courier Description:</b> {{$info->quantity}}</p>
-        <p class="card-text" ><b style="color:blue">Price:</b> {{$info->price}}</p>
-        <p class="card-text" ><b style="color:blue">Pickup Date:</b> {{$info->pickup_date}}</p>
-        <p class="card-text" ><b style="color:blue">Pickup Time:</b> {{$info->pickup_time}}</p>
-  </div>
+</center>
+<div id="PrintTableArea">
+
+
+<p><h3>Customer Name: {{$info->user->name}}</span></h3><h2><span style="color:#2874A6"></span><h2></p>
+
+<p><h4><span style="color:#2E4053">Customer Contact: {{$info->user->phone}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Customer Address: {{$info->user->email}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Customer Email: {{$info->user->email}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Receipient Name: {{$info->recepient_name}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Recepient Phone: {{$info->recepient_phone}}</p></span></h4></p>
+<p><h4><span style="color:#2E4053">Recepient Email: {{$info->recepient_email}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Type of Shipment: {{$info->type_of_shipment}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Courier Description: {{$info->courier_description}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Quantity: {{$info->quantity}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Price: {{$info->price}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Pickup Date: {{$info->pickup_date}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Pickup Time: {{$info->pickup_time}}</span></h4></p>
+<p>
+    <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$info->image)}}" alt="post">
+</p>
+<p><h4><span style="color:green">Tracking Number: {{$info->track_number}}</span></h4></p>
+</center>
+</div>
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
+
  
   <form action="{{route('admin.customer.details.update',$info->id)}}" method='POST'>
   @method('PUT')
@@ -63,51 +84,6 @@
   <label for="pickup_time" class="form-label">Pickup Time</label>
   <input type="time" name="pickup_time" value="{{$info->pickup_time}}" class="form-control" id="pickup_time" placeholder="">
 </div>
-
-<style>
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
-</style>
-
-
 <div>
 <button type="submit" class="btn btn-success">Submit</button>
 </div>

@@ -11,7 +11,7 @@
         <th scope="col">Sender Name</th> 
         <th scope="col">Recepient Name</th>
         <th scope="col">Tracking Number</th>
-        <th scope="col">Image</th>
+        <!-- <th scope="col">Image</th> -->
         <th scope="col">Customer Decision</th>
         <th scope="col">Your Decision</th>
         <th scope="col">Action</th>
@@ -24,7 +24,7 @@
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
         <td>{{$info->track_number}}</td>
-        <td>{{$info->cus_image}}</td>
+        <!-- <td>{{$info->cus_image}}</td> -->
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
         <td>

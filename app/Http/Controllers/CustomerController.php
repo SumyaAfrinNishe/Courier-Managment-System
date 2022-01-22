@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Model\User;
+use App\Model\BranchList;
 use Illuminate\Http\Request;
 use App\Models\CustomerInfo;
 

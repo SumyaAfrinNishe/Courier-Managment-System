@@ -19,7 +19,7 @@
     @foreach($pickups as $key=>$p)
         <td>{{$key+1}}</td>
         <td>{{$p->track_number}}</td>
-        <td>{{$p->sender_name}}</td>
+        <td>{{$p->user->name}}</td>
         <td>{{$p->recepient_name}}</td>
         <td>{{$p->delievery}}</td>
         <td>

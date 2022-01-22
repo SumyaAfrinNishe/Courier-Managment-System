@@ -20,7 +20,7 @@
     @foreach($outdelievers as $key=>$outd)
         <td>{{$key+1}}</td>
         <td>{{$outd->track_number}}</td>
-        <td>{{$outd->sender_name}}</td>
+        <td>{{$outd->user->name}}</td>
         <td>{{$outd->recepient_name}}</td>
         <td>{{$outd->delievery}}</td>
         <td>

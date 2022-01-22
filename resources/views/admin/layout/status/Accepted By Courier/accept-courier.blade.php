@@ -19,7 +19,7 @@
     @foreach($acceptcouriers as $key=>$ac)
         <td>{{$key+1}}</td>
         <td>{{$ac->track_number}}</td>
-        <td>{{$ac->sender_name}}</td>
+        <td>{{$ac->user->name}}</td>
         <td>{{$ac->recepient_name}}</td>
         <td>{{$ac->delievery}}</td>
         <td>

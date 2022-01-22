@@ -171,7 +171,7 @@ h1 {
   padding: 3em;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
   font-size: 0.9em;
   color: #fff;
   font-weight: 100;
@@ -555,7 +555,7 @@ input.checkbox:checked:after {
 
 /*-- responsive-design --*/
 @media(max-width:1440px) {
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
     width: 94%;
   }
 }
@@ -611,7 +611,7 @@ input.checkbox:checked:after {
     width: 58%;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
     width: 93%;
   }
 }
@@ -673,7 +673,7 @@ input.checkbox:checked:after {
     padding: 1.8em;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
     width: 91%;
   }
 
@@ -749,7 +749,7 @@ input.checkbox:checked:after {
     margin: 0 0 1em;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="number"] input[type="password"] {
     width: 89.5%;
     font-size: 0.85em;
   }
@@ -793,9 +793,10 @@ input.checkbox:checked:after {
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form action="{{route('registration.store')}}" method='POST'>
+          @csrf
 					<input class="text" type="text" name="name" placeholder="Your name" required="">
-					<input class="text email" type="email" name="email" placeholder="Your Email" required="">
-          <input class="text" type="text" name="phone" placeholder="Your Contact" required="">
+					<input class="text" type="email" name="email" placeholder="Your Email" required="">
+          <input class="text" type="number" name="phone" placeholder="Your Contact" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required="">
 					
 					<div class="wthree-text">
@@ -805,7 +806,7 @@ input.checkbox:checked:after {
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNUP">
+					<input type="submit" value="Register">
 				</form>
 				<p>Have an Account? <a href="{{route('user.login')}}"> Login Now!</a></p>
 			</div>

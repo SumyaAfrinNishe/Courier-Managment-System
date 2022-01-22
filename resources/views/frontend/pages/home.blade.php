@@ -13,7 +13,7 @@
                 <div class="slide_content">
                     <div class="slide_content_wrap">
                         <!-- Text title -->
-                        <h1 class="title">Courier<br>Management<br>System</h1>
+                        <h1 class="title">Courier Management System</h1>
                         <!-- /Text title -->
                         <!-- <div class="button"><a href="#">See Details</a></div> -->
                         <div class="box">
@@ -32,7 +32,7 @@
                <img src="{{url('frontend/images/slider2.jpg')}}" class="img-responsive" alt=""/>
                 <div class="slide_content">
                     <div class="slide_content_wrap">
-                        <h1 class="title">Courier<br>Management<br>System</h1>
+                        <h1 class="title">Courier Management System</h1>
                        	<!-- <div class="button"><a href="#">See Details</a></div> -->
                         <div class="box">
                            <h1>Search Your Courier</h1>

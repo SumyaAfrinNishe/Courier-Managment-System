@@ -184,7 +184,7 @@ html, body {
                             <div class="col-md-12">
                                 <input class="form-control" type="text" id="branch_name"name="branch_name" placeholder="Branch Name" required>
                             </div>
-                        
+                            
                             <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="type_of_shipment">Type of: </label>
 

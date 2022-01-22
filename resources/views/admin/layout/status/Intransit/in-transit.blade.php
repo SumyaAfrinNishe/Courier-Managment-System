@@ -20,7 +20,7 @@
         @foreach($intransits as $key=>$intra)
         <td>{{$key+1}}</td>
         <td>{{$intra->track_number}}</td>
-        <td>{{$intra->sender_name}}</td>
+        <td>{{$intra->user->name}}</td>
         <td>{{$intra->recepient_name}}</td>
         <td>{{$intra->delievery}}</td>
         <td>

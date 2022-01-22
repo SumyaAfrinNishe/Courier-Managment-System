@@ -20,7 +20,7 @@
         @foreach($unsuccesfuls as $key=>$unsu)
         <td>{{$key+1}}</td>
         <td>{{$unsu->track_number}}</td>
-        <td>{{$unsu->sender_name}}</td>
+        <td>{{$unsu->user->name}}</td>
         <td>{{$unsu->recepient_name}}</td>
         <td>{{$unsu->delievery}}</td>
         <td>
