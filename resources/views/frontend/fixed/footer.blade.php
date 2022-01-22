@@ -1,6 +1,6 @@
 <div class="footer">
 			<div class="container">
-				<!-- <div class="row">
+				<div class="row">
 					<div class="col-md-3">
 						<ul class="footer_box">
 							<h4>Products</h4>
@@ -48,7 +48,9 @@
 						</ul>
 					</div>
 				</div> -->
-				<div class="row footer_bottom">
+				
+				
+				<!-- <div class="row footer_bottom">
 				    <div class="copy">
 			           <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
 		            </div>

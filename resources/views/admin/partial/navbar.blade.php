@@ -8,10 +8,12 @@
     <input name="search" class="search-input" type="text" placeholder="Search" aria-label="Search">
     </form> -->
             <!-- Navbar-->
+            @if(auth()->user())
                 <div class="navbar-nav">
                     <div class="nav-item text-nowrap">
-                    <a class="nav-link px-3" href="{{route('admin.logout')}}">Log Out</a>
+                    <a class="nav-link px-3" href="{{route('admin.logout')}}">{{auth()->user()->name}} ({{auth()->user()->role}})||Log Out</a>
                 </div>
+                @endif
      
             
 </nav>

@@ -4,56 +4,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
- body{
-  
-    background: linear-gradient(to left, #ccccff 45%, #ccffff 95%);
- }
-  #customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  .heading h2{
-    text-align: center;
-  }
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #ccccff;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: rgb(9, 24, 68);
-    color: white;
-  }
-   /* button design */
-   .btn {
-  background-color: rgb(131, 157, 235);
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: rgb(5, 31, 109);
-}
-  </style>
-  </head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-  <div class="heading">
-    <h2>Your Courier Request</h2>
-  </div>
+<div class="container">
+  <h2>Your Courier Request</h2>
+             
+  <table class="table table-hover">
     <thead>
-    <tr>
+      <tr>
       <th scope="col">Your Name</th>
       <th scope="col">Receipient Name</th>
       <th scope="col">Tracking Number</th>
@@ -63,11 +28,10 @@
       <th scope="col">Delivery Status</th>
       <th scope="col">Take Decision</th>
       <th scope="col">Action</th>
-    </tr>
+      </tr>
     </thead>
- 
     <tbody>
-  @foreach($customerinfolist as $key=>$info )
+    @foreach($customerinfolist as $key=>$info )
     <tr>
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
@@ -96,8 +60,10 @@
         @endif
     </tr>
   @endforeach 
+    </tbody>
+  </table>
+</div>
 
-</tbody>
-<body>
-</table>
+</body>
+</html>
 @endsection

@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Models\StaffList;
-use App\Models\CourierRecord;
+use App\Models\BranchList;
 use Illuminate\Http\Request;
 
 class StaffController extends Controller
 {
     public function staffadd()
     {
-        return view('admin.layout.staff.add-staff');
+        $staffinfo=BranchList::all();
+        // dd($staffinfo);
+        return view('admin.layout.staff.add-staff',compact('staffinfo'));
     }
 
     public function stafflist()
@@ -40,13 +42,14 @@ class StaffController extends Controller
 
       }
 //  dd("ok");
-
+// dd($request->all());
         StaffList::create([
             
             'staffname'=>$request->staffname,
-            'staffemail'=>$request->staffemail,
             'staffcontact'=>$request->staffcontact,
-            'staffbranch'=>$request->staffbranch,
+            'staffemail'=>$request->staffemail,
+            'staffpassword'=>bycrypt($request->staffpassword),
+            'staffbranch_id'=>$request->staffbranch,
             'staffimage'=>$filename,
          ]);
          return redirect()->back();

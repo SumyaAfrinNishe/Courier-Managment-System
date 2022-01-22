@@ -9,19 +9,27 @@
 </div>
 
 <div class="mb-3">
-  <label for="staffemail" class="form-label">Email</label>
-  <input type="text" name="staffemail" class="form-control" id="staffemail" placeholder="">
-</div>
-
-<div class="mb-3">
   <label for="staffcontact" class="form-label">Contact</label>
   <input type="text" name="staffcontact" class="form-control" id="staffcontact" placeholder="">
 </div>
 
 <div class="mb-3">
-  <label for="staffbranch" class="form-label">Branch</label>
-  <input type="text" name="staffbranch" class="form-control" id="staffbranch" placeholder="">
+  <label for="staffemail" class="form-label">Email</label>
+  <input type="text" name="staffemail" class="form-control" id="staffemail" placeholder="">
 </div>
+
+<div class="mb-3">
+  <label for="staffpassword" class="form-label">Password</label>
+  <input type="password" name="staffpassword" class="form-control" id="staffpassword" placeholder="">
+</div>
+
+<select id="name" name="staffbranch">
+                               <option selected> Branch Name </option>
+                              @foreach ($staffinfo as $sbranch)
+                              <option value="{{$sbranch->id}}">{{$sbranch->name}}</option>   
+                              @endforeach
+
+                               </select>
 
 <div class="input-group">
   <div class="custom-file">

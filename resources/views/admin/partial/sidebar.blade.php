@@ -1,6 +1,7 @@
  <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
+                    @if(auth()->user()->role=="admin")
                         <div class="nav">
                             <!-- Dashboard -->
                             <a class="nav-link" href="{{route('dashboard')}}">
@@ -53,8 +54,7 @@
                                     <a class="nav-link" href="{{route('admin.staff.list')}}">Staff List</a>
                                 </nav>
                             </div>
-                            
-                            
+                          @endif
 
                             <!-- Status -->
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsstatus" aria-expanded="false" aria-controls="collapseLayouts">
@@ -76,7 +76,9 @@
                                     <a class="nav-link" href="{{route('admin.unsuccessful.delievery')}}">Unsuccessful Delievery Atempt</a>
                                 </nav>
                             </div>
+                            @if(auth()->user()->role=='admin')
                             <div>
+                                
 
                             <!-- Tracking -->
 <!--                             
@@ -93,6 +95,7 @@
                             </div> -->
 
                             <!-- Payment -->
+                           
                             <a class="nav-link" href="{{route('dashboard')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Payment
@@ -105,6 +108,8 @@
                             </a>
                             
                         </div>
+                        
                     </div>
+                    @endif
                 </nav>
             </div>

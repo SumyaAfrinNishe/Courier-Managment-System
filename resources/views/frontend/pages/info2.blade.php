@@ -181,17 +181,11 @@ html, body {
                                 <input class="form-control" type="number" id="recepient_phone" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 
-                            <!-- <div class="col-md-12">
-                                <input class="form-control" type="text" id="branch_name"name="branch_name" placeholder="Branch Name" required>
-                            </div>
-                             -->
-
                              <select id="name" name="branch">
                                <option selected> Branch Name </option>
                               @foreach ($lists as $forbranch)
                               <option value="{{$forbranch->id}}">{{$forbranch->name}}</option>   
                               @endforeach
-
                                </select>
 
 
@@ -231,10 +225,10 @@ html, body {
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity" required>
+                                <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity in packet" required>
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight" required>
+                                <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight(kg)" required>
                             </div>
                             <div class="input-group">
                         <div class="custom-file">

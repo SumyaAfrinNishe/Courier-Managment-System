@@ -30,7 +30,8 @@ class DashboardController extends Controller
         $count['ud']=CustomerInfo::where('delievery','Unsuccessful Delivery Attempt')->count();
 
         return view('admin.partial.home',compact('count'));
-        // $request=CustomerInfo::all()->count();
+        //
+        
         // // dd($request);
         // $totalbranch=BranchList::all()->count();
         // // dd($totalbranch);

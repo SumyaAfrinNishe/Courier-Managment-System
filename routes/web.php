@@ -14,7 +14,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TrackListController;
-use App\Http\Controllers\ShowBranchController;
+use App\Http\Controllers\frontend\ShowBranchController;
 use App\Http\Controllers\CourierRecordController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\LoginController;

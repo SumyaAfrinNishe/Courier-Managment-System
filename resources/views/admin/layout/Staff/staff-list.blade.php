@@ -12,7 +12,7 @@
         <th scope="col">Consignment No.</th> -->
         <th scope="col">ID</th>
         <th scope="col">Name</th>
-        <!-- <th scope="col">Email</th> -->
+        <th scope="col">Email</th>
         <th scope="col">Branch</th>
         <th scope="col">Image</th>
         <th scope="col">Action</th>
@@ -23,8 +23,7 @@
     <tr>
         <td>{{$key+1}}</td>
         <td>{{$staff->staffname}}</td>
-        <!-- <td>{{$staff->staffemail}}</td> -->
-        <!-- <td>{{$staff->staffcontact}}</td> -->
+        <td>{{$staff->staffemail}}</td>
         <td>{{$staff->staffbranch}}</td>
         <td> 
             <img src="{{url('/uploads/'.$staff->staffimage)}}" width="100px" alt="staff image">
