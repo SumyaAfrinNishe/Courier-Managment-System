@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 use App\Models\CustomerInfo;
+use App\Models\BranchList;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\frontend\InformationController;
@@ -10,8 +11,9 @@ class InformationController extends Controller
 {
     public function information()
     {
+        $lists=BranchList::all();
         //dd("information");
-        return view('frontend.pages.info2');
+        return view('frontend.pages.info2',compact('lists'));
     }
 
     public function customerinfoCreate(Request $request)
@@ -43,7 +45,7 @@ class InformationController extends Controller
             'recepient_name'=>$request->recepient_name,
             'recepient_email'=>$request->recepient_email,
             'recepient_phone'=>$request->recepient_phone,
-            'branch_name'=>$request->branch_name,
+            'branch_name_id'=>$request->branch_name,
             'type_of_shipment'=>$request->type_of_shipment,
             'courier_description'=>$request->courier_description,
             'quantity'=>$request->quantity,

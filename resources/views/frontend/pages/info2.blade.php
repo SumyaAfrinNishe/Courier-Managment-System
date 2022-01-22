@@ -181,10 +181,20 @@ html, body {
                                 <input class="form-control" type="number" id="recepient_phone" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 
-                            <div class="col-md-12">
+                            <!-- <div class="col-md-12">
                                 <input class="form-control" type="text" id="branch_name"name="branch_name" placeholder="Branch Name" required>
                             </div>
-                            
+                             -->
+
+                             <select id="name" name="branch">
+                               <option selected> Branch Name </option>
+                              @foreach ($lists as $forbranch)
+                              <option value="{{$forbranch->id}}">{{$forbranch->name}}</option>   
+                              @endforeach
+
+                               </select>
+
+
                             <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="type_of_shipment">Type of: </label>
 

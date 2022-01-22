@@ -10,6 +10,7 @@
         <th scope="col">ID</th>
         <th scope="col">Sender Name</th> 
         <th scope="col">Recepient Name</th>
+        <th scope="col">Branch Name</th>
         <th scope="col">Tracking Number</th>
         <!-- <th scope="col">Image</th> -->
         <th scope="col">Customer Decision</th>
@@ -23,6 +24,7 @@
         <td>{{$key+1}}</td>
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
+        <td>{{$info->branch_name->name}}</td>
         <td>{{$info->track_number}}</td>
         <!-- <td>{{$info->cus_image}}</td> -->
         <td>{{$info->customer_decision}}</td>

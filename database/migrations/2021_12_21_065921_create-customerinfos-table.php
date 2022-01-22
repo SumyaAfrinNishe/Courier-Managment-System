@@ -19,8 +19,7 @@ class CreateCustomerinfosTable extends Migration
             $table->string('recepient_name');
             $table->string('recepient_email');
             $table->integer('recepient_phone');
-            $table->string('branch_name');
-            
+            $table->integer('branch_name_id');
             $table->string('type_of_shipment');
             $table->string('courier_description');
             $table->integer('quantity');
