@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\CustomerInfo;
+use App\Models\BranchList;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -16,7 +17,10 @@ class ProfileController extends Controller
     public function infoEdit($id)
     {
       $info=CustomerInfo::find($id);
-      return view('frontend.pages.edit-info2',compact('info'));
+      $lists=BranchList::all();
+    //   dd($info);
+    //$customerinfolist=Customer::with('branch')->get();
+      return view('frontend.pages.edit-info2',compact('info','lists'));
     }
 
     public function infoUpdate(Request $request,$id)
@@ -28,7 +32,7 @@ class ProfileController extends Controller
                 'recepient_name'=>$request->recepient_name,
                 'recepient_email'=>$request->recepient_email,
                 'recepient_phone'=>$request->recepient_phone,
-                'branch_name_id'=>$request->branch_name,
+                'branch_name_id'=>$request->branch,
                 'type_of_shipment'=>$request->type_of_shipment,
                 'courier_description'=>$request->courier_description,
                 'quantity'=>$request->quantity,

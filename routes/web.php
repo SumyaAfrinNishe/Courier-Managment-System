@@ -50,19 +50,23 @@ use App\Http\Controllers\frontend\ShowCourierInfoController;
 
 //frontend part
 Route::get('/home',[HomeController::class, 'home'])->name('home');
+
+Route::group(['middleware'=>'web_auth'],function (){
 Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name('showbranch');
 Route::get('/your/courier/information/',[ShowCourierInfoController::class,'showCourierInfo'])->name('show.courier.info');
 Route::get('/show/tracking/details',[ShowTrackController::class, 'showTrack'])->name('showtrack');
 Route::get('/search/by/tracking',[ShowTrackController::class,'trackSearch'])->name('track.search');
 Route::get('/your/profile',[HomeController::class,'profile'])->name('profile');
 Route::get('/your/courier/status',[ProfileController::class,'statusView'])->name('profile.status.view');
-
-
-
-
 Route::get('/information',[InformationController::class, 'information'])->name('information');
 Route::get('/edit/update/your/information/{info_id}',[ProfileController::class,'infoEdit'])->name('customer.edit.information');
-Route::get('/update/your/information/{info_id}',[ProfileController::class,'infoUpdate'])->name('customer.update.information');
+Route::put('/update/your/information/{info_id}',[ProfileController::class,'infoUpdate'])->name('customer.update.information');
+Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customerConfirm'])->name('admin.customer.confirm');
+Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
+Route::get('/customerinfo/change/price/{info_id}',[ProfileController::class,'changePrice'])->name('admin.customer.change.price');
+});
+
+
 Route::get('/admin/customerinfo',[CustomerController::class,'customerinfo'])->name('admin.customer.info');
 Route::post('/admin/customerinfo/create',[InformationController::class,'customerinfoCreate'])->name('admin.customer.create');
 Route::get('/customerinfo/view/{info_id}',[CustomerController::class,'customerDetails'])->name('admin.customer.details.view');
@@ -71,9 +75,7 @@ Route::put('/customerinfo/update/{info_id}',[CustomerController::class,'customer
 Route::get('/customerinfo/delete/{info_id}',[CustomerController::class,'customerDelete'])->name('admin.customer.details.delete');
 Route::get('/customerinfo/accept/{info_id}',[CustomerController::class,'customerAccept'])->name('admin.customer.accept');
 Route::get('/customerinfo/cancel/{info_id}',[CustomerController::class,'customerCancel'])->name('admin.customer.cancel');
-Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customerConfirm'])->name('admin.customer.confirm');
-Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
-Route::get('/customerinfo/change/price/{info_id}',[ProfileController::class,'changePrice'])->name('admin.customer.change.price');
+
 
 
 //login and registration

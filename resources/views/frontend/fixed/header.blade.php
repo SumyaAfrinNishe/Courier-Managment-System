@@ -12,7 +12,6 @@
 							<img src="{{url('frontend/images/courierlogo1.png')}}" alt="" style="width:100px;height:100px;"/>
 						    	<li style="list-style:none; "><a style="color: white;" href="{{route('home')}}">Home</a></li>
 						    	<li  style="list-style:none;" ><a style="color: white;" href="{{route('showbranch')}}">Branch</a></li>
-								<li style="list-style:none; "><a style="color: white;" href="{{route('showbranch')}}">Payment</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('information')}}">Courier Request</a></li>
 								<!-- <div class="col-lg-1">
 						<img src="{{url('frontend/images/courierlogo1.png')}}" alt="" style="width:100px;height:100px;"/>

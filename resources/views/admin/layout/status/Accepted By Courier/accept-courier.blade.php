@@ -1,6 +1,12 @@
 @extends('master')
 @section('content')
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Accepted By Courier</title>
+</head>
+<body>
+<div class="container">
 <h1>Accepted By Courier</h1>
 <a href="">
 
@@ -28,5 +34,8 @@
         </td>
         @endforeach
    </tbody>
-    
+   </table>
+</div>
+</body>
+</html>
     @endsection

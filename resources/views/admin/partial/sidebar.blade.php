@@ -12,12 +12,12 @@
                             <!-- Booking -->
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsbook" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Booking
+                                Courier Request
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayoutsbook" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{route('admin.customer.info')}}">Customer Information</a>
+                                    <a class="nav-link" href="{{route('admin.customer.info')}}">Courier Information</a>
                                     
 <!--                                     
                                     <a class="nav-link" href="{{route('admin.booking.add')}}">Add Courier</a>

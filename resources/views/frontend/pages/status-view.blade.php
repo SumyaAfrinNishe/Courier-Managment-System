@@ -49,20 +49,20 @@
         <td>{{$info->delievery}}</td>
 
         <td>{{$info->customer_decision}}</td>
-       
         @if($info->status == 'approved' && $info->customer_decision != 'Cancelled')
           <!-- <td>Now, you are disabled to take action</td> -->
           <td>
 
         <a class="btn btn-warning" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
-        <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a>
-        <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
+        <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a> <br>
+        
         </td>
           @else
           <td>Please Wait Your Request is Processing</td>
         @endif
 <td>
-<a class="btn btn-warning" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
+<a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
+<a class="btn btn-info" href="{{route('customer.edit.information',$info->id)}}">Update Information</i></a>
 </td>
 
     </tr>

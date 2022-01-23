@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <center>
@@ -30,10 +31,11 @@
 <p><h4><span style="color:red">Delivery Status:{{$ac->delievery}}</span></h4></p>
 </center>
 </div>
+<center>
         <form action="{{route('admin.accept.update.status',$ac->id)}}" method='POST' enctype="multipart/form-data">
          @method('PUT')
          @csrf
-        <p class="card-text" >Status:</p>
+        <p class="card-text" style="margin-top: 900px" >Status:</p>
         <select class="form-select" aria-label="Default select example" name="delievery">
         <option selected>{{$ac->delievery}}</option>
         <option value="Courier Collected">Courier Collected</option>
@@ -50,8 +52,10 @@
 <button type="submit" class="btn btn-success">Submit</button>
 </div>
 </form>
+</center>
   </div>
 </div>
+</center>
 
 <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
 <script type="text/javascript">

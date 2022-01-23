@@ -34,7 +34,7 @@
          @method('PUT')
          @csrf
 
-        <p class="card-text" >Status:</p>
+        <p class="card-text" style="margin-top: 900px">Status:</p>
         <select class="form-select" aria-label="Default select example" name="delievery">
         <option selected>{{$arrd->delievery}}</option>
         <option value="Accepted By Courier">Accepted By Courier</option>
