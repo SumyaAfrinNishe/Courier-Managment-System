@@ -1,5 +1,52 @@
 @extends('master')
 @section('content')
+
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+   /* .dropdown-menu{
+     a{
+     text-decoration: none;
+    }
+   } */
+</style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <center>
@@ -8,9 +55,10 @@
 
 
 </center>
+
+
+
 <div id="PrintTableArea">
-
-
 <p><h3>Customer Name: {{$info->user->name}}</span></h3><h2><span style="color:#2874A6"></span><h2></p>
 
 <p><h4><span style="color:#2E4053">Customer Contact: {{$info->user->phone}}</span></h4></p>
@@ -30,8 +78,8 @@
     <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$info->image)}}" alt="post">
 </p>
 <p><h4><span style="color:green">Tracking Number: {{$info->track_number}}</span></h4></p>
-</center>
-</div>
+
+  </div>
 <script type="text/javascript">
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
@@ -42,35 +90,49 @@
     }
 </script>
 
- 
+<center>
   <form action="{{route('admin.customer.details.update',$info->id)}}" method='POST'>
   @method('PUT')
   @csrf
-  <div class="dropdown" style="float:left;">
+
+  <div class="dropdown">
   <button class="dropbtn">Payment Status</button>
-  <div class="dropdown-content" style="left:0;">
+  <div class="dropdown-content">
   <a href="{{route('admin.payment.paid',$info->id)}}">Paid</a>
   <a href="{{route('admin.payment.condition',$info->id)}}">Condition</a>
-  
   </div>
 </div>
 
-<div class="dropdown" style="float:right;">
-  <button class="dropbtn">Delivery Status</button>
+  <!-- <div>
+  <div class="dropdown" style="float:left">
+  <button class="btn btn-warning dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Payment Status</button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+  <a href="{{route('admin.payment.paid',$info->id)}}" style="text-decoration: none;">Paid</a>
+  <a href="{{route('admin.payment.condition',$info->id)}}" style="text-decoration: none;">Condition</a>
+  </div>
+  </div> -->
+  
+<div class="dropdown">
+<button class="dropbtn">
+    Delivery Status
+  </button>
   <div class="dropdown-content">
-  <a href="{{route('admin.courier.accepted',$info->id)}}">Accepted By Courier</a>
-  <a href="{{route('admin.status.collected',$info->id)}}">Courier Collected</a>
-  <a href="{{route('admin.courier.ready.pickup',$info->id)}}">Ready To Pick Up</a>
-  <a href="{{route('admin.courier.picked',$info->id)}}">Courier Picked Up</a>
-  <a href="{{route('admin.courier.shipped',$info->id)}}">Shipped</a>
-  <a href="{{route('admin.courier.intransit',$info->id)}}">In-Transit</a>
-  <a href="{{route('admin.courier.arrived.destination',$info->id)}}">Arrived At Destination</a>
-  <a href="{{route('admin.courier.out.for.delievery',$info->id)}}">Out For Delievery</a>
-  <a href="{{route('admin.courier.deliverd',$info->id)}}">Delieverd </a>
-  <a href="{{route('admin.courier.unsuccessful',$info->id)}}">Unsuccessful Delievery Attempt</a>
+  <a href="{{route('admin.courier.accepted',$info->id)}}" style="text-decoration: none;">Accepted By Courier</a>
+  <a href="{{route('admin.status.collected',$info->id)}}" style="text-decoration: none;">Courier Collected</a>
+  <a href="{{route('admin.courier.ready.pickup',$info->id)}}" style="text-decoration: none;">Ready To Pick Up</a>
+  <a href="{{route('admin.courier.picked',$info->id)}}" style="text-decoration: none;">Courier Picked Up</a>
+  <a href="{{route('admin.courier.shipped',$info->id)}}" style="text-decoration: none;">Shipped</a>
+  <a href="{{route('admin.courier.intransit',$info->id)}}" style="text-decoration: none;">In-Transit</a>
+  <a href="{{route('admin.courier.arrived.destination',$info->id)}}" style="text-decoration: none;">Arrived At Destination</a>
+  <a href="{{route('admin.courier.out.for.delievery',$info->id)}}" style="text-decoration: none;">Out For Delievery</a>
+  <a href="{{route('admin.courier.deliverd',$info->id)}}" style="text-decoration: none;">Delieverd </a>
+  <a href="{{route('admin.courier.unsuccessful',$info->id)}}" style="text-decoration: none;">Unsuccessful Delievery Attempt</a>
   
   </div>
+  <div>
 </div>
+  </center>
+  <center>
   <div class="mb-3">
   <label for="price" class="form-label">Price</label>
   <input type="number" name="price" value="{{$info->price}}" class="form-control" id="price" placeholder="">
@@ -88,6 +150,9 @@
 <div>
 <button type="submit" class="btn btn-success">Submit</button>
 </div>
-
 </form>
+  </div>
+  </div>
+  </center>
+</center>
 @endsection

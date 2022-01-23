@@ -13,6 +13,6 @@ class StaffList extends Model
 
     public function sbranch()
     {
-        return this->belongsTo(BranchList::class,'staffbranch_id','id');
+        return $this->belongsTo(BranchList::class,'staffbranch_id','id');
     }
 }

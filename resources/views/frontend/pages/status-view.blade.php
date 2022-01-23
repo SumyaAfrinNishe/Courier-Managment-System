@@ -60,14 +60,11 @@
         </td>
           @else
           <td>Please Wait Your Request is Processing</td>
-         <!-- <td>
-
-        <a class="btn btn-success" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
-        <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a>
-        <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
-        </td>  -->
-
         @endif
+<td>
+<a class="btn btn-warning" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
+</td>
+
     </tr>
   @endforeach 
     </tbody>

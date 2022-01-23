@@ -9,7 +9,7 @@ class StaffController extends Controller
 {
     public function staffadd()
     {
-        $staffinfo=BranchList::all();
+        $staffinfo=BranchList::with('sbranch')->get();
         // dd($staffinfo);
         return view('admin.layout.staff.add-staff',compact('staffinfo'));
     }
@@ -48,7 +48,6 @@ class StaffController extends Controller
             'staffname'=>$request->staffname,
             'staffcontact'=>$request->staffcontact,
             'staffemail'=>$request->staffemail,
-            'staffpassword'=>bycrypt($request->staffpassword),
             'staffbranch_id'=>$request->staffbranch,
             'staffimage'=>$filename,
          ]);

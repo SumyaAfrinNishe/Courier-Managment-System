@@ -17,7 +17,7 @@ class InformationController extends Controller
 
     public function customerinfoCreate(Request $request)
     {
-        // dd($request->all());
+        
         
         $request->validate([
             'recepient_name'=>'required',

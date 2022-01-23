@@ -18,12 +18,8 @@
   <input type="text" name="staffemail" class="form-control" id="staffemail" placeholder="">
 </div>
 
-<div class="mb-3">
-  <label for="staffpassword" class="form-label">Password</label>
-  <input type="password" name="staffpassword" class="form-control" id="staffpassword" placeholder="">
-</div>
 
-<select id="name" name="staffbranch">
+<select id="name" name="sbranch">
                                <option selected> Branch Name </option>
                               @foreach ($staffinfo as $sbranch)
                               <option value="{{$sbranch->id}}">{{$sbranch->name}}</option>   
