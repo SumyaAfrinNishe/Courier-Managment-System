@@ -12,17 +12,17 @@ class InformationController extends Controller
     public function information()
     {
         $lists=BranchList::all();
-        //dd("information");
         return view('frontend.pages.info2',compact('lists'));
     }
 
     public function customerinfoCreate(Request $request)
     {
+        // dd($request->all());
         
         $request->validate([
             'recepient_name'=>'required',
             'recepient_email'=>'required',
-            'recepient_phone'=>'required|min:11|max:11',
+            'recepient_phone'=>'required|max:11',
             'branch_name'=>'required',
             'type_of_shipment'=>'required',
             'courier_description'=>'required',
@@ -39,7 +39,6 @@ class InformationController extends Controller
   
         }
 
-        // dd($request->all());
         CustomerInfo::create([
             'user_id'=>auth()->user()->id,
             'recepient_name'=>$request->recepient_name,

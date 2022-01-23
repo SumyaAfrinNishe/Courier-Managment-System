@@ -61,6 +61,8 @@ Route::get('/your/courier/status',[ProfileController::class,'statusView'])->name
 
 
 Route::get('/information',[InformationController::class, 'information'])->name('information');
+Route::get('/edit/update/your/information/{info_id}',[ProfileController::class,'infoEdit'])->name('customer.edit.information');
+Route::get('/update/your/information/{info_id}',[ProfileController::class,'infoUpdate'])->name('customer.update.information');
 Route::get('/admin/customerinfo',[CustomerController::class,'customerinfo'])->name('admin.customer.info');
 Route::post('/admin/customerinfo/create',[InformationController::class,'customerinfoCreate'])->name('admin.customer.create');
 Route::get('/customerinfo/view/{info_id}',[CustomerController::class,'customerDetails'])->name('admin.customer.details.view');
@@ -71,6 +73,7 @@ Route::get('/customerinfo/accept/{info_id}',[CustomerController::class,'customer
 Route::get('/customerinfo/cancel/{info_id}',[CustomerController::class,'customerCancel'])->name('admin.customer.cancel');
 Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customerConfirm'])->name('admin.customer.confirm');
 Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
+Route::get('/customerinfo/change/price/{info_id}',[ProfileController::class,'changePrice'])->name('admin.customer.change.price');
 
 
 //login and registration

@@ -18,13 +18,14 @@
         <th scope="col">Action</th>
     </tr>
     </thead>
+    
     <tbody>
         @foreach($customerinfolist as $key=>$info )
     <tr>
         <td>{{$key+1}}</td>
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
-        <td>{{$info->branch_name->name}}</td>
+        <td>{{$info->branch->name}}</td>
         <td>{{$info->track_number}}</td>
         <!-- <td>{{$info->cus_image}}</td> -->
         <td>{{$info->customer_decision}}</td>

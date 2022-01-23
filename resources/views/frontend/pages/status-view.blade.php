@@ -35,27 +35,37 @@
     <tr>
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
+       
         @if($info->customer_decision == 'Confirmed')
 
            <td>{{$info->track_number}}</td>
          @else
            <td> </td>  
          @endif  
+
         <td>{{$info->status}}</td>
         <td>{{$info->price}}</td>
         <td>{{$info->payment}}</td>
         <td>{{$info->delievery}}</td>
 
         <td>{{$info->customer_decision}}</td>
-        @if($info->customer_decision == 'Cancelled')
-          <td>Now, you are disabled to take action</td>
-         @else
-         <td>
+       
+        @if($info->status == 'approved' && $info->customer_decision != 'Cancelled')
+          <!-- <td>Now, you are disabled to take action</td> -->
+          <td>
 
-        
+        <a class="btn btn-warning" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
         <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a>
         <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
-        </td> 
+        </td>
+          @else
+          <td>Please Wait Your Request is Processing</td>
+         <!-- <td>
+
+        <a class="btn btn-success" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
+        <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a>
+        <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
+        </td>  -->
 
         @endif
     </tr>

@@ -158,7 +158,8 @@ html, body {
     </style>
 
     <body>
-    <form class="requires-validation" novalidate action="{{route('admin.customer.create')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('customer.update.information',$info->id)}}" method='POST' enctype="multipart/form-data">
+    @method('PUT')
         @csrf
     <div class="form-body">
         <div class="row">
@@ -166,31 +167,31 @@ html, body {
                 <div class="form-content">
                     <div class="form-items">
                         <h3>Customer Information</h3>
-                        <p>Fill Your Information for Courier</p>
-                        
+                        <p>Update Your Information for Courier</p>
+                        <form class="requires-validation" novalidate>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" id="recepient_name" name="recepient_name" placeholder="Receiver Name" required>
+                                <input class="form-control" type="text" id="recepient_name" value="{{$info->recepient_name}}" name="recepient_name" placeholder="Receiver Name" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="email" id="recepient_email" name="recepient_email" placeholder="Receiver E-mail Address" required>
+                                <input class="form-control" type="email" id="recepient_email" value="{{$info->recepient_email}}" name="recepient_email" placeholder="Receiver E-mail Address" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" id="recepient_phone" name="recepient_phone" placeholder="Receiver Contact" required>
+                                <input class="form-control" type="number" id="recepient_phone" value="{{$info->recepient_phone}}" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 
-                             <select id="name" name="branch_name">
+                             <select id="name" name="branch" value="{{$info->branch_name}}">
                                <option selected> Branch Name </option>
-                              @foreach ($lists as $branch)
-                              <option value="{{$branch->id}}">{{$branch->name}}</option>   
+                              @foreach ($info as $forbranch)
+                              <option value="{{$forbranch->id}}">{{$forbranch->name}}</option>   
                               @endforeach
                                </select>
 
 
                             <div class="col-md-12 mt-3">
-                            <label class="mb-3 mr-1" for="type_of_shipment">Type of: </label>
+                            <label class="mb-3 mr-1" for="type_of_shipment" value="{{$info->type_of_shipment}}">Type of: </label>
 
                             <input type="radio" class="btn-check" value="Electronics" name="type_of_shipment" id="electronics" autocomplete="off" required>
                             <label class="btn btn-sm btn-outline-secondary" for="electronics">Electronics</label>
@@ -221,14 +222,14 @@ html, body {
                               
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="text" id="courier_description"name="courier_description" placeholder="Courier Description" required>
+                                <input class="form-control" type="text" id="courier_description" value="{{$info->courier_description}}" name="courier_description" placeholder="Courier Description" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity in packet" required>
+                                <input class="form-control" type="number" id="quantity" value="{{$info->quantity}}" name="quantity" placeholder="Quantity in packet" required>
                             </div>
                             <div class="col-md-12">
-                                <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight(kg)" required>
+                                <input class="form-control" type="number" id="weight" value="{{$info->weight}}" name="weight" placeholder="Weight(kg)" required>
                             </div>
                             <div class="input-group">
                         <div class="custom-file">

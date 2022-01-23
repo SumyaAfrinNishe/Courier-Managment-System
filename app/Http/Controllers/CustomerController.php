@@ -11,8 +11,8 @@ class CustomerController extends Controller
 
     public function customerinfo()
     {
-        $customerinfolist=CustomerInfo::all();
-      //  dd($customerinfolist);
+        $customerinfolist=CustomerInfo::with('branch')->get();
+    //    dd("information");
         return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
     }
 

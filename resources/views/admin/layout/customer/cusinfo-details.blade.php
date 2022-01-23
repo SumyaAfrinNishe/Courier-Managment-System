@@ -19,6 +19,7 @@
 <p><h4><span style="color:#2E4053">Receipient Name: {{$info->recepient_name}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Recepient Phone: {{$info->recepient_phone}}</p></span></h4></p>
 <p><h4><span style="color:#2E4053">Recepient Email: {{$info->recepient_email}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Pickup Branch: {{$info->branch->name}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Type of Shipment: {{$info->type_of_shipment}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Courier Description: {{$info->courier_description}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Quantity: {{$info->quantity}}</span></h4></p>
