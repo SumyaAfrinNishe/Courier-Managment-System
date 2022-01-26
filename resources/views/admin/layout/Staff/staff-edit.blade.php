@@ -19,17 +19,13 @@
   <input type="text" name="staffemail" value="{{$staff->staffemail}}" class="form-control" id="staffemail" placeholder="">
 </div>
 
-<div class="mb-3">
-  <label for="staffpassword" class="form-label">Password</label>
-  <input type="password" name="staffpassword" value="{{$staff->staffpassword}}" class="form-control" id="staffpassword" placeholder="">
-</div>
+<select id="name" name="staffbranch">
+                               <option selected> Branch Name </option>
+                              @foreach ($upbranch as $sbranch)
+                              <option value="{{$sbranch->id}}">{{$sbranch->name}}</option>   
+                              @endforeach
 
-
-
-<div class="mb-3">
-  <label for="staffbranch" class="form-label">Branch</label>
-  <input type="text" name="staffbranch" value="{{$staff->staffbranch}}" class="form-control" id="staffbranch" placeholder="">
-</div>
+                               </select>
 
 
 

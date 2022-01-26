@@ -17,8 +17,16 @@ class StaffController extends Controller
 
     public function stafflist()
     {
+        $key=request()->search;
+        if($key)
+        {
+            $stafflistinfo=StaffList::where('staffname','LIKE',"%{$key}%")->get();
+            return view('admin.layout.staff.staff-list',compact('stafflistinfo'));
+        }
+        else{
         $stafflistinfo=StaffList::all();
         return view('admin.layout.staff.staff-list',compact('stafflistinfo'));
+        }
     }
 
     public function stafflistCreate(Request $request)
@@ -59,6 +67,7 @@ class StaffController extends Controller
     public function staffdetails($staff_id)
  {
      $staff=StaffList::find($staff_id);
+     
     // dd("$branch_id");
     return view('admin.layout.staff.staff-details',compact('staff'));
  }
@@ -74,13 +83,22 @@ class StaffController extends Controller
  public function staffEdit($id)
  {
    $staff=StaffList::find($id);
-     return view('admin.layout.staff.staff-edit',compact('staff'));
+   $upbranch=BranchList::all();
+     return view('admin.layout.staff.staff-edit',compact('staff','upbranch'));
    
  }
 
  public function staffUpdate(Request $request,$id)
  {
      $staff=StaffList::find($id);
+     $filename=$staff->staffimage;
+     if($request->hasfile('staffimage'))
+     {
+         $file=$request->file('staffimage');
+         $filename=date('Ymdhms').'.'.$file->getclientOriginalExtension();
+         $file->storeAs('/uploads',$filename);
+
+     }
      if($staff)
      {
          $staff->update([

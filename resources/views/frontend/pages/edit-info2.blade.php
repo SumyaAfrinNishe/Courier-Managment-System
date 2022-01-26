@@ -182,7 +182,7 @@ html, body {
                                 <input class="form-control" type="number" id="recepient_phone" value="{{$info->recepient_phone}}" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 
-                            <select id="name" name="from_branch" >
+                            <select id="name" name="from_branch_name" >
                              
                             <option selected>From Branch Name</option>
                             @foreach ($lists as $branch)
@@ -190,7 +190,7 @@ html, body {
                               @endforeach
                                </select>
 
-                             <select id="name" name="branch" >
+                             <select id="name" name="to_branch_name" >
                              
                             <option selected>To Branch Name</option>
                             @foreach ($lists as $branch)

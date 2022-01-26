@@ -1,9 +1,13 @@
 @extends('master')
 @section('content')
-<a href="">
+
 <h1>Customer Information</h1>
-<a href="">
-<table class="table table-bordered">
+
+<form action="{{route('admin.customer.info')}}" method="GET">
+    <input name="search" class="search-input" type="text" class="form-control" placeholder="Search with Customer Name" aria-label="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+</form>
+<table class="table container">
      <thead>
     <tr>
        
@@ -35,12 +39,20 @@
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
         <td>
+    
             <a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}"><i class="fas fa-eye"></i></a>
+</td>
+<td>
             <!-- <a class="btn btn-warning" href="{{route('admin.customer.details.edit',$info->id)}}"><i class="fas fa-edit"></i></a> -->
             <a class="btn btn-danger" href="{{route('admin.customer.details.delete',$info->id)}}"><i class="fas fa-trash-alt"></i></a>
+</td>
+<td>
             <a class="btn btn-success" href="{{route('admin.customer.accept',$info->id)}}"><i class="fas fa-check-circle"></i></a>
+</td>
+<td>
             <a class="btn btn-danger" href="{{route('admin.customer.cancel',$info->id)}}"><i class="fas fa-times-circle"></i></a>
         </td>
+
         
 </tr>
 @endforeach

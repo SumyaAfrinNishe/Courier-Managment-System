@@ -168,78 +168,100 @@ html, body {
                         <h3>Customer Information</h3>
                         <p>Fill Your Information for Courier</p>
                         
-
+                          <div class="form-group" style="padding-bottom: 15px;">
                             <div class="col-md-12">
                                 <input class="form-control" type="text" id="recepient_name" name="recepient_name" placeholder="Receiver Name" required>
                             </div>
-
-                            <div class="col-md-12">
+</div>
+                        <div class="form-group">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="email" id="recepient_email" name="recepient_email" placeholder="Receiver E-mail Address" required>
                             </div>
-
-                            <div class="col-md-12">
+</div>
+                          <div class="form-group">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="recepient_phone" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
-
+</div>
+                           
+                         <div style="padding-bottom: 15px;">
                              <select id="name" name="from_branch_name">
                                <option selected> From Branch Name </option>
                               @foreach ($lists as $branch)
                               <option value="{{$branch->id}}">{{$branch->name}}</option>   
                               @endforeach
                                </select>
-
+</div>
+<div style="padding-bottom: 15px;">
                                <select id="name" name="to_branch_name">
                                <option selected> To Branch Name </option>
                               @foreach ($lists as $branch)
                               <option value="{{$branch->id}}">{{$branch->name}}</option>   
                               @endforeach
                                </select>
+</div>
 
 
 
 
-                            <div class="col-md-12 mt-3">
+                     
                             <label class="mb-3 mr-1" for="type_of_shipment">Type of: </label>
 
                             <input type="radio" class="btn-check" value="Electronics" name="type_of_shipment" id="electronics" autocomplete="off" required>
+
+                  
                             <label class="btn btn-sm btn-outline-secondary" for="electronics">Electronics</label>
 
                             <input type="radio" class="btn-check" value="Cloths" name="type_of_shipment" id="cloths" autocomplete="off" required>
+     
+
                             <label class="btn btn-sm btn-outline-secondary" for="cloths">Cloths</label>
 
                             <input type="radio" class="btn-check" value="Shoes" name="type_of_shipment" id="shoes" autocomplete="off" required>
+
+
                             <label class="btn btn-sm btn-outline-secondary" for="shoes">Shoes</label>
 
                             <input type="radio" class="btn-check" value="Cosmetics" name="type_of_shipment" id="cosmetics" autocomplete="off" required>
+
                             <label class="btn btn-sm btn-outline-secondary" for="cosmetics">Cosmetics</label>
 
                             <input type="radio" class="btn-check" value="Jwellery" name="type_of_shipment" id="jwellery" autocomplete="off" required>
+
+
                             <label class="btn btn-sm btn-outline-secondary" for="jwellery">Jwellery</label>
 
                             <input type="radio" class="btn-check" value="Crockeries" name="type_of_shipment" id="crockeries" autocomplete="off" required>
+
+
                             <label class="btn btn-sm btn-outline-secondary" for="crockeries">Crockeries</label>
 
                             <input type="radio" class="btn-check" value="Food" name="type_of_shipment" id="food" autocomplete="off" required>
+
+
                             <label class="btn btn-sm btn-outline-secondary" for="food">Food</label>
 
                             <input type="radio" class="btn-check" value="Furniture" name="type_of_shipment" id="furniture" autocomplete="off" required>
+
+
                             <label class="btn btn-sm btn-outline-secondary" for="furniture">Furniture</label>
 
                             <input type="radio" class="btn-check" value="Construction" name="type_of_shipment" id="construction" autocomplete="off" required>
+
                             <label class="btn btn-sm btn-outline-secondary" for="construction">Construction Material</label>
                               
-                            </div>
-                            <div class="col-md-12">
+                          
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="text" id="courier_description"name="courier_description" placeholder="Courier Description" required>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity in packet" required>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight(kg)" required>
                             </div>
-                            <div class="input-group">
+                            <div class="input-group" style="padding-bottom: 15px;">
                         <div class="custom-file">
                         <input type="file" name="cus_image" class="custom-file-input" id="cus_image" aria-describedby="inputGroupFileAddon04">
                           </div>
@@ -248,14 +270,16 @@ html, body {
                         <div class="form-button mt-3">
                            <button id="submit" type="submit" class="btn btn-primary">Confirm</button>
                         </div>
-                    
-                    
-                    </form>
-                    </div>
+
+                        </div>
                 </div>
             </div>
         </div>
     </div>
+                    
+                    
+                    </form>
+                   
     
     </body>
 

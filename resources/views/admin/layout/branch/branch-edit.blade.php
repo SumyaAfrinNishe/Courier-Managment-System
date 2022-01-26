@@ -43,6 +43,11 @@
   <label for="country" class="form-label">Branch Country</label>
   <input type="text" name="country" value="{{$branch->country}}" class="form-control" id="country" placeholder="">
 </div>
+<div class="input-group">
+  <div class="custom-file">
+    <input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+  </div>
+</div>
 <button type="submit" class="btn btn-success">Update</button>
 </form>
 

@@ -11,9 +11,18 @@ class CustomerController extends Controller
 
     public function customerinfo()
     {
-        $customerinfolist=CustomerInfo::with('frombranch')->get();
+        $key=request()->search;
+        if($key)
+        {
+        $customerinfolist=CustomerInfo::where('user->name','LIKE',"%{$key}%")->get();
     //    dd("information");
         return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
+        }
+        else{
+            $customerinfolist=CustomerInfo::with('frombranch')->get();
+            //    dd("information");
+                return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
+        }
     }
 
 //     public function customerEdit($id)

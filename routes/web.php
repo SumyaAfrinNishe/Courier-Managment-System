@@ -116,17 +116,6 @@ Route::get('/branch/search',[BranchController::class,'branchSearch'])->name('adm
 
 //Customer and Booking
 
-
-//Booking
-Route::get('/booking',[BookingController::class,'bookingadd'])->name('admin.booking.add');
-Route::get('/courierrecord',[BookingController::class,'courierrecord'])->name('admin.courier.record');
-Route::post('/courierrecord/create',[BookingController::class,'courierrecordCreate'])->name('admin.courier.record.create');
-Route::get('/bookingdetails/view/{book_id}',[BookingController::class,'bookingdetails'])->name('admin.bookingdetails.view');
-Route::get('/bookingdetails/delete/{book_id}',[BookingController::class,'bookingdelete'])->name('admin.bookingdetails.delete');
-Route::get('/bookingedit/{book_id}',[BookingController::class,'bookingEdit'])->name('admin.booking.edit');
-Route::put('/bookingupdate/{book_id}',[BookingController::class,'bookingUpdate'])->name('admin.booking.update');
-Route::get('/booking/search',[BookingController::class,'bookingSearch'])->name('admin.booking.search');
-
 //Staff
 Route::get('/addstaff',[StaffController::class,'staffadd'])->name('admin.staff.add');
 Route::get('/stafflist',[StaffController::class,'stafflist'])->name('admin.staff.list');

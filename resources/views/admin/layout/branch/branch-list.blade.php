@@ -3,7 +3,7 @@
 
 <h1>Branch list</h1>
 
-<form action="{{route('admin.branch.search')}}" method="GET">
+<form action="{{route('admin.branch.list')}}" method="GET">
     <input name="search" class="search-input" type="text" placeholder="Search with Branch" aria-label="Search">
     <button class="btn btn-success" type="submit">Search</button>
 </form>
@@ -33,9 +33,9 @@
             <img src="{{url('/uploads/'.$branch->image)}}" width="100px" alt="product image">
         </td>
         <td>
-            <a class="btn btn-primary" href="{{route('admin.branchdetails.view',$branch->id)}}"><i class="fas fa-eye"></i></a>
-            <a class="btn btn-warning" href="{{route('admin.branch.edit',$branch->id)}}"><i class="fas fa-edit"></i></a>
-            <a class="btn btn-danger" href="{{route('admin.branchdetails.delete',$branch->id)}}"><i class="fas fa-trash-alt"></i></a>
+            <a class="btn btn-primary" href="{{route('admin.branchdetails.view',$branch->id)}}"><i class="fas fa-eye"></i></a></td>
+            <td><a class="btn btn-warning" href="{{route('admin.branch.edit',$branch->id)}}"><i class="fas fa-edit"></i></a></td>
+            <td><a class="btn btn-danger" href="{{route('admin.branchdetails.delete',$branch->id)}}"><i class="fas fa-trash-alt"></i></a>
         </td>
 </tr>
 @endforeach

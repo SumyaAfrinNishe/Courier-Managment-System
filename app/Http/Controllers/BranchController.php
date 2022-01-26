@@ -14,8 +14,16 @@ class BranchController extends Controller
     
     public function branchlist()
     {
+        $key=request()->search;
+        if($key)
+        {
+            $branchlistlist=BranchList::where('name','LIKE',"%{$key}%")->get();
+            return view('admin.layout.branch.branch-list',compact('branchlistlist'));
+        }
+        else{
         $branchlistlist=BranchList::all();
         return view('admin.layout.branch.branch-list',compact('branchlistlist'));
+        }
     }
 
 
@@ -88,6 +96,14 @@ class BranchController extends Controller
  public function branchUpdate(Request $request,$id)
  {
      $branch=BranchList::find($id);
+     $filename=$branch->image;
+      if($request->hasfile('image'))
+      {
+          $file=$request->file('image');
+          $filename=date('Ymdhms').'.'.$file->getclientOriginalExtension();
+          $file->storeAs('/uploads',$filename);
+
+      }
      if($branch)
      {
          $branch->update([
