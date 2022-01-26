@@ -15,8 +15,12 @@ class CustomerInfo extends Model
         return $this->belongsTo(User::class);
         //product->category_id,id
     }
-        public function branch(){
-            return $this->belongsTo(BranchList::class,'branch_name_id','id');
+        public function frombranch(){
+            return $this->belongsTo(BranchList::class,'from_branch_name_id','id');
+        }
+
+        public function tobranch(){
+            return $this->belongsTo(BranchList::class,'to_branch_name_id','id');
         }
     }
 

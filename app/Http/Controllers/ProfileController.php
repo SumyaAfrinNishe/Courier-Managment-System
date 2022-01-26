@@ -32,7 +32,8 @@ class ProfileController extends Controller
                 'recepient_name'=>$request->recepient_name,
                 'recepient_email'=>$request->recepient_email,
                 'recepient_phone'=>$request->recepient_phone,
-                'branch_name_id'=>$request->branch,
+                'from_branch_name_id'=>$request->branch,
+                'to_branch_name_id'=>$request->branch,
                 'type_of_shipment'=>$request->type_of_shipment,
                 'courier_description'=>$request->courier_description,
                 'quantity'=>$request->quantity,
@@ -86,6 +87,31 @@ class ProfileController extends Controller
           ]);
        }
        return redirect()->back()->with('success','Request for change the price');
+    }
+
+    public function paymentPaid($info_id)
+    {
+        $info = CustomerInfo::find($info_id);
+        if($info->payment)
+        {
+            $info->update([
+                'payment' => 'Paid'
+            ]);
+        }
+        return redirect()->back();
+    }
+
+    public function paymentCondition($info_id)
+    {
+        $info= CustomerInfo::find($info_id);
+        if($info->payment)
+        {
+            $info->update([
+                'payment' => 'Condition'
+            ]);
+        }
+    
+        return redirect()->back();
     }
 
 }

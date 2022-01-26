@@ -60,22 +60,23 @@
 
 <div id="PrintTableArea">
 <p><h3>Customer Name: {{$info->user->name}}</span></h3><h2><span style="color:#2874A6"></span><h2></p>
-
 <p><h4><span style="color:#2E4053">Customer Contact: {{$info->user->phone}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Customer Address: {{$info->user->email}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Customer Email: {{$info->user->email}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Receipient Name: {{$info->recepient_name}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Recepient Phone: {{$info->recepient_phone}}</p></span></h4></p>
 <p><h4><span style="color:#2E4053">Recepient Email: {{$info->recepient_email}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Pickup Branch: {{$info->branch->name}}</span></h4></p>
+<p><h4><span style="color:#2E4053">From Branch: {{$info->frombranch->name}}</span></h4></p>
+<p><h4><span style="color:#2E4053">To Branch: {{$info->tobranch->name}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Type of Shipment: {{$info->type_of_shipment}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Courier Description: {{$info->courier_description}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Quantity: {{$info->quantity}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Payment Type: {{$info->payment}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Price: {{$info->price}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Pickup Date: {{$info->pickup_date}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Pickup Time: {{$info->pickup_time}}</span></h4></p>
 <p>
-    <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$info->image)}}" alt="post">
+    <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$info->cus_image)}}" alt="post">
 </p>
 <p><h4><span style="color:green">Tracking Number: {{$info->track_number}}</span></h4></p>
 
@@ -95,23 +96,6 @@
   @method('PUT')
   @csrf
 
-  <div class="dropdown">
-  <button class="dropbtn">Payment Status</button>
-  <div class="dropdown-content">
-  <a href="{{route('admin.payment.paid',$info->id)}}">Paid</a>
-  <a href="{{route('admin.payment.condition',$info->id)}}">Condition</a>
-  </div>
-</div>
-
-  <!-- <div>
-  <div class="dropdown" style="float:left">
-  <button class="btn btn-warning dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Payment Status</button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-  <a href="{{route('admin.payment.paid',$info->id)}}" style="text-decoration: none;">Paid</a>
-  <a href="{{route('admin.payment.condition',$info->id)}}" style="text-decoration: none;">Condition</a>
-  </div>
-  </div> -->
-  
 <div class="dropdown">
 <button class="dropbtn">
     Delivery Status

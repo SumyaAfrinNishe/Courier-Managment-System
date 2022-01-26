@@ -25,9 +25,8 @@
       <th scope="col">Status</th>
       <th scope="col">Price</th>
       <th scope="col">Payment Status</th>
-      <th scope="col">Delivery Status</th>
       <th scope="col">Take Decision</th>
-      <th scope="col">Action</th>
+      <!-- <th scope="col">Action</th> -->
       </tr>
     </thead>
     <tbody>
@@ -35,22 +34,25 @@
     <tr>
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
-       
-        @if($info->customer_decision == 'Confirmed')
-
-           <td>{{$info->track_number}}</td>
+        @if($info->status == 'approved')
+           <td><b style="color:green">{{$info->track_number}}</b></td>
          @else
-           <td> </td>  
+           <td>Wait</td>  
          @endif  
-
         <td>{{$info->status}}</td>
         <td>{{$info->price}}</td>
-        <td>{{$info->payment}}</td>
-        <td>{{$info->delievery}}</td>
+        @if($info->customer_decision != 'Cancelled')
+        <td>
+     <a class="btn btn-warning" href="{{route('admin.payment.paid',$info->id)}}">Paid</i></a>
+     <a class="btn btn-danger" href="{{route('admin.payment.condition',$info->id)}}">Condition</i></a>
+      </td>
+      @else
+      <td>You are disabled to take action</td>
+      @endif
 
-        <td>{{$info->customer_decision}}</td>
+        <!-- <td>{{$info->customer_decision}}</td> -->
         @if($info->status == 'approved' && $info->customer_decision != 'Cancelled')
-          <!-- <td>Now, you are disabled to take action</td> -->
+          
           <td>
 
         <a class="btn btn-warning" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
@@ -60,12 +62,17 @@
           @else
           <td>Please Wait Your Request is Processing</td>
         @endif
+
+        @if($info->customer_decision != 'Cancelled')
 <td>
 <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
 <a class="btn btn-info" href="{{route('customer.edit.information',$info->id)}}">Update Information</i></a>
 </td>
-
+@else
+<td><b style="color:red">Successfully, cancel your request</b></td>
+@endif
     </tr>
+    
   @endforeach 
     </tbody>
   </table>

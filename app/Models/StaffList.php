@@ -2,8 +2,9 @@
 
 namespace App\Models;
 Use App\Models\BranchList;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\StaffList;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class StaffList extends Model
 {

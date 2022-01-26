@@ -11,7 +11,7 @@ class CustomerController extends Controller
 
     public function customerinfo()
     {
-        $customerinfolist=CustomerInfo::with('branch')->get();
+        $customerinfolist=CustomerInfo::with('frombranch')->get();
     //    dd("information");
         return view('admin.layout.customer.cusinfo',compact('customerinfolist'));
     }
@@ -90,36 +90,6 @@ class CustomerController extends Controller
         return redirect()->back()->with('success','Request cancel.');
     }
 
-    public function paymentPaid($info_id)
-    {
-        $info = CustomerInfo::find($info_id);
-        if($info->payment)
-        {
-            $info->update([
-                'payment' => 'Paid'
-            ]);
-        }
-        else
-        {
-            $info->update([
-                'payment' => 'Condition'
-            ]);   
-        }
-        return redirect()->back();
-    }
-
-    public function paymentCondition($info_id)
-    {
-        $info= CustomerInfo::find($info_id);
-        if($info->payment)
-        {
-            $info->update([
-                'status' => 'Condition'
-            ]);
-        }
-    
-        return redirect()->back();
-    }
 
     public function statusAccepted($info_id)
     {

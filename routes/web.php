@@ -64,6 +64,8 @@ Route::put('/update/your/information/{info_id}',[ProfileController::class,'infoU
 Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customerConfirm'])->name('admin.customer.confirm');
 Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
 Route::get('/customerinfo/change/price/{info_id}',[ProfileController::class,'changePrice'])->name('admin.customer.change.price');
+Route::get('payment/status/paid/{info_id}',[ProfileController::class,'paymentPaid'])->name('admin.payment.paid');
+Route::get('payment/status/condition/{info_id}',[ProfileController::class,'paymentCondition'])->name('admin.payment.condition');
 });
 
 
@@ -203,8 +205,6 @@ Route::put('/unsuccessful/update/{unsu_id}',[StatusController::class,'unsuccessf
 
 
 //payment status
-Route::get('payment/status/paid/{info_id}',[CustomerController::class,'paymentPaid'])->name('admin.payment.paid');
-Route::get('payment/status/condition/{info_id}',[CustomerController::class,'paymentCondition'])->name('admin.payment.condition');
 
 //deliver status
 Route::get('courier/status/accepted/by/courier/{info_id}',[CustomerController::class,'statusAccepted'])->name('admin.courier.accepted');

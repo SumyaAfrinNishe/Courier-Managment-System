@@ -9,9 +9,10 @@ class StaffController extends Controller
 {
     public function staffadd()
     {
-        $staffinfo=BranchList::with('sbranch')->get();
+        $branch=BranchList::all();
+        
         // dd($staffinfo);
-        return view('admin.layout.staff.add-staff',compact('staffinfo'));
+        return view('admin.layout.staff.add-staff',compact('branch'));
     }
 
     public function stafflist()

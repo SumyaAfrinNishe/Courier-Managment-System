@@ -8,11 +8,13 @@
     <tr>
        
         <th scope="col">ID</th>
+        <th scope="col">Image</th> 
         <th scope="col">Sender Name</th> 
         <th scope="col">Recepient Name</th>
-        <th scope="col">Branch Name</th>
+        <th scope="col">From Branch Name</th>
+        <th scope="col">To Branch Name</th>
         <th scope="col">Tracking Number</th>
-        <!-- <th scope="col">Image</th> -->
+        <th scope="col">Payment Status</th>
         <th scope="col">Customer Decision</th>
         <th scope="col">Your Decision</th>
         <th scope="col">Action</th>
@@ -23,11 +25,13 @@
         @foreach($customerinfolist as $key=>$info )
     <tr>
         <td>{{$key+1}}</td>
+        <td>{{$info->cus_image}}</td>
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
-        <td>{{$info->branch->name}}</td>
+        <td>{{$info->frombranch->name}}</td>
+        <td>{{$info->tobranch->name}}</td>
         <td>{{$info->track_number}}</td>
-        <!-- <td>{{$info->cus_image}}</td> -->
+        <td>{{$info->payment}}</td>
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
         <td>

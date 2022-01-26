@@ -19,9 +19,9 @@
 </div>
 
 
-<select id="name" name="sbranch">
+<select id="name" name="staffbranch">
                                <option selected> Branch Name </option>
-                              @foreach ($staffinfo as $sbranch)
+                              @foreach ($branch as $sbranch)
                               <option value="{{$sbranch->id}}">{{$sbranch->name}}</option>   
                               @endforeach
 

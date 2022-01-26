@@ -10,4 +10,5 @@ class BranchList extends Model
     use HasFactory;
     protected $table="branchlists";
     protected $guarded=[];
+   
 }

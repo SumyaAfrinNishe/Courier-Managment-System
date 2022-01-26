@@ -66,7 +66,7 @@
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-red order-card">
+            <div class="card bg-c-pink order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Courier Collected</h6>
                     <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$count['ccollected']}}</span></h2>
@@ -76,7 +76,7 @@
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-yellow order-card">
+            <div class="card bg-c-green order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Ready To Pick Up</h6>
                     <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$count['rtpu']}}</span></h2>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-yellow order-card">
+            <div class="card bg-c-blue order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Picked</h6>
                     <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$count['picked']}}</span></h2>
@@ -96,7 +96,7 @@
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-yellow order-card">
+            <div class="card bg-c-blue order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Shipped</h6>
                     <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$count['ship']}}</span></h2>
@@ -106,7 +106,7 @@
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-yellow order-card">
+            <div class="card bg-c-pink order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Intransit</h6>
                     <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$count['intran']}}</span></h2>
@@ -116,7 +116,7 @@
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-yellow order-card">
+            <div class="card bg-c-green order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Arrived At Destination</h6>
                     <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$count['aad']}}</span></h2>
@@ -136,7 +136,7 @@
         </div>
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-yellow order-card">
+            <div class="card bg-c-green order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Delivered</h6>
                     <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$count['delivrd']}}</span></h2>
