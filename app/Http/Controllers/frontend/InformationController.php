@@ -32,9 +32,9 @@ class InformationController extends Controller
         ]);
         
         $filename='';
-        if($request->hasfile('image'))
+        if($request->hasfile('cus_image'))
         {
-            $file=$request->file('image');
+            $file=$request->file('cus_image');
             $filename=date('Ymdhms').'.'.$file->getclientOriginalExtension();
             $file->storeAs('/uploads',$filename);
   

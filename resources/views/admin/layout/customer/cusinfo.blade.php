@@ -25,7 +25,7 @@
         @foreach($customerinfolist as $key=>$info )
     <tr>
         <td>{{$key+1}}</td>
-        <td>{{$info->cus_image}}</td>
+        <td><img src="{{url('/uploads/'.$info->cus_image)}}" width="100px" alt="courier image"></td>
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
         <td>{{$info->frombranch->name}}</td>

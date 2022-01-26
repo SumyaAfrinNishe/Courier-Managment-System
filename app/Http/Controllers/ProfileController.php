@@ -26,6 +26,17 @@ class ProfileController extends Controller
     public function infoUpdate(Request $request,$id)
     {
         $info=CustomerInfo::find($id);
+
+        $filename=$info->cus_image;
+        if($request->hasfile('cus_image'))
+        {
+            $file=$request->file('cus_image');
+            $filename=date('Ymdhms').'.'.$file->getclientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+  
+        }
+
+
         if($info)
         {
             $info->update([
@@ -38,7 +49,7 @@ class ProfileController extends Controller
                 'courier_description'=>$request->courier_description,
                 'quantity'=>$request->quantity,
                 'weight'=>$request->weight,
-               // 'image'=>$filename,
+                'cus_image'=>$filename,
             ]);
             return redirect()->back()->with('msg', 'Your Information Updated Successfully.');
         }
