@@ -24,7 +24,12 @@
       <label for="date">To Date:</label>
       <input type="date" class="form-control" id="todate" placeholder="To Date" name="todate">
     </div>
-
+    <div class="form-group">
+        <select class="form-select" aria-label="Default select example" name="payment">
+        <option value="paid">Paid</option>
+        <option value="condition">Condition</option>
+        <select>
+</div>
     <button type="submit" class="btn btn-default">Search</button>
   </form>
   <table class="table table-bordered">
@@ -52,7 +57,7 @@
 </tr>
 @endforeach
 </tbody>
-
+</table>
 </div>
 
 </body>

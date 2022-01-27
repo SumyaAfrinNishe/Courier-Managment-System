@@ -795,9 +795,9 @@ input.checkbox:checked:after {
 				<form action="{{route('profile.update')}}" method='POST'>
                     @method('PUT')
           @csrf
-					<input class="text" type="text" name="name" value="" placeholder="Your name" required="">
-					<input class="text" type="email" name="email" value="" placeholder="Your Email" required="">
-          <input class="text" type="number" name="phone" value=""placeholder="Your Contact" required="">
+					<input class="text" type="text" name="name" value="{{auth()->user()->name}}" placeholder="Your name" required="">
+					<input class="text" type="email" name="email" value="{{auth()->user()->email}}" placeholder="Your Email" required="">
+          <input class="text" type="number" name="phone" value="{{auth()->user()->phone}}"placeholder="Your Contact" required="">
 					
 				
 					<input type="submit" value="Update">

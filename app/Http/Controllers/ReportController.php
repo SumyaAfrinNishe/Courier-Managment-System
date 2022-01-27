@@ -13,8 +13,9 @@ class ReportController extends Controller
         {
             $from_date=request()->fromdate;
             $to_date=request()->todate;
-
-            $reports=CustomerInfo::where('payment','paid')->whereDate('created_at','>=',$from_date)->whereDate('created_at','>=',$to_date)->get();
+            $payment=request()->payment;
+            $reports=CustomerInfo::where('payment',$payment)
+            ->whereDate('created_at','>=',$from_date)->whereDate('created_at','>=',$to_date)->get();
         }
         return view('admin.layout.Report.report',compact('reports'));
     }
