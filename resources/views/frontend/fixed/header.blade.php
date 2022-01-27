@@ -13,6 +13,7 @@
 						    	<li style="list-style:none; "><a style="color: white;" href="{{route('home')}}">Home</a></li>
 						    	<li  style="list-style:none;" ><a style="color: white;" href="{{route('showbranch')}}">Branch</a></li>
 								<li style="list-style:none; "><a style="color: white;" href="{{route('information')}}">Courier Request</a></li>
+								<li style="list-style:none; "><a style="color: white;" href="{{route('profile.status.view')}}">My Courier History</a></li>
 								<!-- <div class="col-lg-1">
 						<img src="{{url('frontend/images/courierlogo1.png')}}" alt="" style="width:100px;height:100px;"/>
 					 </div> -->

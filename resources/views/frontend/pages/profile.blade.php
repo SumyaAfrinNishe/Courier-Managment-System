@@ -81,9 +81,9 @@
     </p>
     
     <div class="dropdown">
-  <button class="dropbtn">My Courier Status</button>
+  <button class="dropbtn">Update Profile</button>
   <div class="dropdown-content">
-    <a href="{{route('profile.status.view')}}">Click here</a>
+    <a href="{{route('profile.edit')}}">Click here</a>
   </div>
 </div>
   </div>

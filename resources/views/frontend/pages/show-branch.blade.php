@@ -21,8 +21,8 @@
                         <h2>{{$item->city}}</h2>
                         <h2>{{$item->state}}</h2>
                         <h2>{{$item->country}}</h2> -->
-                        <p> <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="branch image">
-                    </p>
+                        <p> <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="branch image"></p>
+          
 
                 </div>
                   

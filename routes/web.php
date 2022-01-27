@@ -13,7 +13,7 @@ use App\Http\Controllers\ProfileController;
 //backend
 use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\TrackListController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\frontend\ShowBranchController;
 use App\Http\Controllers\CourierRecordController;
 use App\Http\Controllers\frontend\HomeController;
@@ -57,6 +57,8 @@ Route::get('/your/courier/information/',[ShowCourierInfoController::class,'showC
 Route::get('/show/tracking/details',[ShowTrackController::class, 'showTrack'])->name('showtrack');
 Route::get('/search/by/tracking',[ShowTrackController::class,'trackSearch'])->name('track.search');
 Route::get('/your/profile',[HomeController::class,'profile'])->name('profile');
+Route::get('/your/profile/edit',[HomeController::class,'profileEdit'])->name('profile.edit');
+Route::put('/your/profile/update',[HomeController::class,'profileUpdate'])->name('profile.update');
 Route::get('/your/courier/status',[ProfileController::class,'statusView'])->name('profile.status.view');
 Route::get('/information',[InformationController::class, 'information'])->name('information');
 Route::get('/edit/update/your/information/{info_id}',[ProfileController::class,'infoEdit'])->name('customer.edit.information');
@@ -212,4 +214,5 @@ Route::get('courier/status/unsuccesful/delievery/attempt/{info_id}',[CustomerCon
 //Tracking
 Route::get('/status',[StatusController::class,'status'])->name('admin.status');
 Route::get('/tracklist',[StatusController::class,'tracklist'])->name('admin.track.list');
+Route::get('/report',[ReportController::class,'report'])->name('admin.report.show');
 });
