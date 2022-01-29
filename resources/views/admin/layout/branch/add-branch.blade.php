@@ -11,7 +11,8 @@
 </ul>
 </div>
 @endif
-
+<div class="card mt-3">
+  <div class="container p-5">
 <form action="{{route('admin.branch.list.create')}}" method='POST' enctype="multipart/form-data">
   
 @csrf
@@ -54,7 +55,8 @@
 </div>
 <button type="submit" class="btn btn-success">Submit</button>
 </form>
-
+</div>
+</div>
 @endsection
 
 <!-- <!DOCTYPE html>

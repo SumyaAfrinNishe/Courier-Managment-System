@@ -21,6 +21,7 @@ class LoginController extends Controller
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
             'phone'=>$request->phone,
+            'role'=>"user",
         ]);
         return redirect()->route('registration');
     }

@@ -16,8 +16,9 @@ class CreateStafflistsTable extends Migration
         Schema::create('stafflists', function (Blueprint $table) {
             $table->id();
             $table->string('staffname');
-            $table->string('staffemail');
             $table->integer('staffcontact');
+            $table->string('staffemail');
+            $table->string('staffpassword');
             $table->integer('staffbranch_id');
             $table->string('staffimage');
             $table->timestamps();

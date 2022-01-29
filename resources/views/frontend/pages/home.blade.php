@@ -16,11 +16,11 @@
                         <h1 class="title">Courier Management System</h1>
                         <!-- /Text title -->
                         <!-- <div class="button"><a href="#">See Details</a></div> -->
-                        <div class="box">
-                          <h1>Search Your Courier</h1>
+                        <div class="box" style="padding-top:85px">
+                          <h1>Track Your Courier</h1>
                           <form action="{{route('track.search')}}" method="GET">
-                            <input type="search" name="search" placeholder="Enter Your Tracking Number">
-                            <input type="submit" value="Search">
+                            <input type="text" name="search" placeholder="Enter Your Tracking Number">
+                            <input type="submit" value="Track">
                           </form>
                        </div>
                     </div>
@@ -34,11 +34,11 @@
                     <div class="slide_content_wrap">
                         <h1 class="title">Courier Management System</h1>
                        	<!-- <div class="button"><a href="#">See Details</a></div> -->
-                        <div class="box">
-                           <h1>Search Your Courier</h1>
+                        <div class="box" style="padding-top:200px">
+                           <h1>Track Your Courier</h1>
                            <form action="{{route('track.search')}}" method="GET">
-                            <input type="search" name="search" placeholder="Enter Your Tracking Number">
-                            <input type="submit" value="Search">
+                            <input type="text" name="search" placeholder="Enter Your Tracking Number">
+                            <input type="submit" value="Track">
                           </form>
                     </div>
                 </div>

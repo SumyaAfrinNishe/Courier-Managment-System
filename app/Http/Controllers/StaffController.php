@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\StaffList;
 use App\Models\BranchList;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class StaffController extends Controller
@@ -35,8 +36,9 @@ class StaffController extends Controller
         $request->validate([
 
             'staffname'=>'required',
-            'staffemail'=>'required',
             'staffcontact'=>'required|min:11|max:11',
+            'staffemail'=>'required',
+            'staffpassword'=>'required',
             'staffbranch'=>'required',
             'staffimage'=>'required',
 
@@ -50,6 +52,16 @@ class StaffController extends Controller
           $file->storeAs('/uploads',$filename);
 
       }
+
+      User::create([
+           'name'=>$request->staffname,
+          'email'=>$request->staffemail,
+          'password'=>bcrypt($request->staffpassword),
+          'phone'=>$request->staffcontact,
+          'role'=>"staff",
+      ]);
+
+    //   $lastuser=User::orderBy('created_at','desc')->first();
 //  dd("ok");
 // dd($request->all());
         StaffList::create([
@@ -57,6 +69,7 @@ class StaffController extends Controller
             'staffname'=>$request->staffname,
             'staffcontact'=>$request->staffcontact,
             'staffemail'=>$request->staffemail,
+            'staffpassword'=>$request->staffpassword,
             'staffbranch_id'=>$request->staffbranch,
             'staffimage'=>$filename,
          ]);

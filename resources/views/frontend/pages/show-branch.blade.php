@@ -9,24 +9,43 @@
 
             <div class="row">
                   @foreach($branchlists as $key=>$item)
-				<div class="col-md-3 top_box">
-				  <div class="view view-ninth"><a href="single.html">
-                    <img src="{{url('/uploads/'.$item->image)}}" class="img-responsive" alt="" style="height: 190px;"/>
-                   
-                      <div class="content">
-                        <h2>{{$item->name}}</h2>
-                        <h2>{{$item->contact}}</h2>
-                        <h2>{{$item->email}}</h2>
-                        <!-- <h2>{{$item->address}}</h2>
-                        <h2>{{$item->city}}</h2>
-                        <h2>{{$item->state}}</h2>
-                        <h2>{{$item->country}}</h2> -->
-                        <p> <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="branch image"></p>
-          
+				<div class="col-md-4 top_box" style="padding:25px">
+        <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px ;
+}
 
-                </div>
-                  
-           </div>
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 5px 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="{{url('/uploads/'.$item->image)}}" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h5><b>Name:{{$item->name}}</b></h5> 
+    <p><b>E-mail:</b>{{$item->email}}</p> 
+    <p><b>Contact:</b>{{$item->contact}}</p> 
+    <p><b>Address:</b>{{$item->address}}</p>
+    <p><b>City:</b>{{$item->city}}</p> 
+    <p><b>State:</b>{{$item->state}}</p>  
+
+  </div>
+</div>
 
         </div>
 

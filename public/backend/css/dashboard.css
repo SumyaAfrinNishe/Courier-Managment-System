@@ -21,8 +21,34 @@ body{
 .bg-c-pink {
     background: linear-gradient(45deg,#FF5370,#ff869a);
 }
+.bg-c-red {
+background: linear-gradient(45deg, #db0f0f,#f26161);
+}
 
+.bg-c-parrot {
+    background: linear-gradient(45deg, #06a106,#8bf371);
+    }
 
+    
+.bg-c-velvet {
+        background: linear-gradient(45deg, #ee2df5,#faa5e0);
+        }
+
+.bg-c-ting {
+            background: linear-gradient(45deg,#8bf371, #e2e461);
+            }
+.bg-c-yellowish {
+                background: linear-gradient(45deg,#baba20, #ebeb88);
+                }
+.bg-c-coffee {
+                    background: linear-gradient(45deg,#db7d30, #f5be8b);
+                    }
+.bg-c-pinkish {
+                        background: linear-gradient(45deg,#e34dcc, #eb98de);
+                        }
+.bg-c-black {
+                            background: linear-gradient(45deg,#7e7b79, #b6b5b5);
+                            }
 .card {
     border-radius: 5px;
     -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);

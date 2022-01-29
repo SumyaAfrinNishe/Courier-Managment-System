@@ -44,7 +44,7 @@
                                 Staff
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayoutss" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseLayoutstaff" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                 
                                     <a class="nav-link" href="{{route('admin.staff.add')}}">Add Staff</a>
@@ -106,8 +106,8 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                 
                             <!-- Report -->
-                            <a class="nav-link" href="{{route('admin.report.show')}}">Date Wise Payment(Paid)</a>
-                                    <a class="nav-link" href="{{route('admin.staff.list')}}">Time Wise</a>
+                            <a class="nav-link" href="{{route('admin.report.show')}}">For Payment</a>
+                                    <a class="nav-link" href="{{route('admin.staff.list')}}">For Status</a>
                                 </nav>
                             </div>
                             

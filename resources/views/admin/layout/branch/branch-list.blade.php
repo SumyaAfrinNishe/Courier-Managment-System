@@ -5,7 +5,7 @@
 
 <form action="{{route('admin.branch.list')}}" method="GET">
     <input name="search" class="search-input" type="text" placeholder="Search with Branch" aria-label="Search">
-    <button class="btn btn-success" type="submit">Search</button>
+    <button class="btn btn-success" type="submit"><i class='fas fa-search'></i></button>
 </form>
     
     <table class="table table-bordered">

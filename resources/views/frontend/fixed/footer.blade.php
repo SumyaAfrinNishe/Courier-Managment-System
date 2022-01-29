@@ -3,7 +3,7 @@
 				<div class="row">
 					<div class="col-md-3">
 						<ul class="footer_box">
-							<h4>Products</h4>
+							<h4>Contact</h4>
 							<li><a href="#">Mens</a></li>
 							<li><a href="#">Womens</a></li>
 							<li><a href="#">Youth</a></li>
@@ -18,7 +18,7 @@
 							<li><a href="#">Catalog Request/Download</a></li>
 						</ul>
 					</div>
-					<div class="col-md-3">
+					 <div class="col-md-3">
 						<ul class="footer_box">
 							<h4>Customer Support</h4>
 							<li><a href="#">Contact Us</a></li>
@@ -28,7 +28,7 @@
 							<li><a href="#">Replacement Binding Parts</a></li>
 						</ul>
 					</div>
-					<div class="col-md-3">
+					<!-- <div class="col-md-3">
 						<ul class="footer_box">
 							<h4>Newsletter</h4>
 							<div class="footer_search">
@@ -47,7 +47,7 @@
 		   					
 						</ul>
 					</div>
-				</div> -->
+				</div>  -->
 				
 				
 				<!-- <div class="row footer_bottom">

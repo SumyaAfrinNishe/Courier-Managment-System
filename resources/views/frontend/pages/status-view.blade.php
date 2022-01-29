@@ -32,6 +32,7 @@
     <tbody>
     @foreach($customerinfolist as $key=>$info )
     <tr>
+      
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
         @if($info->status == 'approved')
@@ -41,31 +42,15 @@
          @endif  
         <td>{{$info->status}}</td>
         <td>{{$info->price}}</td>
-        @if($info->customer_decision != 'Cancelled')
-        <td>
+        
+      <td>
      <a class="btn btn-warning" href="{{route('admin.payment.paid',$info->id)}}">Paid</i></a>
      <a class="btn btn-danger" href="{{route('admin.payment.condition',$info->id)}}">Condition</i></a>
       </td>
-      @else
-      <td>You are disabled to take action</td>
-      @endif
-
-        <!-- <td>{{$info->customer_decision}}</td> -->
-        @if($info->status == 'approved' && $info->customer_decision != 'Cancelled')
-          
-          <td>
-
-        <a class="btn btn-warning" href="{{route('admin.customer.change.price',$info->id)}}">Change Prize</i></a>
-        <a class="btn btn-success" href="{{route('admin.customer.confirm',$info->id)}}">Confirm</i></a> <br>
-        
-        </td>
-          @else
-          <td>Please Wait Your Request is Processing</td>
-        @endif
-
+     
         @if($info->customer_decision != 'Cancelled')
 <td>
-<a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel</i></a>
+<a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel Request</i></a>
 <a class="btn btn-info" href="{{route('customer.edit.information',$info->id)}}">Update Information</i></a>
 </td>
 @else

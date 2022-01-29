@@ -3,7 +3,7 @@
 <h1>Staff List</h1>
 <form action="{{route('admin.staff.list')}}" method="GET">
     <input name="search" class="search-input" type="text" placeholder="Search with Name" aria-label="Search">
-    <button class="btn btn-success" type="submit">Search</button>
+    <button class="btn btn-success" type="submit"><i class='fas fa-search'></i></button>
 </form>
 <table class="table table-bordered">
      <thead>
@@ -24,7 +24,7 @@
         <td>{{$key+1}}</td>
         <td>{{$staff->staffname}}</td>
         <td>{{$staff->staffemail}}</td>
-        <td>{{$staff->sbranch->name}}</td>
+        <td>{{$staff->sbranch->name}}</td>>
         <td> 
             <img src="{{url('/uploads/'.$staff->staffimage)}}" width="100px" alt="staff image">
         </td>
