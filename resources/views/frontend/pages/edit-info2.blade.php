@@ -170,27 +170,27 @@ html, body {
                         <p>Update Your Information for Courier</p>
                         <form class="requires-validation" novalidate>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="text" id="recepient_name" value="{{$info->recepient_name}}" name="recepient_name" placeholder="Receiver Name" required>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="email" id="recepient_email" value="{{$info->recepient_email}}" name="recepient_email" placeholder="Receiver E-mail Address" required>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="recepient_phone" value="{{$info->recepient_phone}}" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 
-                            <select id="name" name="from_branch_name" >
+                            <select id="name" name="from_branch_name" style="padding-bottom: 15px;">
                              
                             <option selected>From Branch Name</option>
-                            @foreach ($lists as $branch)
+                            @foreach($lists as $branch)
                               <option value="{{$branch->id}}">{{$branch->name}}</option>   
                               @endforeach
                                </select>
 
-                             <select id="name" name="to_branch_name" >
+                             <select id="name" name="to_branch_name" style="padding-bottom: 15px;">
                              
                             <option selected>To Branch Name</option>
                             @foreach ($lists as $branch)
@@ -199,7 +199,7 @@ html, body {
                                </select>
 
 
-                            <div class="col-md-12 mt-3">
+                            <div class="col-md-12 mt-3" style="padding-bottom: 15px;">
                             <label class="mb-3 mr-1" for="type_of_shipment" value="{{$info->type_of_shipment}}">Type of: </label>
 
                             <input type="radio" class="btn-check" value="Electronics" name="type_of_shipment" id="electronics" autocomplete="off" required>
@@ -230,23 +230,23 @@ html, body {
                             <label class="btn btn-sm btn-outline-secondary" for="construction">Construction Material</label>
                               
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="text" id="courier_description" value="{{$info->courier_description}}" name="courier_description" placeholder="Courier Description" required>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="quantity" value="{{$info->quantity}}" name="quantity" placeholder="Quantity in packet" required>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="weight" value="{{$info->weight}}" name="weight" placeholder="Weight(kg)" required>
                             </div>
-                            <div class="input-group">
+                            <div class="input-group" style="padding-bottom: 15px;">
                         <div class="custom-file">
                         <input type="file" name="cus_image" class="custom-file-input" id="cus_image" aria-describedby="inputGroupFileAddon04">
                           </div>
                           </div>
 
-                        <div class="form-button mt-3">
+                        <div class="form-button mt-3" style="padding-bottom: 15px;">
                            <button id="submit" type="submit" class="btn btn-primary">Confirm</button>
                         </div>
                     

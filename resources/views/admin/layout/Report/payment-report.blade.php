@@ -15,7 +15,7 @@
 <div class="container">
   <h2>Date Wise</h2>
   <!-- <p>Make the viewport larger than 768px wide to see that all of the form elements are inline, left aligned, and the labels are alongside.</p> -->
-  <form class="form-inline" action="{{route('admin.report.show')}}">
+  <form class="form-inline" action="{{route('admin.payment.report.show')}}">
     <div class="form-group">
       <label for="date">From Date:</label>
       <input type="date" class="form-control" id="fromdate" placeholder="From Date" name="fromdate">
@@ -46,7 +46,7 @@
 </tr>
 </thead>
 <tbody>
-        @foreach($reports as $key=>$rep )
+        @foreach($paymentreports as $key=>$rep )
     <tr>
         <td>{{$key+1}}</td>
         <td><img src="{{url('/uploads/'.$rep->cus_image)}}" width="100px" alt="courier image"></td>

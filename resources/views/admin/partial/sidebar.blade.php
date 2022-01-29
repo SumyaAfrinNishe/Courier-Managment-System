@@ -106,8 +106,8 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                 
                             <!-- Report -->
-                            <a class="nav-link" href="{{route('admin.report.show')}}">For Payment</a>
-                                    <a class="nav-link" href="{{route('admin.staff.list')}}">For Status</a>
+                            <a class="nav-link" href="{{route('admin.payment.report.show')}}">For Payment</a>
+                                    <a class="nav-link" href="{{route('admin.status.report.show')}}">For Status</a>
                                 </nav>
                             </div>
                             

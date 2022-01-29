@@ -214,5 +214,6 @@ Route::get('courier/status/unsuccesful/delievery/attempt/{info_id}',[CustomerCon
 //Tracking
 Route::get('/status',[StatusController::class,'status'])->name('admin.status');
 Route::get('/tracklist',[StatusController::class,'tracklist'])->name('admin.track.list');
-Route::get('/report',[ReportController::class,'report'])->name('admin.report.show');
+Route::get('/payment/report',[ReportController::class,'paymentreport'])->name('admin.payment.report.show');
+Route::get('/status/report',[ReportController::class,'statusreport'])->name('admin.status.report.show');
 });

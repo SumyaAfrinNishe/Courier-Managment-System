@@ -18,7 +18,7 @@
 </p>
 <p><h4><span style="color:#2E4053">Staff Contact: {{$staff->staffcontact}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Staff Email: {{$staff->staffemail}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Staff Branch: {{$staff->staffbranch}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Staff Branch: {{$staff->sbranch->name}}</span></h4></p>
 
 </center>
 </div>

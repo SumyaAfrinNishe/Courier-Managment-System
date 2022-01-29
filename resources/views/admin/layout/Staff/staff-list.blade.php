@@ -8,8 +8,6 @@
 <table class="table table-bordered">
      <thead>
     <tr>
-        <!-- <th scope="col">SI No.</th>
-        <th scope="col">Consignment No.</th> -->
         <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>

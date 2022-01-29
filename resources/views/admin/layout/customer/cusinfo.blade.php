@@ -19,6 +19,7 @@
         <th scope="col">To Branch Name</th>
         <th scope="col">Tracking Number</th>
         <th scope="col">Payment Status</th>
+        <th scope="col">Payment Action</th>
         <th scope="col">Customer Decision</th>
         <th scope="col">Your Decision</th>
         <th scope="col">Action</th>
@@ -36,6 +37,9 @@
         <td>{{$info->tobranch->name}}</td>
         <td>{{$info->track_number}}</td>
         <td>{{$info->payment}}</td>
+        <td>
+        <a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}">Add Payment</a>
+        </td>
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
         <td>

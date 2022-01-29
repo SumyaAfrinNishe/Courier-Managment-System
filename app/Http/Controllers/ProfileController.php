@@ -18,7 +18,7 @@ class ProfileController extends Controller
     {
       $info=CustomerInfo::find($id);
       $lists=BranchList::all();
-    //   dd($info);
+    //    dd($info);
     //$customerinfolist=Customer::with('branch')->get();
       return view('frontend.pages.edit-info2',compact('info','lists'));
     }
@@ -43,8 +43,8 @@ class ProfileController extends Controller
                 'recepient_name'=>$request->recepient_name,
                 'recepient_email'=>$request->recepient_email,
                 'recepient_phone'=>$request->recepient_phone,
-                'from_branch_name_id'=>$request->branch,
-                'to_branch_name_id'=>$request->branch,
+                'from_branch_name_id'=>$request->from_branch_name,
+                'to_branch_name_id'=>$request->to_branch_name,
                 'type_of_shipment'=>$request->type_of_shipment,
                 'courier_description'=>$request->courier_description,
                 'quantity'=>$request->quantity,
