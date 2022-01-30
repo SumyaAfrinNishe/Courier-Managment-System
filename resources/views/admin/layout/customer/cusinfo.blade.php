@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
 
+<div class="container">
 <h1>Customer Information</h1>
 
 <form action="{{route('admin.customer.info')}}" method="GET">
@@ -18,6 +19,7 @@
         <th scope="col">From Branch Name</th>
         <th scope="col">To Branch Name</th>
         <th scope="col">Tracking Number</th>
+        <th scope="col">Delivery Type</th>
         <th scope="col">Payment Status</th>
         <th scope="col">Payment Action</th>
         <th scope="col">Customer Decision</th>
@@ -28,7 +30,7 @@
     
     <tbody>
         @foreach($customerinfolist as $key=>$info )
-    <tr>
+    <tr> 
         <td>{{$key+1}}</td>
         <td><img src="{{url('/uploads/'.$info->cus_image)}}" width="100px" alt="courier image"></td>
         <td>{{$info->user->name}}</td>
@@ -36,12 +38,14 @@
         <td>{{$info->frombranch->name}}</td>
         <td>{{$info->tobranch->name}}</td>
         <td>{{$info->track_number}}</td>
+        <td>{{$info->delitype}}</td>
         <td>{{$info->payment}}</td>
         <td>
-        <a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}">Add Payment</a>
+        <a class="btn btn-warning" href="{{route('admin.add.payment',$info->id)}}">Add Payment</a>
         </td>
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
+        
         <td>
     
             <a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}"><i class="fas fa-eye"></i></a>
@@ -50,6 +54,7 @@
             <!-- <a class="btn btn-warning" href="{{route('admin.customer.details.edit',$info->id)}}"><i class="fas fa-edit"></i></a> -->
             <a class="btn btn-danger" href="{{route('admin.customer.details.delete',$info->id)}}"><i class="fas fa-trash-alt"></i></a>
 </td>
+
 <td>
             <a class="btn btn-success" href="{{route('admin.customer.accept',$info->id)}}"><i class="fas fa-check-circle"></i></a>
 </td>
@@ -62,4 +67,5 @@
 @endforeach
     </tbody>
 </table>
+</div>
 @endsection

@@ -28,7 +28,8 @@ class InformationController extends Controller
             'type_of_shipment'=>'required',
             'courier_description'=>'required',
             'quantity'=>'required',
-            'weight'=>'required'
+            'weight'=>'required',
+            'delitype'=>'required'
         ]);
         
         $filename='';
@@ -51,6 +52,7 @@ class InformationController extends Controller
             'courier_description'=>$request->courier_description,
             'quantity'=>$request->quantity,
             'weight'=>$request->weight,
+            'delitype'=>$request->delitype,
             'cus_image'=>$filename,
             'track_number'=>date('Ymdhmis'),
             'price'=>$request->price,

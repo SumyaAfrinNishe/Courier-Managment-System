@@ -216,4 +216,7 @@ Route::get('/status',[StatusController::class,'status'])->name('admin.status');
 Route::get('/tracklist',[StatusController::class,'tracklist'])->name('admin.track.list');
 Route::get('/payment/report',[ReportController::class,'paymentreport'])->name('admin.payment.report.show');
 Route::get('/status/report',[ReportController::class,'statusreport'])->name('admin.status.report.show');
+Route::get('/add/payment/{info_id}',[CustomerController::class,'addPayment'])->name('admin.add.payment');
+Route::post('/add/payment/create/{d}',[CustomerController::class,'addPaymentCreate'])->name('admin.add.payment.create');
+Route::get('payment/status/paid',[CustomerController::class,'paymentPaid'])->name('admin.payment.paid');
 });

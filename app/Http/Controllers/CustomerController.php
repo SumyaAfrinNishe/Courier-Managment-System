@@ -214,4 +214,21 @@ class CustomerController extends Controller
             return redirect()->back();
     }
 
+    public function addPayment($id)
+    {
+        return view('admin.layout.customer.add-payment',compact('id'));
+    }
+    
+    public function addPaymentCreate(Request $request,$id)
+    {
+
+         CustomerInfo::find($id)->update(['payment'=>'Paid','transid'=>$request->transid]);
+
+        
+         return redirect()->back();
+ }
+    
+
+
+
 }

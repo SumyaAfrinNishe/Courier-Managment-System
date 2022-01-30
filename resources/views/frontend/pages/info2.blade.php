@@ -261,6 +261,13 @@ html, body {
                             <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight(kg)" required>
                             </div>
+                            <div class="col-md-12" style="padding-bottom: 15px;">
+                            <select class="form-control" name="delitype">
+                            <option selected>Delivery Type </option>
+                            <option value="PrePayment">PrePayment</option>
+                            <option value="Condition">Condition</option>
+                            </select>
+                            </div>
                             <div class="input-group" style="padding-bottom: 15px;">
                         <div class="custom-file">
                         <input type="file" name="cus_image" class="custom-file-input" id="cus_image" aria-describedby="inputGroupFileAddon04">

@@ -24,7 +24,7 @@
       <th scope="col">Tracking Number</th>
       <th scope="col">Status</th>
       <th scope="col">Price</th>
-      <th scope="col">Payment Status</th>
+      <!-- <th scope="col">Payment Status</th> -->
       <th scope="col">Take Decision</th>
       <!-- <th scope="col">Action</th> -->
       </tr>
@@ -43,10 +43,10 @@
         <td>{{$info->status}}</td>
         <td>{{$info->price}}</td>
         
-      <td>
+      <!-- <td>
      <a class="btn btn-warning" href="{{route('admin.payment.paid',$info->id)}}">Paid</i></a>
      <a class="btn btn-danger" href="{{route('admin.payment.condition',$info->id)}}">Condition</i></a>
-      </td>
+      </td> -->
      
         @if($info->customer_decision != 'Cancelled')
 <td>

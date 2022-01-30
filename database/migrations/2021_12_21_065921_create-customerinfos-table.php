@@ -25,6 +25,7 @@ class CreateCustomerinfosTable extends Migration
             $table->string('courier_description');
             $table->integer('quantity');
             $table->integer('weight');
+            $table->string('delitype');
             $table->string('cus_image');
             $table->bigInteger('track_number')->nullable();
             $table->string('customer_decision')->default('Pending');
@@ -33,6 +34,7 @@ class CreateCustomerinfosTable extends Migration
             $table->date('pickup_date')->nullable();
             $table->time('pickup_time')->nullable();
             $table->string('payment')->default('Pending');
+            $table->integer('transid')->nullable();
             $table->string('delievery')->default('Pending');
             $table->timestamps();
         });

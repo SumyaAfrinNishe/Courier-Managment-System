@@ -1,6 +1,11 @@
 @extends('master')
 @section('content')
 <h1 style="text-align:center;"> Add Staff</h1>
+@if(session()->has('success'))
+    <p class="alert alert-success">
+        {{session()->get('success')}}
+    </p>
+@endif
 @if ($errors->any())
 <div class="alert alert-warning" role="alert">
     <ul>

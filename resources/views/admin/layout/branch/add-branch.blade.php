@@ -1,6 +1,11 @@
 @extends('master')
 @section('content')
 <h1> Add Branch</h1>
+@if(session()->has('success'))
+    <p class="alert alert-success">
+        {{session()->get('success')}}
+    </p>
+@endif
 @if ($errors->any())
 <div class="alert alert-warning" role="alert">
 

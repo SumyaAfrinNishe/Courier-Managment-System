@@ -100,29 +100,29 @@ class ProfileController extends Controller
        return redirect()->back()->with('success','Request for change the price');
     }
 
-    public function paymentPaid($info_id)
-    {
-        $info = CustomerInfo::find($info_id);
-        if($info->payment)
-        {
-            $info->update([
-                'payment' => 'Paid'
-            ]);
-        }
-        return redirect()->back();
-    }
+    // public function paymentPaid($info_id)
+    // {
+    //     $info = CustomerInfo::find($info_id);
+    //     if($info->payment)
+    //     {
+    //         $info->update([
+    //             'payment' => 'Paid'
+    //         ]);
+    //     }
+    //     return redirect()->back();
+    // }
 
-    public function paymentCondition($info_id)
-    {
-        $info= CustomerInfo::find($info_id);
-        if($info->payment)
-        {
-            $info->update([
-                'payment' => 'Condition'
-            ]);
-        }
+    // public function paymentCondition($info_id)
+    // {
+    //     $info= CustomerInfo::find($info_id);
+    //     if($info->payment)
+    //     {
+    //         $info->update([
+    //             'payment' => 'Condition'
+    //         ]);
+    //     }
     
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
 }
