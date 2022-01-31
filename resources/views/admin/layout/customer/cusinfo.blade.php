@@ -8,7 +8,7 @@
     <input name="search" class="search-input" type="text" class="form-control" placeholder="Search with Customer Name" aria-label="Search">
     <button class="btn btn-success" type="submit"><i class='fas fa-search'></i></button>
 </form>
-<table class="table container">
+<table class="table table-bordered">
      <thead>
     <tr>
        

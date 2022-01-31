@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Courier Request is Approved</title>
+    <title>Your Courier Request is Cancelled</title>
 </head>
 <body>
     
-    <h1>{{$details['title']}}</h1>
-    <p>Dear {{$details->user->name}}</p>
-    <p>Your tracking number is {{$details->track_number}}</p>
-    <p>Thank You.</p>
-
-
+    <h1>{{$cancels['title']}}</h1>
+    <p>Dear {{$cancels->user->name}}</p>
+    <p>Sorry,your courier request has been cancelled.</p>
 </body>
 </html>

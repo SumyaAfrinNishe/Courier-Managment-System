@@ -6,6 +6,7 @@ use App\Model\BranchList;
 use Illuminate\Http\Request;
 use App\Models\CustomerInfo;
 use App\Mail\TestMail;
+use App\Mail\CancelMail;
 use Illuminate\Support\Facades\Mail;
 
 class CustomerController extends Controller
@@ -77,6 +78,7 @@ class CustomerController extends Controller
             $info->update([
                 'status' => 'approved'
             ]);
+            
         }
         // else
         // {
@@ -98,7 +100,7 @@ class CustomerController extends Controller
                 'status' => 'cancelled'
             ]);
         }
-        Mail::to($info->user->email)->send(new TestMail($info));
+        Mail::to($info->user->email)->send(new CancelMail($info));
         return "Email sent";
         return redirect()->back()->with('success','Request cancel.');
     }

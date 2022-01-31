@@ -19,7 +19,7 @@
                 <div class="card-block">
                     <h6 class="m-b-20">Total Courier Request</h6>
                     <!-- <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span></span></h2> -->
-                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>{{$count['request']}}</span></h2>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span></span></h2>
                     <p class="m-b-0">Cancel Request<span class="f-right">{{$count['cancelrequest']}}</span></p>
                 </div>
             </div>
