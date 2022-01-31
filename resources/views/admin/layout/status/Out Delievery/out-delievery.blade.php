@@ -2,7 +2,7 @@
 @section('content')
 
 <h1>Total Out for Delievery</h1>
-<a href="">
+
 
     <table class="table table-bordered">
     <thead>

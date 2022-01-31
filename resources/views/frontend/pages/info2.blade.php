@@ -264,7 +264,7 @@ html, body {
                             <div class="col-md-12" style="padding-bottom: 15px;">
                             <select class="form-control" name="delitype">
                             <option selected>Delivery Type </option>
-                            <option value="PrePayment">PrePayment</option>
+                            <option value="Prepayment">PrePayment</option>
                             <option value="Condition">Condition</option>
                             </select>
                             </div>

@@ -70,6 +70,7 @@
                                     <a class="nav-link" href="{{route('admin.arrived.destination')}}">Arrived at Destination</a>
                                     <a class="nav-link" href="{{route('admin.out.delievery')}}">Out for Delievery</a>
                                     <a class="nav-link" href="{{route('admin.total.delieverd')}}">Delievered Courier</a>
+                                    <a class="nav-link" href="{{route('admin.handover.delievery')}}">Handover</a>
                                     <a class="nav-link" href="{{route('admin.unsuccessful.delievery')}}">Unsuccessful Delievery Atempt</a>
                                 </nav>
                             </div>

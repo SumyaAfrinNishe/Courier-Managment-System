@@ -139,6 +139,34 @@ class StatusController extends Controller
        }
     } 
 
+    public function handover()
+    {
+        $handover=CustomerInfo::where('delievery','Handover')->get();
+        return view('admin.layout.status.Handover.handover',compact('handover'));
+    }
+    public function handoverDetails($ho_id)
+    {
+        $ho=CustomerInfo::find($ho_id);
+        return view('admin.layout.status.Handover.handover-details',compact('ho'));
+    }
+
+    public function handoverEdit($id)
+    {
+        $ho=CustomerInfo::find($id);
+        return view('admin.layout.status.Handover.handover-edit',compact('ho'));
+    } 
+    public function handoverUpdate(Request $request,$id)
+    {
+        $ho=CustomerInfo::find($id);
+        if($ho)
+        {
+            $ho->update([
+               'delievery'=>$request->delievery,
+           ]);
+           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+       }
+    } 
+
 
 
 

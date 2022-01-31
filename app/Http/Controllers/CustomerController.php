@@ -5,6 +5,8 @@ use App\Model\User;
 use App\Model\BranchList;
 use Illuminate\Http\Request;
 use App\Models\CustomerInfo;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 
 class CustomerController extends Controller
 {
@@ -76,13 +78,14 @@ class CustomerController extends Controller
                 'status' => 'approved'
             ]);
         }
-        else
-        {
-            $info->update([
-                'status' => 'cancelled'
-            ]);   
-        }
-           
+        // else
+        // {
+        //     $info->update([
+        //         'status' => 'cancelled'
+        //     ]);   
+        // }
+        Mail::to($info->user->email)->send(new TestMail($info));
+        return "Email sent";
         return redirect()->back()->with('success','Request Approve.');
     }
 
@@ -95,7 +98,8 @@ class CustomerController extends Controller
                 'status' => 'cancelled'
             ]);
         }
-    
+        Mail::to($info->user->email)->send(new TestMail($info));
+        return "Email sent";
         return redirect()->back()->with('success','Request cancel.');
     }
 
@@ -210,6 +214,16 @@ class CustomerController extends Controller
         // {
             $info->update([
                 'delievery' => 'Unsuccessful Delivery Attempt'
+            ]);
+            return redirect()->back();
+    }
+    public function statusHandover($info_id)
+    {
+        $info = CustomerInfo::find($info_id);
+        // if($info->delievery)
+        // {
+            $info->update([
+                'delievery' => 'Handover'
             ]);
             return redirect()->back();
     }

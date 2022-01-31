@@ -45,22 +45,14 @@
         </td>
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
-        
-        <td>
-    
-            <a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}"><i class="fas fa-eye"></i></a>
-</td>
+        <td><a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}"><i class="fas fa-eye"></i></a></td>
 <td>
             <!-- <a class="btn btn-warning" href="{{route('admin.customer.details.edit',$info->id)}}"><i class="fas fa-edit"></i></a> -->
-            <a class="btn btn-danger" href="{{route('admin.customer.details.delete',$info->id)}}"><i class="fas fa-trash-alt"></i></a>
+<a class="btn btn-danger" href="{{route('admin.customer.details.delete',$info->id)}}"><i class="fas fa-trash-alt"></i></a>
 </td>
 
-<td>
-            <a class="btn btn-success" href="{{route('admin.customer.accept',$info->id)}}"><i class="fas fa-check-circle"></i></a>
-</td>
-<td>
-            <a class="btn btn-danger" href="{{route('admin.customer.cancel',$info->id)}}"><i class="fas fa-times-circle"></i></a>
-        </td>
+<td><a class="btn btn-success" href="{{route('admin.customer.accept',$info->id)}}"><i class="fas fa-check-circle"></i></a></td>
+<td><a class="btn btn-danger" href="{{route('admin.customer.cancel',$info->id)}}"><i class="fas fa-times-circle"></i></a></td>
 
         
 </tr>

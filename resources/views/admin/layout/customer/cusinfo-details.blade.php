@@ -110,6 +110,9 @@
   <a href="{{route('admin.courier.arrived.destination',$info->id)}}" style="text-decoration: none;">Arrived At Destination</a>
   <a href="{{route('admin.courier.out.for.delievery',$info->id)}}" style="text-decoration: none;">Out For Delievery</a>
   <a href="{{route('admin.courier.deliverd',$info->id)}}" style="text-decoration: none;">Delieverd </a>
+  @if($info->payment=='Paid')
+  <a href="{{route('admin.courier.handover',$info->id)}}" style="text-decoration: none;">Handover </a>
+  @endif
   <a href="{{route('admin.courier.unsuccessful',$info->id)}}" style="text-decoration: none;">Unsuccessful Delievery Attempt</a>
   
   </div>

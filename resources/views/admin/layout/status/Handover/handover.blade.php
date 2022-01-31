@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Accepted By Courier</title>
+  <title>Courier Handover</title>
 </head>
 <body>
 <div class="container">
-<h1>Accepted By Courier</h1>
+<h1>Courier Handover</h1>
 
 
     <table class="table table-bordered">
@@ -22,14 +22,14 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($acceptcouriers as $key=>$ac)
+    @foreach($handover as $key=>$ho)
         <td>{{$key+1}}</td>
-        <td>{{$ac->track_number}}</td>
-        <td>{{$ac->user->name}}</td>
-        <td>{{$ac->recepient_name}}</td>
-        <td>{{$ac->delievery}}</td>
+        <td>{{$ho->track_number}}</td>
+        <td>{{$ho->user->name}}</td>
+        <td>{{$ho->recepient_name}}</td>
+        <td>{{$ho->delievery}}</td>
         <td>
-            <a class="btn btn-primary" href="{{route('admin.acceptdetails.view',$ac->id)}}"><i class="fas fa-eye"></i></a>
+            <a class="btn btn-primary" href="{{route('admin.handover.details.view',$ho->id)}}"><i class="fas fa-eye"></i></a>
             
         </td>
         @endforeach

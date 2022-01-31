@@ -1,21 +1,20 @@
 <?php
 
-//frontend
+//backend
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\Frontend\ShowTrackController;
-use App\Http\Controllers\BranchController;
-use App\Http\Controllers\StatusController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\ProfileController;
-//backend
-use App\Http\Controllers\AddBranchController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\BranchController;
+use App\Http\Controllers\StatusController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MailController;
+//frontend
+
+use App\Http\Controllers\Frontend\ShowTrackController;
 use App\Http\Controllers\frontend\ShowBranchController;
-use App\Http\Controllers\CourierRecordController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\LoginController;
 use App\Http\Controllers\frontend\InformationController;
@@ -90,7 +89,7 @@ Route::post('/user/do/login',[LoginController::class,'userdoLogin'])->name('doLo
 Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
 
 
-
+Route::get('/send/email',[MailController::class,'Sendmail'])->name('send.mail');
 
     Route::get('/login',[AdminController::class,'login'])->name('admin.login');
     Route::post('/do/login',[AdminController::class,'doLogin'])->name('admin.doLogin');
@@ -193,6 +192,11 @@ Route::get('/unsuccessful/details/view/{unsu_id}',[StatusController::class,'unsu
 Route::get('/unsuccessful/edit/{unsu_id}',[StatusController::class,'unsuccessfulEdit'])->name('admin.unsuccessful.edit');
 Route::put('/unsuccessful/update/{unsu_id}',[StatusController::class,'unsuccessfulUpdate'])->name('admin.unsuccessful.update.status');
 
+Route::get('/handover',[StatusController::class,'handover'])->name('admin.handover.delievery');
+Route::get('/handover/details/view/{ho_id}',[StatusController::class,'handoverDetails'])->name('admin.handover.details.view');
+Route::get('/handover/edit/{ho_id}',[StatusController::class,'handoverEdit'])->name('admin.handover.edit');
+Route::put('/handover/update/{ho_id}',[StatusController::class,'handoverUpdate'])->name('admin.handover.update.status');
+
 
 
 //payment status
@@ -208,6 +212,7 @@ Route::get('courier/status/out/for/delivery/{info_id}',[CustomerController::clas
 Route::get('courier/status/picked/{info_id}',[CustomerController::class,'statusPicked'])->name('admin.courier.picked');
 Route::get('courier/status/delieverd/{info_id}',[CustomerController::class,'statusDeliverd'])->name('admin.courier.deliverd');
 Route::get('courier/status/unsuccesful/delievery/attempt/{info_id}',[CustomerController::class,'statusUnsuccessful'])->name('admin.courier.unsuccessful');
+Route::get('courier/status/handover/{info_id}',[CustomerController::class,'statusHandover'])->name('admin.courier.handover');
 
 
 
