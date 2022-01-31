@@ -12,7 +12,7 @@ class InformationController extends Controller
     public function information()
     {
         $lists=BranchList::all();
-        return view('frontend.pages.info2',compact('lists'));
+        return view('frontend.pages.Courier Information.info2',compact('lists'));
     }
 
     public function customerinfoCreate(Request $request)

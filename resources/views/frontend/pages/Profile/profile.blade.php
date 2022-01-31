@@ -79,14 +79,19 @@
     <p>
       <b>Contact:</b>{{auth()->user()->phone}}
     </p>
+
     
     <div class="dropdown">
   <button class="dropbtn">Update Profile</button>
   <div class="dropdown-content">
     <a href="{{route('profile.edit')}}">Click here</a>
+    <a href="{{route('change.password')}}">Change Password</a>
   </div>
 </div>
   </div>
+  <div style="margin:2px;">
+      <a href="{{route('home')}}">Back to Home</button>
+    </div>
 
   <!-- some social links to show off -->
   

@@ -52,19 +52,28 @@ Route::get('/home',[HomeController::class, 'home'])->name('home');
 
 Route::group(['middleware'=>'web_auth'],function (){
 Route::get('/showbranch',[ShowBranchController::class, 'showbranch'])->name('showbranch');
+
 Route::get('/your/courier/information/',[ShowCourierInfoController::class,'showCourierInfo'])->name('show.courier.info');
+
 Route::get('/show/tracking/details',[ShowTrackController::class, 'showTrack'])->name('showtrack');
 Route::get('/search/by/tracking',[ShowTrackController::class,'trackSearch'])->name('track.search');
+
 Route::get('/your/profile',[HomeController::class,'profile'])->name('profile');
 Route::get('/your/profile/edit',[HomeController::class,'profileEdit'])->name('profile.edit');
 Route::put('/your/profile/update',[HomeController::class,'profileUpdate'])->name('profile.update');
+Route::get('/change/password',[HomeController::class,'changePassword'])->name('change.password');
+Route::post('/update/password',[HomeController::class,'updatePassword'])->name('update.password');
+
 Route::get('/your/courier/status',[ProfileController::class,'statusView'])->name('profile.status.view');
+
 Route::get('/information',[InformationController::class, 'information'])->name('information');
+
+
 Route::get('/edit/update/your/information/{info_id}',[ProfileController::class,'infoEdit'])->name('customer.edit.information');
 Route::put('/update/your/information/{info_id}',[ProfileController::class,'infoUpdate'])->name('customer.update.information');
 Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customerConfirm'])->name('admin.customer.confirm');
 Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
-Route::get('/customerinfo/change/price/{info_id}',[ProfileController::class,'changePrice'])->name('admin.customer.change.price');
+
 Route::get('payment/status/paid/{info_id}',[ProfileController::class,'paymentPaid'])->name('admin.payment.paid');
 Route::get('payment/status/condition/{info_id}',[ProfileController::class,'paymentCondition'])->name('admin.payment.condition');
 });

@@ -14,6 +14,6 @@ class ShowTrackController extends Controller
     //  dd($key);
      $trackings=CustomerInfo::where('track_number','LIKE',"%{$key}%")->get();
     //  dd($trackings);
-     return view('frontend.pages.show-tracking',compact('trackings'));
+     return view('frontend.pages.Tracking.show-tracking',compact('trackings'));
  }
 }

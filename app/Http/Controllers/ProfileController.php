@@ -11,7 +11,7 @@ class ProfileController extends Controller
     {
         $customerinfolist=CustomerInfo::where('user_id',auth()->user()->id)->get();
         // dd($customerinfolist);
-        return view('frontend.pages.status-view',compact('customerinfolist'));
+        return view('frontend.pages.Courier History.status-view',compact('customerinfolist'));
     }
 
     public function infoEdit($id)
@@ -20,7 +20,7 @@ class ProfileController extends Controller
       $lists=BranchList::all();
     //    dd($info);
     //$customerinfolist=Customer::with('branch')->get();
-      return view('frontend.pages.edit-info2',compact('info','lists'));
+      return view('frontend.pages.Courier Information.edit-info2',compact('info','lists'));
     }
 
     public function infoUpdate(Request $request,$id)

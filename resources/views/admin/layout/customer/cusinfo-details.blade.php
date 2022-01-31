@@ -73,6 +73,7 @@
 <p><h4><span style="color:#2E4053">Quantity: {{$info->quantity}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Payment Type: {{$info->payment}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Price: {{$info->price}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Delivery Type: {{$info->delitype}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Pickup Date: {{$info->pickup_date}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Pickup Time: {{$info->pickup_time}}</span></h4></p>
 <p>

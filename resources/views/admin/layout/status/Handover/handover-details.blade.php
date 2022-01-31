@@ -23,6 +23,7 @@
         <p class="card-text" ><b style="color:#2E4053;">Quantity:</b>{{$ho->quantity}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Weight:</b>{{$ho->weight}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Price:</b>{{$ho->price}}</p>
+        <p class="card-text" ><b style="color:#2E4053;">Delivery Type:</b>{{$ho->delitype}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Date:</b>{{$ho->pickup_date}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Time:</b>{{$ho->pickup_time}}</p>
 <p>

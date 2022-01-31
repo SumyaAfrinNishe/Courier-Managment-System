@@ -21,7 +21,7 @@
       <tr>
       <th scope="col">Your Name</th>
       <th scope="col">Receipient Name</th>
-      <th scope="col">Tracking Number</th>
+      <!-- <th scope="col">Tracking Number</th> -->
       <th scope="col">Status</th>
       <th scope="col">Price</th>
       <!-- <th scope="col">Payment Status</th> -->
@@ -35,11 +35,11 @@
       
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
-        @if($info->status == 'approved')
+        <!-- @if($info->status == 'approved')
            <td><b style="color:green">{{$info->track_number}}</b></td>
          @else
            <td>Wait</td>  
-         @endif  
+         @endif   -->
         <td>{{$info->status}}</td>
         <td>{{$info->price}}</td>
         
