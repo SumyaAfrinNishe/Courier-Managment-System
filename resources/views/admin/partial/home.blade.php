@@ -19,7 +19,7 @@
                 <div class="card-block">
                     <h6 class="m-b-20">Total Courier Request</h6>
                     <!-- <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span></span></h2> -->
-                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span></span></h2>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>{{$count['request']}}</span></h2>
                     <p class="m-b-0">Cancel Request<span class="f-right">{{$count['cancelrequest']}}</span></p>
                 </div>
             </div>
@@ -48,9 +48,9 @@
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-pink order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">Customer Confirmed Request</h6>
-                    <h2 class="text-right"><i class="fa fa-check f-left"></i><span>{{$count['cusconfirm']}}</span></h2>
-                    <p class="m-b-0">Customer Cancel Request<span class="f-right">{{$count['cuscancel']}}</span></p>
+                    <h6 class="m-b-20">Customer Cancel Request</h6>
+                    <h2 class="text-right"><i class="fa fa-check f-left"></i><span>{{$count['cuscancel']}}</span></h2>
+                    
                 </div>
             </div>
         </div>

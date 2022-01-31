@@ -118,8 +118,8 @@ class StaffController extends Controller
             'staffname'=>$request->staffname,
             'staffemail'=>$request->staffemail,
             'staffcontact'=>$request->staffcontact,
-            'staffbranch'=>$request->staffbranch,
-            // 'image'=>$filename,
+            'staffbranch_id'=>$request->staffbranch,
+            'staffimage'=>$filename,
          ]);
          return redirect()->back()->with('msg', 'Staff Updated Successfully.');
      }

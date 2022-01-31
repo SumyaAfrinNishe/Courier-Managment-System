@@ -14,15 +14,16 @@ class BranchController extends Controller
     
     public function branchlist()
     {
+        $pagi=BranchList::paginate(5);
         $key=request()->search;
         if($key)
         {
             $branchlistlist=BranchList::where('name','LIKE',"%{$key}%")->get();
-            return view('admin.layout.branch.branch-list',compact('branchlistlist'));
+            return view('admin.layout.branch.branch-list',compact('branchlistlist','pagi'));
         }
         else{
         $branchlistlist=BranchList::all();
-        return view('admin.layout.branch.branch-list',compact('branchlistlist'));
+        return view('admin.layout.branch.branch-list',compact('branchlistlist','pagi'));
         }
     }
 

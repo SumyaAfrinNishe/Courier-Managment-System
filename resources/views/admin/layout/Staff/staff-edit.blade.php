@@ -19,6 +19,11 @@
   <input type="text" name="staffemail" value="{{$staff->staffemail}}" class="form-control" id="staffemail" placeholder="">
 </div>
 
+<div class="mb-3">
+  <label for="staffpassword" class="form-label">Email</label>
+  <input type="password" name="staffpassword" value="{{$staff->staffpassword}}" class="form-control" id="staffpassword" placeholder="">
+</div>
+
 <select id="name" name="staffbranch">
                                <option selected> Branch Name </option>
                               @foreach ($upbranch as $sbranch)
@@ -26,7 +31,12 @@
                               @endforeach
 
                                </select>
-
+                               <div class="input-group">
+  <div class="custom-file">
+  <label for="staffimage" class="form-label">Image</label>
+    <input type="file" name="staffimage" value="{{$staff->staffimage}}" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+  </div>
+</div>
 
 
 <div>

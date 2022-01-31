@@ -1,6 +1,15 @@
 @extends('master')
 @section('content')
+<head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
 <h1>Branch list</h1>
 
 <form action="{{route('admin.branch.list')}}" method="GET">
@@ -25,7 +34,8 @@
     <tr>
        
         <td>{{$key+1}}</td> 
-        <td>{{$branch->name}} "---" {{$branch->id}}</td>
+        <td>{{$branch->name}}</td>
+        <!-- "---" {{$branch->id}} -->
         <td>{{$branch->contact}}</td>
         <td>{{$branch->email}}</td>
         <td>{{$branch->address}}</td>
@@ -41,5 +51,8 @@
 @endforeach
     </tbody>
 </table>
+
+<!-- {{$branchlistlist->onEachside(1)->links()}} -->
+
 
 @endsection

@@ -41,7 +41,7 @@ class InformationController extends Controller
   
         }
 
-        $tracking=CustomerInfo::create([
+        CustomerInfo::create([
             'user_id'=>auth()->user()->id,
             'recepient_name'=>$request->recepient_name,
             'recepient_email'=>$request->recepient_email,
