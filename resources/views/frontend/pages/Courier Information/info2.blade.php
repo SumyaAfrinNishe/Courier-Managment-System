@@ -167,7 +167,17 @@ html, body {
                     <div class="form-items">
                         <h3>Customer Information</h3>
                         <p>Fill Your Information for Courier</p>
-                        
+                        @if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
                           <div class="form-group" style="padding-bottom: 15px;">
                             <div class="col-md-12">
                                 <input class="form-control" type="text" id="recepient_name" name="recepient_name" placeholder="Receiver Name" required>
@@ -258,9 +268,11 @@ html, body {
                             <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity in packet" required>
                             </div>
+                            
                             <div class="col-md-12" style="padding-bottom: 15px;">
                                 <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight(kg)" required>
                             </div>
+
                             <div class="col-md-12" style="padding-bottom: 15px;">
                             <select class="form-control" name="delitype">
                             <option selected>Delivery Type </option>

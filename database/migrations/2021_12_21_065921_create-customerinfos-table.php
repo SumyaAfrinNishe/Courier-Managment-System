@@ -34,7 +34,7 @@ class CreateCustomerinfosTable extends Migration
             $table->date('pickup_date')->nullable();
             $table->time('pickup_time')->nullable();
             $table->string('payment')->default('Pending');
-            $table->integer('transid')->nullable();
+            $table->string('transid')->nullable();
             $table->string('delievery')->default('Pending');
             $table->timestamps();
         });

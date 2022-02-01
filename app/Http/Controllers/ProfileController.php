@@ -52,7 +52,7 @@ class ProfileController extends Controller
                 'delitype'=>$request->delitype,
                 'cus_image'=>$filename,
             ]);
-            return redirect()->back()->with('msg', 'Your Information Updated Successfully.');
+            return redirect()->back()->with('success', 'Your Information Updated Successfully.');
         }
     }
 
@@ -89,17 +89,6 @@ class ProfileController extends Controller
         return redirect()->back()->with('success','Request cancel.');
     }
 
-    // public function changePrice($info_id)
-    // {
-    //    $info=CustomerInfo::find($info_id);
-    //    if($info->customer_decision)
-    //    {
-    //       $info->update([
-    //           'customer_decision'=>'Please decrease the price'
-    //       ]);
-    //    }
-    //    return redirect()->back()->with('success','Request for change the price');
-    // }
 
     // public function paymentPaid($info_id)
     // {  

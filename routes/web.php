@@ -74,8 +74,9 @@ Route::put('/update/your/information/{info_id}',[ProfileController::class,'infoU
 Route::get('/customerinfo/confirm/{info_id}',[ProfileController::class,'customerConfirm'])->name('admin.customer.confirm');
 Route::get('/customerinfo/confirmation/cancel/{info_id}',[ProfileController::class,'confirmCancel'])->name('admin.customer.confirm.cancel');
 
-Route::get('payment/status/paid/{info_id}',[ProfileController::class,'paymentPaid'])->name('admin.payment.paid');
-Route::get('payment/status/condition/{info_id}',[ProfileController::class,'paymentCondition'])->name('admin.payment.condition');
+// Route::get('payment/status/paid/{info_id}',[ProfileController::class,'prePayment'])->name('admin.pre.payment');
+// Route::get('payment/status/condition/{info_id}',[ProfileController::class,'paymentCondition'])->name('admin.payment.condition');
+Route::get('/about',[HomeController::class,'about'])->name('about');
 });
 
 

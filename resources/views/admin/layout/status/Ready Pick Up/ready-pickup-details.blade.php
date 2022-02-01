@@ -4,6 +4,17 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <center>
 <h1>Your Product Details</h1>
+@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 <center>  <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
 
 
@@ -22,7 +33,7 @@
         <p class="card-text" ><b style="color:#2E4053;">Quantity:</b>{{$rp->quantity}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Weight:</b>{{$rp->weight}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Price:</b>{{$rp->price}}</p>
-        <p class="card-text" ><b style="color:#2E4053;">Delivery Type:</b>{{$rp->delitype}}</p>
+        <p class="card-text" ><b style="color:#2E4053;">Delivery Type:</b>{{$rp->delitype}}({{$info->payment}})</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Date:</b>{{$rp->pickup_date}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Time:</b>{{$rp->pickup_time}}</p>
 <p>

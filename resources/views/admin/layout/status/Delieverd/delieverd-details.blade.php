@@ -3,7 +3,18 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <center>
-<h1>Your Product Details</h1>
+<h1> Details</h1>
+@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 <center>  <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
 
 
@@ -22,7 +33,7 @@
         <p class="card-text" ><b style="color:#2E4053;">Quantity:</b>{{$d->quantity}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Weight:</b>{{$d->weight}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Price:</b>{{$d->price}}</p>
-        <p class="card-text" ><b style="color:#2E4053;">Delivery Type:</b>{{$d->delitype}}</p>
+        <p class="card-text" ><b style="color:#2E4053;">Delivery Type:</b>{{$d->delitype}}({{$info->payment}})</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Date:</b>{{$d->pickup_date}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Time:</b>{{$d->pickup_time}}</p>
 <p>

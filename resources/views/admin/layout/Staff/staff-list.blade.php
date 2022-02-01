@@ -1,6 +1,17 @@
 @extends('master')
 @section('content')
 <h1>Staff List</h1>
+@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 <form action="{{route('admin.staff.list')}}" method="GET">
     <input name="search" class="search-input" type="text" placeholder="Search with Name" aria-label="Search">
     <button class="btn btn-success" type="submit"><i class='fas fa-search'></i></button>

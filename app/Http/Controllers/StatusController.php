@@ -31,7 +31,7 @@ class StatusController extends Controller
          $ac->update([
             'delievery'=>$request->delievery,
         ]);
-        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+        return redirect()->back()->with('success', 'Status Updated Successfully.');
     }
 }
 
@@ -66,7 +66,7 @@ class StatusController extends Controller
          $collect->update([
             'delievery'=>$request->delievery,
         ]);
-        return redirect()->back()->with('msg', 'Status Updated Successfully.');
+        return redirect()->back()->with('success', 'Status Updated Successfully.');
     }
 
     }
@@ -100,7 +100,7 @@ class StatusController extends Controller
             $arrd->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
 
@@ -135,7 +135,7 @@ class StatusController extends Controller
             $rp->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
 
@@ -163,7 +163,7 @@ class StatusController extends Controller
             $ho->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
 
@@ -198,7 +198,7 @@ class StatusController extends Controller
             $p->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
 
@@ -232,7 +232,7 @@ class StatusController extends Controller
             $s->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     }
     
@@ -266,7 +266,7 @@ class StatusController extends Controller
             $d->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
 
@@ -302,7 +302,7 @@ class StatusController extends Controller
             $outd->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
 
@@ -338,7 +338,7 @@ class StatusController extends Controller
             $intra->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
 
     } 
@@ -375,7 +375,7 @@ class StatusController extends Controller
             $unsu->update([
                'delievery'=>$request->delievery,
            ]);
-           return redirect()->back()->with('msg', 'Status Updated Successfully.');
+           return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
 }
 }

@@ -1,18 +1,15 @@
 @extends('master')
 @section('content')
 <h1 style="text-align:center;"> Add Staff</h1>
-@if(session()->has('success'))
-    <p class="alert alert-success">
-        {{session()->get('success')}}
-    </p>
+@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
 @endif
-@if ($errors->any())
-<div class="alert alert-warning" role="alert">
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{$error}}</li>
-        @endforeach
-    </ul> 
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
 </div>
 @endif
 <div class="card mt-3">

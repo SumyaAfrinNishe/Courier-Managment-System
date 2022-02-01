@@ -71,9 +71,8 @@
 <p><h4><span style="color:#2E4053">Type of Shipment: {{$info->type_of_shipment}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Courier Description: {{$info->courier_description}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Quantity: {{$info->quantity}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Payment Type: {{$info->payment}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Price: {{$info->price}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Delivery Type: {{$info->delitype}}</span></h4></p>
+<p><h4><span style="color:#2E4053">Delivery Type: {{$info->delitype}}({{$info->payment}})</span></h4></p>
 <p><h4><span style="color:#2E4053">Pickup Date: {{$info->pickup_date}}</span></h4></p>
 <p><h4><span style="color:#2E4053">Pickup Time: {{$info->pickup_time}}</span></h4></p>
 <p>
@@ -121,10 +120,21 @@
 </div>
   </center>
   <center>
-  <div class="mb-3">
+  <!-- <div class="mb-3">
   <label for="price" class="form-label">Price</label>
   <input type="number" name="price" value="{{$info->price}}" class="form-control" id="price" placeholder="">
+</div> -->
+@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
 </div>
+@endif
 
 <div class="mb-3">
   <label for="pickup_date" class="form-label">Pickup Date</label>

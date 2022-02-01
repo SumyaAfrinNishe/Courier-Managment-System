@@ -73,7 +73,7 @@ class StaffController extends Controller
             'staffbranch_id'=>$request->staffbranch,
             'staffimage'=>$filename,
          ]);
-         return redirect()->back();
+         return redirect()->back()->with('success','Staff added Successfully');
 
     }
 
@@ -90,7 +90,7 @@ class StaffController extends Controller
     //  dd($branch_id);
 
      $staff=StaffList::find($staff_id)->delete();
-     return redirect()->back()->with('Success','Staff Deleted');
+     return redirect()->back()->with('success','Staff Deleted');
  }
 
  public function staffEdit($id)
@@ -121,7 +121,7 @@ class StaffController extends Controller
             'staffbranch_id'=>$request->staffbranch,
             'staffimage'=>$filename,
          ]);
-         return redirect()->back()->with('msg', 'Staff Updated Successfully.');
+         return redirect()->back()->with('success', 'Staff Updated Successfully.');
      }
  }
  public function staffSearch()

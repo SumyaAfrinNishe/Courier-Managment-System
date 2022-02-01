@@ -1,24 +1,24 @@
-<div class="footer">
+<div class="footer" style="margin-top: 150px;">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3">
+					<!-- <div class="col-md-3">
 						<ul class="footer_box">
 							<h4>Contact</h4>
 							<li><a href="#">Mens</a></li>
 							<li><a href="#">Womens</a></li>
 							<li><a href="#">Youth</a></li>
 						</ul>
-					</div>
+					</div> -->
 					<div class="col-md-3">
 						<ul class="footer_box">
-							<h4>About</h4>
-							<li><a href="#">Careers and internships</a></li>
-							<li><a href="#">Sponserships</a></li>
+							<h4>About Us</h4>
+							<li><a href="{{route('about')}}">Go Here</a></li>
+							<!-- <li><a href="#">Sponserships</a></li>
 							<li><a href="#">team</a></li>
-							<li><a href="#">Catalog Request/Download</a></li>
+							<li><a href="#">Catalog Request/Download</a></li> -->
 						</ul>
 					</div>
-					 <div class="col-md-3">
+					 <!-- <div class="col-md-3">
 						<ul class="footer_box">
 							<h4>Customer Support</h4>
 							<li><a href="#">Contact Us</a></li>
@@ -27,7 +27,7 @@
 							<li><a href="#">Warranty</a></li>
 							<li><a href="#">Replacement Binding Parts</a></li>
 						</ul>
-					</div>
+					</div> -->
 					<!-- <div class="col-md-3">
 						<ul class="footer_box">
 							<h4>Newsletter</h4>

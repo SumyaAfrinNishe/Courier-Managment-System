@@ -101,15 +101,11 @@ p {
         <div class="row gx-3">
             <div class="col-12">
                 <div class="d-flex flex-column">
-                    <p class="text mb-1">Transaction ID</p> 
-                    <input class="form-control mb-3" name="transid" type="number" placeholder="transaction number" value="Barry Allen">
+                    <p class="text mb-1">Amount</p> 
+                    <input class="form-control mb-3" name="price" type="number" placeholder="Amount" value="">
                 </div>
             </div>
-            <!-- <div class="col-12">
-                <div class="d-flex flex-column">
-                    <p class="text mb-1">Phone Number</p> <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
-                </div>
-            </div> -->
+           
             <!-- <div class="col-6">
                 <div class="d-flex flex-column">
                     <p class="text mb-1">Phone Number</p>

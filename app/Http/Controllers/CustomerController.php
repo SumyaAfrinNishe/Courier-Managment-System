@@ -44,13 +44,12 @@ class CustomerController extends Controller
      {
         
         $a = $info->update([
-               'price'=>$request->price,
                'pickup_date'=>$request->pickup_date,
                'pickup_time'=>$request->pickup_time,
          ]);
 
 
-         return redirect()->back()->with('msg', 'Customer Info Updated Successfully.');
+         return redirect()->back()->with('success', 'Pickup Date and pickup time added Successfully.');
      }
  }
  
@@ -67,7 +66,7 @@ class CustomerController extends Controller
        //  dd($branch_id);
    
         $info=CustomerInfo::find($info_id)->delete();
-        return redirect()->back()->with('Success','Customer Deleted');
+        return redirect()->back()->with('success','Request Deleted');
     }
 
     public function customerAccept($info_id)
@@ -238,10 +237,14 @@ class CustomerController extends Controller
     public function addPaymentCreate(Request $request,$id)
     {
 
-         CustomerInfo::find($id)->update(['payment'=>'Paid','transid'=>$request->transid]);
+         CustomerInfo::find($id)->update([
+             'payment'=>'Paid',
+             'price'=>$request->price,
+             'transid'=> time() . '-' . auth()->user()->id,
+            ]);
 
         
-         return redirect()->back();
+         return redirect()->route('admin.customer.info');
  }
     
 

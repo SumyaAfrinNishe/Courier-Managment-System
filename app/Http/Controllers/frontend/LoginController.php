@@ -23,7 +23,7 @@ class LoginController extends Controller
             'phone'=>$request->phone,
             'role'=>"user",
         ]);
-        return redirect()->route('registration');
+        return redirect()->route('registration')->with('success','Registered Successfully');
     }
 
     public function userlogin(){
@@ -36,14 +36,14 @@ class LoginController extends Controller
      
          if(Auth::attempt($userpost))
          {
-             return redirect()->route('home');
+             return redirect()->route('home')->with('success','Login Successfully');
          }
          else
-         return redirect()->route('user.login');
+         return redirect()->route('user.login')->withError('error','Invalid user credentials');
 
      }
      public function logout(){
          Auth::logout();
-         return redirect()->route('home');
+         return redirect()->route('home')->with('success','Logout Successfully');
      }
 }

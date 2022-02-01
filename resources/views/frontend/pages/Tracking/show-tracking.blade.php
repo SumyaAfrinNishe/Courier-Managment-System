@@ -28,7 +28,7 @@
         <p class="card-text" ><b style="color:#6c11b8;">Quantity:</b>{{$track->quantity}}</p>
         <p class="card-text" ><b style="color:#6c11b8;">Weight:</b>{{$track->weight}}</p>
         <p class="card-text" ><b style="color:#6c11b8;">Price:</b>{{$track->price}}</p>
-        <p class="card-text" ><b style="color:#6c11b8;">Delivery Type:</b>{{$track->delitype}}</p>
+        <p class="card-text" ><b style="color:#6c11b8;">Delivery Type:</b>{{$track->delitype}}({{$info->payment}})</p>
         <p class="card-text" ><b style="color:#6c11b8;">Pickup Date:</b>{{$track->pickup_date}}</p>
         <p class="card-text" ><b style="color:#6c11b8;">Pickup Time:</b>{{$track->pickup_time}}</p>
         <p class="card-text" ><b style="color:red;">Delivery Status:</b>{{$track->delievery}}</p>

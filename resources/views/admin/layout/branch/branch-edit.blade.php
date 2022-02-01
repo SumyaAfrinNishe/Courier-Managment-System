@@ -1,10 +1,16 @@
 @extends('master')
 @section('content')
 <h1> Edit Branch</h1>
-@if(session()->has('success'))
-    <p class="alert alert-success">
-        {{session()->get('success')}}
-    </p>
+@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
 @endif
 
 <form action="{{route('admin.branch.update',$branch->id)}}" method='POST' enctype="multipart/form-data">

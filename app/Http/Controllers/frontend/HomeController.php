@@ -35,7 +35,7 @@ class HomeController extends Controller
          $user->save();
             // 'image'=>$filename,
 
-         return redirect()->back()->with('msg', 'Your Profile Update Successfully.');
+         return redirect()->back()->with('success', 'Your Profile Update Successfully.');
      }
 
      public function changePassword()
@@ -66,6 +66,11 @@ class HomeController extends Controller
     $user->save();
 
     return redirect()->back()->with("success","Password successfully changed!");
+}
+
+public function about()
+{
+    return view('frontend.pages.about-us');
 }
     }
 

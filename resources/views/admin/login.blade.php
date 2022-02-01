@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>Admin Login</title>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -37,6 +38,18 @@
 					<span class="login100-form-title p-b-43">
 						Admin Login
 					</span>
+									
+						@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 					
 					<div class="wrap-input100 rs1 validate-input" data-validate = "Username is required">
 						<input class="input100" type="text" name="email">
@@ -55,11 +68,6 @@
 						</button>
 					</div>
 					
-					<div class="text-center w-full p-t-23">
-						<a href="#" class="txt1">
-							Forgot password?
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>

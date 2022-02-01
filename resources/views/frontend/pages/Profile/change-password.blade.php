@@ -788,6 +788,17 @@ input.checkbox:checked:after {
 }
 </style>
 	<!-- main -->
+  @if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 	<div class="main-w3layouts wrapper">
 		<h1>Change Password</h1>
 		<div class="main-agileinfo">

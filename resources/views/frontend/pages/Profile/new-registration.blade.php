@@ -788,16 +788,29 @@ input.checkbox:checked:after {
 }
 </style>
 	<!-- main -->
+  @if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 	<div class="main-w3layouts wrapper">
 		<h1>Creative SignUp Form</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form action="{{route('registration.store')}}" method='POST'>
           @csrf
-					<input class="text" type="text" name="name" placeholder="Your name" required="">
-					<input class="text" type="email" name="email" placeholder="Your Email" required="">
-          <input class="text" type="number" name="phone" placeholder="Your Contact" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
+         
+					<input class="text" style="margin-bottom: 20px; " type="text" name="name" placeholder="Your name" required="">
+
+					<input class="text" style="margin-bottom: 20px; border-top-left-radius: 20px; border-bottom-left-radius: 20px;"  type="email" name="email" placeholder="Your Email" required="">
+          <input class="text" style="margin-bottom: 20px;  border-top-left-radius: 20px; border-bottom-left-radius: 20px;""  type="number" name="phone" placeholder="Your Contact" required="">
+					<input class="text" style="margin-bottom: 20px;  border-top-left-radius: 20px; border-bottom-left-radius: 20px;""  type="password" name="password" placeholder="Password" required="">
 					
 					<div class="wthree-text">
 						<label class="anim">

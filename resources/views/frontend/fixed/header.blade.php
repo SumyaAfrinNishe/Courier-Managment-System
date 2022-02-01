@@ -24,7 +24,17 @@
 									<li style="list-style:none; "><a style="color: white;" href="{{route('registration')}}">Registartion</a></li>
 								@endif
 								<li style="list-style:none; "><a style="color: white;" href="{{route('profile')}}">Profile</a></li>
-								
+								@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="{{url('frontend/js/responsive-nav.js')}}"></script> -->

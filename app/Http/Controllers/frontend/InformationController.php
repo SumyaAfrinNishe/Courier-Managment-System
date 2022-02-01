@@ -41,7 +41,7 @@ class InformationController extends Controller
   
         }
 
-        CustomerInfo::create([
+      $customerInfo =  CustomerInfo::create([
             'user_id'=>auth()->user()->id,
             'recepient_name'=>$request->recepient_name,
             'recepient_email'=>$request->recepient_email,
@@ -61,6 +61,12 @@ class InformationController extends Controller
             
 
          ]);
+
+        //  if($customerInfo->delitype == 'Prepayment'){
+        //     $customerInfo->update([
+        //         'payment' => 'Paid'
+        //     ]); 
+        //  }
          return redirect()->back();
     }
 

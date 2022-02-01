@@ -19,16 +19,16 @@ class AdminController extends Controller
     //  dd((Auth::attempt($userpost)));
         if(Auth::attempt($userpost))
         {
-            return redirect()->route('dashboard')->with('message','Login Successful');
+            return redirect()->route('dashboard')->with('success','Login Successful');
         }
         else
-        return redirect()->route('admin.login')->withErrors('Invalid user credentials');
+        return redirect()->route('admin.login')->withErrors('error','Invalid user credentials');
 
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('admin.login')->with('message','Logging out.');
+        return redirect()->route('admin.login')->with('success','Logging out.');
     }
 }

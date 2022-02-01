@@ -1,6 +1,17 @@
 @extends('master')
 @section('content')
 <h1> Edit Staff</h1>
+@if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
 <form action="{{route('admin.staff.update',$staff->id)}}" method='POST' enctype="multipart/form-data">
     @method('PUT')
     @csrf

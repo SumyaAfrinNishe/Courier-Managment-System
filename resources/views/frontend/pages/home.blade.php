@@ -29,7 +29,7 @@
             </div>
             <!-- /Duplicate to create more slides -->
             <div class="slide">
-               <img src="{{url('frontend/images/slider2.jpg')}}" class="img-responsive" alt=""/>
+               <img src="{{url('frontend/images/newslider2.jpg')}}" class="img-responsive" alt=""/>
                 <div class="slide_content">
                     <div class="slide_content_wrap">
                         <h1 class="title">Courier Management System</h1>

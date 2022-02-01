@@ -15,18 +15,26 @@
 
 <div class="container">
   <h2>Your Courier Request</h2>
+  @if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
              
   <table class="table table-hover">
     <thead>
       <tr>
       <th scope="col">Your Name</th>
       <th scope="col">Receipient Name</th>
-      <!-- <th scope="col">Tracking Number</th> -->
       <th scope="col">Status</th>
       <th scope="col">Price</th>
-      <!-- <th scope="col">Payment Status</th> -->
       <th scope="col">Take Decision</th>
-      <!-- <th scope="col">Action</th> -->
       </tr>
     </thead>
     <tbody>
@@ -35,19 +43,9 @@
       
         <td>{{$info->user->name}}</td>
         <td>{{$info->recepient_name}}</td>
-        <!-- @if($info->status == 'approved')
-           <td><b style="color:green">{{$info->track_number}}</b></td>
-         @else
-           <td>Wait</td>  
-         @endif   -->
         <td>{{$info->status}}</td>
         <td>{{$info->price}}</td>
-        
-      <!-- <td>
-     <a class="btn btn-warning" href="{{route('admin.payment.paid',$info->id)}}">Paid</i></a>
-     <a class="btn btn-danger" href="{{route('admin.payment.condition',$info->id)}}">Condition</i></a>
-      </td> -->
-     
+             
         @if($info->customer_decision != 'Cancelled')
 <td>
 <a class="btn btn-danger" href="{{route('admin.customer.confirm.cancel',$info->id)}}">Cancel Request</i></a>

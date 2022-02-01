@@ -168,6 +168,17 @@ html, body {
                     <div class="form-items">
                         <h3>Customer Information</h3>
                         <p>Update Your Information for Courier</p>
+                        @if(session('success'))
+    <div class="alert alert-success">
+        {!! session('success') !!}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+</div>
+@endif
                         <form class="requires-validation" novalidate>
 
                             <div class="col-md-12" style="padding-bottom: 15px;">

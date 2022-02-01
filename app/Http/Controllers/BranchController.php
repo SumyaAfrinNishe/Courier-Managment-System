@@ -18,11 +18,11 @@ class BranchController extends Controller
         $key=request()->search;
         if($key)
         {
-            $branchlistlist=BranchList::where('name','LIKE',"%{$key}%")->get();
+            $branchlistlist=BranchList::where('name','LIKE',"%{$key}%")->paginate(10);
             return view('admin.layout.branch.branch-list',compact('branchlistlist','pagi'));
         }
         else{
-        $branchlistlist=BranchList::all();
+        $branchlistlist=BranchList::orderBy('id','desc')->paginate(5);
         return view('admin.layout.branch.branch-list',compact('branchlistlist','pagi'));
         }
     }
@@ -69,7 +69,7 @@ class BranchController extends Controller
             'image'=>$filename,
 
          ]);
-         return redirect()->back();
+         return redirect()->back()->with('success', 'New Branch added');
  }
 
  public function branchdetails($branch_id)
@@ -84,7 +84,7 @@ class BranchController extends Controller
     //  dd($branch_id);
 
      $branch=BranchList::find($branch_id)->delete();
-     return redirect()->back()->with('Success','Branch Deleted');
+     return redirect()->back()->with('success','Branch Deleted');
  }
 
  public function branchEdit($id)
@@ -118,7 +118,7 @@ class BranchController extends Controller
             'country'=>$request->country,
             // 'image'=>$filename,
          ]);
-         return redirect()->back()->with('msg', 'Branch Updated Successfully.');
+         return redirect()->back()->with('success', 'Branch Updated Successfully.');
      }
  }
 

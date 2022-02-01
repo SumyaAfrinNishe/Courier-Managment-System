@@ -52,7 +52,7 @@
     </tbody>
 </table>
 
-<!-- {{$branchlistlist->onEachside(1)->links()}} -->
+{{$branchlistlist->links()}}
 
 
 @endsection
