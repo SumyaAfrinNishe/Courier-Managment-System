@@ -1,4 +1,4 @@
-<div class="footer" style="margin-top: 150px;">
+<div class="footer" style="margin-top: 0px;">
 			<div class="container">
 				<div class="row">
 					<!-- <div class="col-md-3">

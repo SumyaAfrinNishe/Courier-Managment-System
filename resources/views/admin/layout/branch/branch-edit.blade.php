@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<h1> Edit Branch</h1>
+<h1 style="text-align:center;"> Edit Branch</h1>
 @if(session('success'))
     <div class="alert alert-success">
         {!! session('success') !!}
@@ -54,7 +54,7 @@
     <input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
   </div>
 </div>
-<button type="submit" class="btn btn-success">Update</button>
+<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;>Update</button>
 </form>
 
 @endsection

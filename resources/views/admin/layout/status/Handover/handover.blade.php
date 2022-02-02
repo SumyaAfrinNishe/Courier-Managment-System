@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-<h1>Courier Handover</h1>
+<h1 style="text-align:center;">Courier Handover</h1>
 
 
     <table class="table table-bordered">

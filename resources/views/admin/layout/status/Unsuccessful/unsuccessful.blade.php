@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<h1>Unsuccessful Delievery Attempt!!!</h1>
+<h1 style="text-align:center;">Unsuccessful Delievery Attempt!!!</h1>
 
 
     <table class="table table-bordered">

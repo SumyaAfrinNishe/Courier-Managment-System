@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<h1>Staff List</h1>
+<h1 style="text-align:center;">Staff List</h1>
 @if(session('success'))
     <div class="alert alert-success">
         {!! session('success') !!}
@@ -46,5 +46,5 @@
 @endforeach
 </tbody>
 </table>
-
+{{$stafflistinfo->links()}}
 @endsection

@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<h1>In-Transit</h1>
+<h1 style="text-align:center;">In-Transit</h1>
 
 
     <table class="table table-bordered">

@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<h1>Ready To Pickup</h1>
+<h1 style="text-align:center;">Ready To Pickup</h1>
 
 
     <table class="table table-bordered">

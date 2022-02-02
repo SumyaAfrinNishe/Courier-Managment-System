@@ -3,7 +3,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <center>
-<h1> Details</h1>
+<h1 style="text-align:center;"> Delivered</h1>
 @if(session('success'))
     <div class="alert alert-success">
         {!! session('success') !!}
@@ -33,11 +33,11 @@
         <p class="card-text" ><b style="color:#2E4053;">Quantity:</b>{{$d->quantity}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Weight:</b>{{$d->weight}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Price:</b>{{$d->price}}</p>
-        <p class="card-text" ><b style="color:#2E4053;">Delivery Type:</b>{{$d->delitype}}({{$info->payment}})</p>
+        <p class="card-text" ><b style="color:#2E4053;">Delivery Type:</b>{{$d->delitype}}({{$d->payment}})</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Date:</b>{{$d->pickup_date}}</p>
         <p class="card-text" ><b style="color:#2E4053;">Pickup Time:</b>{{$d->pickup_time}}</p>
 <p>
-    <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$d->image)}}" alt="post">
+    <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$d->cus_image)}}" alt="post">
 </p>
 <p><h4><span style="color:red">Delivery Status:{{$d->delievery}}</span></h4></p>
 </center>
@@ -56,6 +56,11 @@
         <option value="Shipped">Shipped</option>
         <option value="Intransit">Intransit</option>
         <option value="Arrived At Destination">Arrived At Destination</option>
+        @if($d->payment=='Paid')
+        <option value="Handover">Handover</option>
+        @else
+        <option value="" style="color:red">For handover need to pay first</option>
+        @endif
         <option value="Unsuccessful Delievery Attempt">Unsuccessful Delievery Attempt</option>
 </select>
         <div>

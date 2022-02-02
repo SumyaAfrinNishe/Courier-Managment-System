@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<h1> Edit Staff</h1>
+<center><h1> Edit Staff</h1></center>
 @if(session('success'))
     <div class="alert alert-success">
         {!! session('success') !!}
@@ -31,7 +31,7 @@
 </div>
 
 <div class="mb-3">
-  <label for="staffpassword" class="form-label">Email</label>
+  <label for="staffpassword" class="form-label">Password</label>
   <input type="password" name="staffpassword" value="{{$staff->staffpassword}}" class="form-control" id="staffpassword" placeholder="">
 </div>
 
@@ -51,7 +51,7 @@
 
 
 <div>
-<button type="submit" class="btn btn-success">Submit</button>
+<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;>Submit</button>
 </div>
 </form>
 @endsection

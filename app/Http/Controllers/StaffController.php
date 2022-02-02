@@ -18,6 +18,7 @@ class StaffController extends Controller
 
     public function stafflist()
     {
+        $pagi=BranchList::paginate(3);
         $key=request()->search;
         if($key)
         {
@@ -25,8 +26,8 @@ class StaffController extends Controller
             return view('admin.layout.staff.staff-list',compact('stafflistinfo'));
         }
         else{
-        $stafflistinfo=StaffList::all();
-        return view('admin.layout.staff.staff-list',compact('stafflistinfo'));
+        $stafflistinfo=StaffList::orderBy('id','desc')->paginate(3);
+        return view('admin.layout.staff.staff-list',compact('stafflistinfo','pagi'));
         }
     }
 

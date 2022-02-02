@@ -25,12 +25,13 @@
         <p class="card-text" ><b style="color:#6c11b8;">To Branch Name:</b>{{$track->tobranch->name}}</p>
         <p class="card-text" ><b style="color:#6c11b8;">Type of Shipment:</b>{{$track->type_of_shipment}}</p>
         <p class="card-text" ><b style="color:#6c11b8;">Description:</b>{{$track->courier_description}}</p>
-        <p class="card-text" ><b style="color:#6c11b8;">Quantity:</b>{{$track->quantity}}</p>
-        <p class="card-text" ><b style="color:#6c11b8;">Weight:</b>{{$track->weight}}</p>
-        <p class="card-text" ><b style="color:#6c11b8;">Price:</b>{{$track->price}}</p>
-        <p class="card-text" ><b style="color:#6c11b8;">Delivery Type:</b>{{$track->delitype}}({{$info->payment}})</p>
+        <p class="card-text" ><b style="color:#6c11b8;">Quantity:</b>{{$track->quantity}}(in packet)</p>
+        <p class="card-text" ><b style="color:#6c11b8;">Weight:</b>{{$track->weight}}kg</p>
+        <p class="card-text" ><b style="color:#6c11b8;">Price:</b><p style="color:green">BDT</p> {{$track->price}} tk</p>
+        <p class="card-text" ><b style="color:#6c11b8;">Delivery Type:</b>{{$track->delitype}}({{$track->payment}})</p>
         <p class="card-text" ><b style="color:#6c11b8;">Pickup Date:</b>{{$track->pickup_date}}</p>
         <p class="card-text" ><b style="color:#6c11b8;">Pickup Time:</b>{{$track->pickup_time}}</p>
+        <p class="card-text" ><b style="color:velvet;">Transaction ID:</b>{{$track->transid}}</p>
         <p class="card-text" ><b style="color:red;">Delivery Status:</b>{{$track->delievery}}</p>
         <!-- <center>  <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a></center> -->
 

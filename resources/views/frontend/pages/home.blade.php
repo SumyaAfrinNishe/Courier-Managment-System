@@ -34,7 +34,7 @@
                     <div class="slide_content_wrap">
                         <h1 class="title">Courier Management System</h1>
                        	<!-- <div class="button"><a href="#">See Details</a></div> -->
-                        <div class="box" style="padding-top:200px">
+                        <div class="box" style="padding-top:85px">
                            <h1>Track Your Courier</h1>
                            <form action="{{route('track.search')}}" method="GET">
                             <input type="text" name="search" placeholder="Enter Your Tracking Number">

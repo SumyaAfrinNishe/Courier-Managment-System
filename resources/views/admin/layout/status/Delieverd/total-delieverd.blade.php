@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<h1>Total Delieverd Courier</h1>
+<h1 style="text-align:center;">Total Delieverd Courier</h1>
 
 
     <table class="table table-bordered">
