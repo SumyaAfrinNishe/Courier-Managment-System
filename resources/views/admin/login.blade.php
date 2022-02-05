@@ -37,8 +37,6 @@
 					@csrf
 					<span class="login100-form-title p-b-43">
 						Admin Login
-					</span>
-									
 						@if(session('success'))
     <div class="alert alert-success">
         {!! session('success') !!}
@@ -50,6 +48,8 @@
         {!! session('error') !!}
 </div>
 @endif
+					</span>
+	
 					
 					<div class="wrap-input100 rs1 validate-input" data-validate = "Username is required">
 						<input class="input100" type="text" name="email">

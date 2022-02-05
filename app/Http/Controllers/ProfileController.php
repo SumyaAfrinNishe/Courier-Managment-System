@@ -78,13 +78,13 @@ class ProfileController extends Controller
 
     public function confirmCancel($info_id)
     {
-        $info= CustomerInfo::find($info_id);
-        if($info->customer_decision)
-        {
-            $info->update([
-                'customer_decision' => 'Cancelled'
-            ]);
-        }
+        $info= CustomerInfo::find($info_id)->delete();
+        // if($info->customer_decision)
+        // {
+        //     $info->update([
+        //         'customer_decision' => 'Cancelled'
+        //     ]);
+        // }
     
         return redirect()->back()->with('success','Request cancel.');
     }

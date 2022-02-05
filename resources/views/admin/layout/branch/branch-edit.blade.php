@@ -54,7 +54,7 @@
     <input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
   </div>
 </div>
-<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;>Update</button>
+<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;">Update</button>
 </form>
 
 @endsection

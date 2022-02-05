@@ -67,7 +67,7 @@ class InformationController extends Controller
         //         'payment' => 'Paid'
         //     ]); 
         //  }
-         return redirect()->back();
+         return redirect()->back()->with('success','Your request has been sent successfully ');
     }
 
     public function customerDetails($info_id)

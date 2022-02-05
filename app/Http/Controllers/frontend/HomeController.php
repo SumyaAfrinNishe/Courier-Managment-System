@@ -20,7 +20,7 @@ class HomeController extends Controller
 
     public function profileEdit()
     {
-        return view('frontend.pages.update-profile');
+        return view('frontend.pages.Profile.update-profile');
     }
 
     public function profileUpdate(Request $request)

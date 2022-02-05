@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CustomerInfo;
+use App\Mail\InvoiceMail;
+use Illuminate\Support\Facades\Mail;
 class StatusController extends Controller
 {
     public function acceptCourier()
@@ -30,7 +32,9 @@ class StatusController extends Controller
      {
          $ac->update([
             'delievery'=>$request->delievery,
+            'delievery'=>'Handover',
         ]);
+        Mail::to($ac->recepient_email)->send(new InvoiceMail($ac));
         return redirect()->back()->with('success', 'Status Updated Successfully.');
     }
 }
@@ -65,7 +69,10 @@ class StatusController extends Controller
      {
          $collect->update([
             'delievery'=>$request->delievery,
+            'delievery'=>'Handover',
+        
         ]);
+        Mail::to($collect->recepient_email)->send(new InvoiceMail($collect));
         return redirect()->back()->with('success', 'Status Updated Successfully.');
     }
 
@@ -99,7 +106,9 @@ class StatusController extends Controller
         {
             $arrd->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($arrd->recepient_email)->send(new InvoiceMail($arrd));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
@@ -134,7 +143,9 @@ class StatusController extends Controller
         {
             $rp->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($rp->recepient_email)->send(new InvoiceMail($rp));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
@@ -197,7 +208,9 @@ class StatusController extends Controller
         {
             $p->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($p->recepient_email)->send(new InvoiceMail($p));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
@@ -231,7 +244,9 @@ class StatusController extends Controller
         {
             $s->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($s->recepient_email)->send(new InvoiceMail($s));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     }
@@ -265,7 +280,9 @@ class StatusController extends Controller
         {
             $d->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($d->recepient_email)->send(new InvoiceMail($d));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
@@ -301,7 +318,9 @@ class StatusController extends Controller
         {
             $outd->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($outd->recepient_email)->send(new InvoiceMail($outd));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
     } 
@@ -337,7 +356,9 @@ class StatusController extends Controller
         {
             $intra->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($intra->recepient_email)->send(new InvoiceMail($intra));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
 
@@ -374,7 +395,9 @@ class StatusController extends Controller
         {
             $unsu->update([
                'delievery'=>$request->delievery,
+               'delievery'=>'Handover',
            ]);
+           Mail::to($unsu->recepient_email)->send(new InvoiceMail($unsu));
            return redirect()->back()->with('success', 'Status Updated Successfully.');
        }
 }

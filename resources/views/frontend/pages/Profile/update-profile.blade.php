@@ -806,14 +806,16 @@ input.checkbox:checked:after {
 				<form action="{{route('profile.update')}}" method='POST'>
                     @method('PUT')
           @csrf
-					<input class="text" type="text" name="name" style="padding-bottom: 20px;" value="{{auth()->user()->name}}" placeholder="Your name" required="">
-					<input class="text" type="email" name="email" style="padding-bottom: 20px;" value="{{auth()->user()->email}}" placeholder="Your Email" required="">
-          <input class="text" type="number" name="phone" style="padding-bottom: 20px;" value="{{auth()->user()->phone}}"placeholder="Your Contact" required="">
+					<input class="text" type="text" name="name" style="margin-bottom: 20px; border-top-right-radius:25px; border-bottom-right-radius:25px; " value="{{auth()->user()->name}}" placeholder="Your name" required="">
+					<input class="text" type="email" name="email" style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" value="{{auth()->user()->email}}" placeholder="Your Email" required="">
+          <input class="text" type="number" name="phone" style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" value="{{auth()->user()->phone}}"placeholder="Your Contact" required="">
 					
 				
-					<input type="submit" value="Update">
+					<input type="submit"  style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;" value="Update">
 				</form>
-				\
+				
 			</div>
 		</div>
 		<!-- copyright -->

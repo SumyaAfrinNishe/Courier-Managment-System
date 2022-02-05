@@ -7,19 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CancelMail extends Mailable
+class InvoiceMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $cancels;
+    public $invoice;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($cancels)
+    public function __construct($invoice)
     {
-        $this->cancels = $cancels;
+        $this->invoice = $invoice;
     }
 
     /**
@@ -29,6 +29,6 @@ class CancelMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Your Courier Request is Cancelled')->view('admin.layout.Email.cancel-mail');
+        return $this->subject('Invoice Mail')->view('admin.layout.Email.invoice-mail');
     }
 }

@@ -805,12 +805,14 @@ input.checkbox:checked:after {
 			<div class="agileits-top">
 				<form action="{{route('doLogin')}}" method='POST'>
 					@csrf
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" class="text email" type="email" name="email" placeholder="Email" required="">
           
-					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<input style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" class="text" type="password" name="password" placeholder="Password" required="">
 					
 
-					<input type="submit" value="LOGIN">
+					<input style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;" type="submit" value="LOGIN">
 				</form>
 				<p>Don't have an Account? <a href="{{route('registration')}}"> Register!</a></p>
 			</div>

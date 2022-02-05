@@ -182,28 +182,30 @@ html, body {
                         <form class="requires-validation" novalidate>
 
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="recepient_name" class="form-label">Receiver Name</label>
                                 <input class="form-control" type="text" id="recepient_name" value="{{$info->recepient_name}}" name="recepient_name" placeholder="Receiver Name" required>
                             </div>
 
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="recepient_email" class="form-label">Receiver Email</label>
                                 <input class="form-control" type="email" id="recepient_email" value="{{$info->recepient_email}}" name="recepient_email" placeholder="Receiver E-mail Address" required>
                             </div>
 
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="recepient_phone" class="form-label">Receiver Phone Number</label>
                                 <input class="form-control" type="number" id="recepient_phone" value="{{$info->recepient_phone}}" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 
+                            <label for="from_branch_name" class="form-label">From Branch</label>
                             <select id="name" name="from_branch_name" style="padding-bottom: 15px;">
                              
-                            <option selected>From Branch Name</option>
                             @foreach($lists as $branch)
                               <option value="{{$branch->id}}">{{$branch->name}}</option>   
                               @endforeach
                                </select>
 
+                               <label for="to_branch_name" class="form-label">To Branch</label>
                              <select id="name" name="to_branch_name" style="padding-bottom: 15px;">
-                             
-                            <option selected>To Branch Name</option>
                             @foreach ($lists as $branch)
                               <option value="{{$branch->id}}">{{$branch->name}}</option>   
                               @endforeach
@@ -242,19 +244,22 @@ html, body {
                               
                             </div>
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="courier_description" class="form-label">Courier Description</label>
                                 <input class="form-control" type="text" id="courier_description" value="{{$info->courier_description}}" name="courier_description" placeholder="Courier Description" required>
                             </div>
 
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="quantity" class="form-label">Quantity</label>
                                 <input class="form-control" type="number" id="quantity" value="{{$info->quantity}}" name="quantity" placeholder="Quantity in packet" required>
                             </div>
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="weight" class="form-label">Weight</label>
                                 <input class="form-control" type="number" id="weight" value="{{$info->weight}}" name="weight" placeholder="Weight(kg)" required>
                             </div>
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="delitype" class="form-label">Delivery Type</label>
                             <select class="form-control" name="delitype" value="{{$info->delitype}}">
-                            <option selected>Delivery Type </option>
-                            <option value="PrePayment">PrePayment</option>
+                            <option value="Prepayment">Prepayment</option>
                             <option value="Condition">Condition</option>
                             </select>
                             </div>

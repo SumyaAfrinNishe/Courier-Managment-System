@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-
 <style>
 .dropbtn {
   background-color: #4CAF50;
@@ -47,50 +46,6 @@
     }
    } */
 </style>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<center>
-<h1>Customer Request Details</h1>
-<center>  <a href="#" class="btn btn-warning" onclick="printDiv('PrintTableArea')">Print</a>
-
-
-</center>
-
-
-
-<div id="PrintTableArea">
-<p><h3>Customer Name: {{$info->user->name}}</span></h3><h2><span style="color:#2874A6"></span><h2></p>
-<p><h4><span style="color:#2E4053">Customer Contact: {{$info->user->phone}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Customer Address: {{$info->user->email}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Customer Email: {{$info->user->email}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Receipient Name: {{$info->recepient_name}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Recepient Phone: {{$info->recepient_phone}}</p></span></h4></p>
-<p><h4><span style="color:#2E4053">Recepient Email: {{$info->recepient_email}}</span></h4></p>
-<p><h4><span style="color:#2E4053">From Branch: {{$info->frombranch->name}}</span></h4></p>
-<p><h4><span style="color:#2E4053">To Branch: {{$info->tobranch->name}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Type of Shipment: {{$info->type_of_shipment}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Courier Description: {{$info->courier_description}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Quantity: {{$info->quantity}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Price: {{$info->price}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Delivery Type: {{$info->delitype}}({{$info->payment}})</span></h4></p>
-<p><h4><span style="color:#2E4053">Pickup Date: {{$info->pickup_date}}</span></h4></p>
-<p><h4><span style="color:#2E4053">Pickup Time: {{$info->pickup_time}}</span></h4></p>
-<p>
-    <img style="border-radius: 4px;" width="200px;" src=" {{url('/uploads/'.$info->cus_image)}}" alt="post">
-</p>
-<p><h4><span style="color:green">Tracking Number: {{$info->track_number}}</span></h4></p>
-
-  </div>
-<script type="text/javascript">
-    function printDiv(divName) {
-        var printContents = document.getElementById(divName).innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
-    }
-</script>
-<!-- 
 <center>
   <form action="{{route('admin.customer.details.update',$info->id)}}" method='POST'>
   @method('PUT')
@@ -120,11 +75,11 @@
 </div>
   </center>
   <center>
-   <div class="mb-3">
+  <!-- <div class="mb-3">
   <label for="price" class="form-label">Price</label>
   <input type="number" name="price" value="{{$info->price}}" class="form-control" id="price" placeholder="">
 </div> -->
-<!-- @if(session('success'))
+@if(session('success'))
     <div class="alert alert-success">
         {!! session('success') !!}
     </div>
@@ -151,6 +106,5 @@
 </form>
   </div>
   </div>
-  </center> -->
-</center>
+  </center>
 @endsection

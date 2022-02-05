@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\CustomerInfo;
 use App\Mail\TestMail;
 use App\Mail\CancelMail;
+use App\Mail\InvoiceMail;
 use Illuminate\Support\Facades\Mail;
 
 class CustomerController extends Controller
@@ -60,6 +61,14 @@ class CustomerController extends Controller
     
        return view('admin.layout.customer.cusinfo-details',compact('info'));
     }
+    public function customerEdit($info_id)
+    {
+        // dd($info_id);
+        $info=CustomerInfo::find($info_id);
+    
+       return view('admin.layout.customer.edit-cusinfo',compact('info'));
+    }
+
    
     public function customerDelete($info_id)
     {
@@ -226,6 +235,7 @@ class CustomerController extends Controller
             $info->update([
                 'delievery' => 'Handover'
             ]);
+            Mail::to($info->recepient_email)->send(new InvoiceMail($info));
             return redirect()->back();
     }
 
@@ -237,14 +247,14 @@ class CustomerController extends Controller
     public function addPaymentCreate(Request $request,$id)
     {
 
-         CustomerInfo::find($id)->update([
+         $info=CustomerInfo::find($id);
+         $info->update([
              'payment'=>'Paid',
              'price'=>$request->price,
              'transid'=> time() . '-' . auth()->user()->id,
             ]);
-
-        
-         return redirect()->route('admin.customer.info');
+        // Mail::to($info->recepient_email)->send(new InvoiceMail($info));
+        return redirect()->route('admin.customer.info');
  }
     
 

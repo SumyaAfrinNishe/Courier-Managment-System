@@ -42,7 +42,6 @@
                               @foreach ($branch as $sbranch)
                               <option value="{{$sbranch->id}}">{{$sbranch->name}}</option>   
                               @endforeach
-
                                </select>
 
 <div class="input-group">
@@ -51,7 +50,7 @@
   </div>
 </div>
 <div>
-<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;>Submit</button>
+<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;">Submit</button>
 </div>
 </form>
 </div>

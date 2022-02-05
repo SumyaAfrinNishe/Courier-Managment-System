@@ -20,16 +20,18 @@
                     <h6 class="m-b-20">Total Courier Request</h6>
                     <!-- <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span></span></h2> -->
                     <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>{{$count['request']}}</span></h2>
+    
                     <p class="m-b-0">Cancel Request<span class="f-right">{{$count['cancelrequest']}}</span></p>
                 </div>
             </div>
         </div>
         
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-green order-card">
+            <div class="card bg-c-pink order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Total Branch</h6>
                     <h2 class="text-right"><i class="fa fa-building f-left"></i><span>{{$count['totalbranch']}}</span></h2>
+                    <p class="m-b-0"><i class="fa fa-user f-left"></i>Total Staff<span class="f-right">{{$count['totalstaff']}}</span></p>
                     
                 </div>
             </div>
@@ -38,22 +40,14 @@
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-yellow order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">Total Staff</h6>
-                    <h2 class="text-right"><i class="fa fa-user f-left"></i><span>{{$count['totalstaff']}}</span></h2>
-                    
+                    <h6 class="m-b-20">Paid</h6>
+                    <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>{{$count['paid']}}</span></h2>
+                    <p class="m-b-0"><i class="fa fa-refresh f-left"></i>Pending<span class="f-right">{{$count['pending']}}</span></p>
                 </div>
             </div>
         </div>
         
-        <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-pink order-card">
-                <div class="card-block">
-                    <h6 class="m-b-20">Customer Cancel Request</h6>
-                    <h2 class="text-right"><i class="fa fa-check f-left"></i><span>{{$count['cuscancel']}}</span></h2>
-                    
-                </div>
-            </div>
-        </div>
+        
 
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-red order-card">
@@ -78,7 +72,7 @@
 
 
         <div class="col-md-4 col-xl-3">
-            <div class="card bg-c-pink order-card">
+            <div class="card bg-c-green order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Out For Delivery</h6>
                     <h2 class="text-right"></i><span>{{$count['ofd']}}</span></h2>
@@ -90,11 +84,12 @@
             <div class="card bg-c-yellowish order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Shipped</h6>
-                    <h2 class="text-right"><i class="fas fa-rocket f-left"></i><span>{{$count['ship']}}</span></h2>
+                    <h2 class="text-right"><span>{{$count['ship']}}</span></h2>
                     <p class="m-b-0">Intransit<span class="f-right">{{$count['intran']}}</span></p>
                 </div>
             </div>
         </div>
+        <!-- <i class="fas fa-rocket f-left"></i> -->
 
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-black order-card">
@@ -102,6 +97,15 @@
                     <h6 class="m-b-20">Delivered</h6>
                     <h2 class="text-right"></i><span>{{$count['delivrd']}}</span></h2>
                     <p class="m-b-0">Unsuccessful Delivery<span class="f-right">{{$count['ud']}}</span></p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Handover</h6>
+                    <h2 class="text-right"><span>{{$count['handover']}}</span></h2>
                     
                 </div>
             </div>

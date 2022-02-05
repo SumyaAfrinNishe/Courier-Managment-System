@@ -33,7 +33,7 @@
         <td>{{$key+1}}</td>
         <td>{{$staff->staffname}}</td>
         <td>{{$staff->staffemail}}</td>
-        <td>{{$staff->sbranch->name}}</td>>
+        <td>{{$staff->sbranch->name}}</td>
         <td> 
             <img src="{{url('/uploads/'.$staff->staffimage)}}" width="100px" alt="staff image">
         </td>

@@ -1,16 +1,9 @@
 @extends('frontend.master')
 @section('content')
 
-
-<div class="features">
-		<div class="container">
-			<h3 class="m_3">Our Branches</h3>
-			<div class="close_but"><i class="close1"> </i></div>
-
-            <div class="row">
-                  @foreach($branchlists as $key=>$item)
-				<div class="col-md-4 top_box" style="padding:25px">
-        <style>
+<html>
+  <head>
+  <style>
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -31,8 +24,18 @@ img {
   padding: 5px 10px;
 }
 </style>
-</head>
-<body>
+  </head>
+</html>
+<div class="features">
+		<div class="container">
+			<h3 class="m_3">Our Branches</h3>
+			<div class="close_but"><i class="close1"> </i></div>
+      <body>
+            <div class="row">
+                  @foreach($branchlists as $key=>$item)
+				<div class="col-md-4 top_box" style="padding:25px;">
+
+
 
 <div class="card">
   <img src="{{url('/uploads/'.$item->image)}}" alt="Avatar" style="width:100%">
@@ -46,12 +49,11 @@ img {
 
   </div>
 </div>
-
-        </div>
-
-               
-                  @endforeach
-                </div>
+</div>
+@endforeach
+ </div>
+</body>
 		 </div>
 	    </div>
+      </html>
 @endsection

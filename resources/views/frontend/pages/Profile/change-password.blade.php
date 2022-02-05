@@ -806,12 +806,15 @@ input.checkbox:checked:after {
 				<form action="{{route('update.password')}}" method='POST'>
                     
                    @csrf
-					<input class="text" type="password" name="old_pass" style="padding-bottom: 20px;" placeholder="Old Password" required="">
-					<input class="text" type="password" name="new_pass" style="padding-bottom: 20px;" placeholder="New Password" required="">
-                    <input class="text" type="password" name="confirm_pass" style="padding-bottom: 20px;" placeholder="Confirm Password" required="">
+					<input class="text" type="password" name="old_pass" style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" placeholder="Old Password" required="">
+					<input class="text" type="password" name="new_pass" style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" placeholder="New Password" required="">
+          <input class="text" type="password" name="confirm_pass" style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" placeholder="Confirm Password" required="">
 					
 				
-					<input type="submit" value="Update">
+					<input type="submit"  style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;" value="Update">
 				</form>
 				\
 			</div>

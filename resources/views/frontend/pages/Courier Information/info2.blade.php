@@ -180,31 +180,35 @@ html, body {
 @endif
                           <div class="form-group" style="padding-bottom: 15px;">
                             <div class="col-md-12">
+                            <label for="recepient_name" class="form-label">Receiver Name</label>
                                 <input class="form-control" type="text" id="recepient_name" name="recepient_name" placeholder="Receiver Name" required>
                             </div>
 </div>
                         <div class="form-group">
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="recepient_email" class="form-label">Receiver Email</label>
                                 <input class="form-control" type="email" id="recepient_email" name="recepient_email" placeholder="Receiver E-mail Address" required>
                             </div>
 </div>
                           <div class="form-group">
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="recepient_phone" class="form-label">Receiver Phone Number</label>
                                 <input class="form-control" type="number" id="recepient_phone" name="recepient_phone" placeholder="Receiver Contact" required>
                             </div>
 </div>
                            
                          <div style="padding-bottom: 15px;">
+                         <label for="from_branch_name" class="form-label">From Branch</label>
                              <select id="name" name="from_branch_name">
-                               <option selected> From Branch Name </option>
+                               <!-- <option selected> From Branch Name </option> -->
                               @foreach ($lists as $branch)
                               <option value="{{$branch->id}}">{{$branch->name}}</option>   
                               @endforeach
                                </select>
 </div>
 <div style="padding-bottom: 15px;">
+<label for="to_branch_name" class="form-label">To Branch</label>
                                <select id="name" name="to_branch_name">
-                               <option selected> To Branch Name </option>
                               @foreach ($lists as $branch)
                               <option value="{{$branch->id}}">{{$branch->name}}</option>   
                               @endforeach
@@ -262,20 +266,23 @@ html, body {
                               
                           
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="courier_description" class="form-label">Courier Description</label>
                                 <input class="form-control" type="text" id="courier_description"name="courier_description" placeholder="Courier Description" required>
                             </div>
 
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="quantity" class="form-label">Quantity(in packet)</label>
                                 <input class="form-control" type="number" id="quantity" name="quantity" placeholder="Quantity in packet" required>
                             </div>
                             
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="weight" class="form-label">Weight(in Kg)</label>
                                 <input class="form-control" type="number" id="weight" name="weight" placeholder="Weight(kg)" required>
                             </div>
 
                             <div class="col-md-12" style="padding-bottom: 15px;">
+                            <label for="delitype" class="form-label">Payment Type</label>
                             <select class="form-control" name="delitype">
-                            <option selected>Delivery Type </option>
                             <option value="Prepayment">PrePayment</option>
                             <option value="Condition">Condition</option>
                             </select>

@@ -806,11 +806,14 @@ input.checkbox:checked:after {
 				<form action="{{route('registration.store')}}" method='POST'>
           @csrf
          
-					<input class="text" style="margin-bottom: 20px; " type="text" name="name" placeholder="Your name" required="">
+					<input class="text" style="margin-bottom: 20px; border-top-right-radius:25px; border-bottom-right-radius:25px; " type="text" name="name" placeholder="Your name" required="">
 
-					<input class="text" style="margin-bottom: 20px; border-top-left-radius: 20px; border-bottom-left-radius: 20px;"  type="email" name="email" placeholder="Your Email" required="">
-          <input class="text" style="margin-bottom: 20px;  border-top-left-radius: 20px; border-bottom-left-radius: 20px;""  type="number" name="phone" placeholder="Your Contact" required="">
-					<input class="text" style="margin-bottom: 20px;  border-top-left-radius: 20px; border-bottom-left-radius: 20px;""  type="password" name="password" placeholder="Password" required="">
+					<input class="text" style="margin-bottom: 20px; border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;"  type="email" name="email" placeholder="Your Email" required="">
+          <input class="text" style="margin-bottom: 20px;  border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;" type="number" name="phone" placeholder="Your Contact" required="">
+					<input class="text" style="margin-bottom: 20px;  border-top-left-radius: 25px; border-bottom-left-radius: 25px;
+           border-top-right-radius:25px; border-bottom-right-radius:25px;"  type="password" name="password" placeholder="Password" required="">
 					
 					<div class="wthree-text">
 						<label class="anim">
@@ -819,7 +822,7 @@ input.checkbox:checked:after {
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="Register">
+					<input style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;"type="submit" value="Register">
 				</form>
 				<p>Have an Account? <a href="{{route('user.login')}}"> Login Now!</a></p>
 			</div>

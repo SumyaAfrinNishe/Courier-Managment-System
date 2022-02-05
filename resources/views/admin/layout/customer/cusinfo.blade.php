@@ -57,10 +57,12 @@
         @endif
         <td>{{$info->customer_decision}}</td>
         <td>{{$info->status}}</td>
+        <td><a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}"><i class="fas fa-eye"></i></a></td>
+        
         @if($info->delitype=='Prepayment' && $info->payment=='Pending')
         <td> <b style="color:red">Pay First</b> </td>
         @else
-        <td><a class="btn btn-primary" href="{{route('admin.customer.details.view',$info->id)}}"><i class="fas fa-eye"></i></a></td>
+        <td><a class="btn btn-warning" href="{{route('admin.customer.details.edit',$info->id)}}"><i class="fas fa-edit"></i></a></td>
         @endif
 <td>
             <!-- <a class="btn btn-warning" href="{{route('admin.customer.details.edit',$info->id)}}"><i class="fas fa-edit"></i></a> -->

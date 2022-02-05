@@ -51,7 +51,7 @@
 
 
 <div>
-<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;>Submit</button>
+<button type="submit" class="btn btn-success" style="margin-bottom:30px;margin-left:500px;">Submit</button>
 </div>
 </form>
 @endsection

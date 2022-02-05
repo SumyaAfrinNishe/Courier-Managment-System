@@ -15,9 +15,9 @@ class DashboardController extends Controller
         $count['totalstaff']=StaffList::all()->count();
         $count['cancelrequest']=CustomerInfo::where('status','cancelled')->count();
         // dd($count['cancelrequest']);
-        $count['cusconfirm']=CustomerInfo::where('customer_decision','Confirmed')->count();
-        $count['cuscancel']=CustomerInfo::where('customer_decision','Cancelled')->count();
-
+        $count['paid']=CustomerInfo::where('payment','Paid')->count();
+        $count['pending']=CustomerInfo::where('payment','Pending')->count();
+        $count['handover']=CustomerInfo::where('delievery','Handover')->count();
         $count['accepted']=CustomerInfo::where('delievery','Accepted By Courier')->count();
         $count['ccollected']=CustomerInfo::where('delievery','Courier Collected')->count();
         $count['rtpu']=CustomerInfo::where('delievery','Ready To Pick Up')->count();
